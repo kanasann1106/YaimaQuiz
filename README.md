@@ -62,3 +62,11 @@ $ git remote add origin https://github.com/${USER_NAME}/${REPOSITORY_NAME}.git
 $ git pull --rebase origin
 ```
 
+## Start server
+
+```.sh
+$ cd ${PROJECT_NAME}
+
+$ php artisan serve
+```
+
