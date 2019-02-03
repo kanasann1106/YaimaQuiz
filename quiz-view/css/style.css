@@ -1,4 +1,4 @@
-html,body{
+html, body{
 	height: 100%;
 }
 body{
@@ -142,8 +142,9 @@ header h1 a:hover{
 		top: 48px;
 		left: 0;
 		width: 100%;
-		height: 100vw;
 		background: #80cee0db;
+		overflow: scroll;
+		height: 100vh;
 	}
 	/*-- accordion_menu ここから ---*/
 	#accordion_menu{
@@ -206,6 +207,7 @@ header h1 a:hover{
 	[id^="sp-region"] li{
 		padding: 10px 10px 10px 20px;
 	}
+
 	/*-- accordion_menu ここまで ---*/
 
 	.top-nav ul{
@@ -280,12 +282,12 @@ main{
 footer{
 	font-size: 14px;
 	width: 100%;
-	/*margin-top: auto;*/
+	margin-top: auto;
 	padding: 8px;
 	text-align: center;
-	color: #444;
-	background: #fff;
+	color: #fff;
+	background: #444;
 }
 footer a{
-	color: #444;
+	color: #fff;
 }
