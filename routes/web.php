@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ino', 'InoController@index');
+
+Route::get('/quiz', 'QuizController@index');
+
