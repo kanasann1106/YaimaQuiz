@@ -1,7 +1,5 @@
-html, body{
-	height: 100%;
-}
 body{
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	color: #555;
@@ -18,6 +16,23 @@ ul{
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+/* -------------------
+	animation
+---------------------*/
+@keyframes SlideDown{
+	0%{
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeIn{
+	0%{opacity: 0}
+	100%{opacity: 1}
 }
 /* -------------------
 	header
@@ -115,6 +130,7 @@ header h1 a:hover{
 	text-decoration: none;
 	background: #fff;
 	color: #80cee0;
+	transition: all .5s;
 }
 /*ドロップダウンメニュー*/
 .dropdown:hover .dropdown-menu {
@@ -226,10 +242,15 @@ header h1 a:hover{
 	quiz
 ---------------------*/
 main{
+	position: relative;
 	width: 848px;
 	margin: 0 auto;
 	padding-top: 96px;
-	min-height: 560px;
+	padding-bottom: 40px;
+	animation: fadeIn 1s;
+}
+#question{
+	/*opacity: .4;*/
 }
 #question h1{
 	background: #ffc6e2;
@@ -300,6 +321,59 @@ main{
 	margin: 16px auto 0 auto;
 	padding: 14px 0;
 	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	box-shadow: 0 4px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #6d95ce inset;
+	transition: .3s;
+}
+#explain button:hover {
+ 	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+/* -------------------
+	result
+---------------------*/
+#result{
+	border: 1px solid #000;
+	border-radius: 24px;
+	-webkit-border-radius: 24px;
+	-moz-border-radius: 24px;
+	padding: 40px 0;
+	width: 72%;
+	margin: 0 auto;
+	text-align: center;
+	position: absolute;
+	top: 160px;
+	left: 14%;
+	background: #eee;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	animation: SlideDown 1.5s;
+}
+#result h1{
+	font-size: 32px;
+	margin-bottom: 16px;
+}
+#result p{
+	font-size: 24px;
+	margin-bottom: 24px;
+}
+#result button{
+	height: 56px;
+	padding: 8px 0;
+	margin-top: 24px;
+	box-shadow: 0 4px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #6d95ce inset;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	transition: .3s;
+}
+#result button:hover {
+ 	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+@media screen and (max-width: 600px){
+	#result{
+		width: 88%;
+		left: 6%;
+	}
 }
 /* -------------------
 	footer
@@ -307,11 +381,11 @@ main{
 footer{
 	font-size: 14px;
 	width: 100%;
-	margin-top: auto;
 	padding: 8px;
 	text-align: center;
 	color: #fff;
 	background: #444;
+
 }
 footer a{
 	color: #fff;
