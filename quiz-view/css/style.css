@@ -112,7 +112,7 @@ header h1 a:hover{
 .top-nav{
 	width: 560px;
 }
-#accordion_menu{
+#accordion-menu{
 	display: none;
 }
 .top-nav ul{
@@ -162,35 +162,35 @@ header h1 a:hover{
 		overflow: scroll;
 		height: 100vh;
 	}
-	/*-- accordion_menu ここから ---*/
-	#accordion_menu,
+	/*-- accordion-menu ここから ---*/
+	#accordion-menu,
 	.show{
 		display: block;
 	}
-	#accordion_menu ul,
-	#accordion_menu li{
+	#accordion-menu ul,
+	#accordion-menu li{
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
-	#accordion_menu > li {
+	#accordion-menu > li {
 		border: #ccc 1px solid;
 		margin-bottom: -1px;
 	}
-	#accordion_menu a:hover{
+	#accordion-menu a:hover{
 		background: #fff;
 		color: #80cee0;
 	}
-	#accordion_menu a[data-toggle="collapse"]{
+	#accordion-menu a[data-toggle="collapse"]{
 		display: block;
 		padding: 10px;
 		text-decoration: none;
 		position: relative;
 	}
-	#accordion_menu a[data-toggle="collapse"]:hover{
+	#accordion-menu a[data-toggle="collapse"]:hover{
 		background: #fff;
 	}
-	#accordion_menu a[data-toggle="collapse"]::after{
+	#accordion-menu a[data-toggle="collapse"]::after{
 		content:"";
 		display: block;
 		width: 12px;
@@ -203,17 +203,17 @@ header h1 a:hover{
 		bottom: 0;
 		margin: auto;
 	}
-	#accordion_menu a[data-toggle="collapse"]:hover::after{
+	#accordion-menu a[data-toggle="collapse"]:hover::after{
 		border-top: #80cee0 3px solid;
 		border-right: #80cee0 3px solid;
 	}
-	#accordion_menu a[aria-expanded=false]::after{
+	#accordion-menu a[aria-expanded=false]::after{
 		-webkit-transform: rotate(45deg);
 		-ms-transform: rotate(45deg);
 		transform: rotate(45deg);
 		transition-duration: 0.3s;
 	}
-	#accordion_menu a[aria-expanded=true]::after{
+	#accordion-menu a[aria-expanded=true]::after{
 		-webkit-transform: rotate(135deg);
 		-ms-transform: rotate(135deg);
 		transform: rotate(135deg);
@@ -222,7 +222,7 @@ header h1 a:hover{
 	[id^="sp-region"] li{
 		padding: 10px 10px 10px 20px;
 	}
-	/*-- accordion_menu ここまで ---*/
+	/*-- accordion-menu ここまで ---*/
 
 	.top-nav ul{
 		display: block;
@@ -240,8 +240,6 @@ header h1 a:hover{
 	button
 ---------------------*/
 .btn{
-	height: 56px;
-	box-shadow: 0 6px #005bbb;
 	border-radius: 16px;
 	-webkit-border-radius: 16px;
 	-moz-border-radius: 16px;
@@ -254,7 +252,7 @@ header h1 a:hover{
 .btn-primary{
 	color: #fff;
 	background-color: #007bff;
-	border-color: #007bff;
+	box-shadow: 0 6px #005bbb;
 }
 /* -------------------
 	quiz
@@ -292,7 +290,7 @@ main{
 	height: 100%;
 	object-fit: cover;
 }
-#answer_option li{
+#answer-choices li{
 	font-size: 20px;
 	margin: 16px 0;
 	padding: 16px 24px;
@@ -300,7 +298,7 @@ main{
 	border-radius: 8px;
 	cursor: pointer;
 }
-#answer_option li:hover{
+#answer-choices li:hover{
 	opacity: .7;
 }
 @media screen and (max-width: 856px){
@@ -310,7 +308,7 @@ main{
 	#question h1{
 		font-size: 20px;
 	}
-	#answer_option li{
+	#answer-choices li{
 		font-size: 16px;
 	}
 }
@@ -335,6 +333,7 @@ main{
 }
 #explain button{
 	width: 56%;
+	height: 56px;
 	margin: 16px auto 0 auto;
 }
 /* -------------------
@@ -353,7 +352,7 @@ main{
 	top: 160px;
 	left: 14%;
 	background: #eee;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 	animation: SlideDown 1.5s;
 }
 #result h1{
@@ -366,6 +365,7 @@ main{
 }
 #result button{
 	margin-top: 24px;
+	height: 56px;
 }
 @media screen and (max-width: 600px){
 	#result{
