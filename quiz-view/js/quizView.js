@@ -1,4 +1,4 @@
-var questionNum = 5;
+var questionNum = 1;
 var nextCounter = 0;
 var quiz = new Vue({
 	el: '#quiz',
@@ -15,6 +15,9 @@ var quiz = new Vue({
 		showResult: false,
 	},
 	methods: {
+			start: function(){
+				window.location.href = 'quiz.html'; 
+			},
 			showAnswer: function(){
 				this.showQuestion = !this.showQuestion //false
 				this.showExplain = !this.showExplain //true
