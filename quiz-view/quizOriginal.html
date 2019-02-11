@@ -78,39 +78,36 @@
 		</header>
 
 		<!-- main -->
-		<main id="quiz" class="cantainer">
+		<main class="cantainer">
 			<article id="question">
 				<section>
-					<h1>問題 @{{question.id}}. @{{question.sentence}}</h1>
-					<div v-if="showQuestion">
-						<div class="img-wrap">
-							<img src="{{ asset('image/uma.jpg')}}">
-						</div>
-						<div id="answer-choices">
-							<ul>
-								<li v-for="choice in choices" v-on:click="showAnswer()">
-									@{{ choice.message }}
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div id="explain" v-if="showExplain">
+					<h1>問題1. 与那国の方言で「ありがとう」はなんという？</h1>
+					<!-- <div class="img-wrap">
+						<img src="images/uma.jpg">
+					</div> -->
+					<!-- <div id="explain">
 						<h2><i class="far fa-circle mr-4"></i>正解！</h2>
-						<!-- <h2><i class="fas fa-times mr-4"></i></i>不正解</h2> -->
+						<h2><i class="fas fa-times mr-4"></i></i>不正解</h2>
 						<p><strong>解説：</strong>カジキ祭りの醍醐味の一つはなんといってもカジキの丸焼き！体長2m超、重さ100kgものカジキマグロを実質食べ放題で召し上がることができます。中までじっくり蒸し焼きにするため6時間以上もかかるんだとか！！（すごい）</p>
-						<button v-on:click="next()" type="button" class="btn btn-primary rounded-pill btn-block">@{{btnname}}</button>
-					</div>
+						<button type="button" class="btn btn-primary rounded-pill btn-block">次へ</button>
+					</div> -->
+				</section>
+				<section id="answer-choices">
+					<ul>
+						<li>ふがらっさ</li>
+						<li>かむさ</li>
+						<li>てんきゅー</li>
+					</ul>
 				</section>
 			</article>
-			<article id="result" v-if="showResult">
+			<!-- <article id="result">
 				<section>
 					<h1>クイズ結果</h1>
 					<p>3問正解！</p>
 					<div class="container">
 						<div class="row">
 							<div class="col-md-5 offset-md-1">
-								<button v-on:click="start()" type="button" class="btn btn-primary rounded-pill btn-block">リトライ</button>
+								<button type="button" class="btn btn-primary rounded-pill btn-block">リトライ</button>
 							</div>
 							<div class="col-md-5">
 								<button type="button" class="btn btn-primary rounded-pill btn-block"><i class="fab fa-twitter fa-lg mr-3"></i>ツイート</button>
@@ -118,8 +115,7 @@
 						</div>
 					</div>
 				</section>
-			</article>
-
+			</article> -->
 		</main>
 
 		<!-- footer -->
@@ -132,8 +128,8 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="{{ asset('js/footerFixed.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('js/quizView.js') }}"></script>
+		<script type="text/javascript" src="js/footerFixed.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/quizView.js"></script>
 	</body>
 </html>
