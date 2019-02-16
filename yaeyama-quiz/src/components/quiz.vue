@@ -2,27 +2,27 @@
 <main id="quiz" class="cantainer">
 	<article id="question">
 		<section>
-			<h1>問題 {{question.id}}. {{question.sentence}}</h1>
+			<h1>問題 {{quizNum}}. {{quizData[quizNum-1].q}}</h1>
 			<div v-if="show">
 				<div class="img-wrap">
 					<img src="@/assets/uma.jpg">
 				</div>
 				<div id="answer-choices">
 					<ul>
-						<li v-for="choice in choices" v-on:click="showAnswer()">
-							{{ choice.message }}
+						<li v-for="(choice, index) in quizData[quizNum-1].a" v-on:click="showAnswer(index)">
+							{{ choice }}
 						</li>
 					</ul>
 				</div>
 			</div>
 
-			<quiz-explain ref="explain" @showQuiz="hideAndShow" @endQuiz="alertResult"></quiz-explain>
+			<quiz-explain v-bind:quizData="quizData" v-bind:quizNum="quizNum" v-bind:judgment="judgment" ref="explain" @showQuiz="showQuiz" @endQuiz="alertResult"></quiz-explain>
 
 		</section>
 
 	</article>
 
-	<quiz-result ref="result"></quiz-result>
+	<quiz-result ref="result" v-bind:totalCorrectNum="totalCorrectNum"></quiz-result>
 
 </main>
 
@@ -39,30 +39,46 @@ export default{
 	},
 	data: function(){
 		return{
-			question:{id: 1, sentence: '与那国の方言で「ありがとう」はなんという？'},
-			choices: [
-				{message: 'ふがらっさ'},
-				{message: 'かむさー'},
-				{message: 'てんきゅー'}
+			quizNum: 1,
+			quizData: [
+				{q: '与那国島から台湾までの距離はどのくらいでしょう？', a: ['111km','222km','333km'], e: '台湾までの距離は111kmです。たまーに西崎灯台から台湾が見えます！ちなみに石垣島との距離は127kmです。台湾の方が近い！！(笑)'},
+				{q: '与那国島の山の中には不思議な岩がありますがどんな岩でしょう？', a: ['人面岩','光岩','浮遊岩'], e: '人面岩は島の南側の「新川鼻」という岬の高台にあります。獣道を進んでいくと目の前に人面岩が現れます！ちょっとした冒険みたいで楽しいですよ〜♪'},
+				{q: '与那国島は日本のどこにある？', a: ['日本最西端','日本最東端','日本最北端'], e: '与那国島は日本の最西端の島で、沖縄県八重山諸島の一番西の端っこにあります。すぐお隣には台湾があります。（頑張れば泳げると思う。頑張れば。。）'},
+				{q: '小学校は何校あるでしょう？', a: ['3校','6校','9校'], e: '小学校は3校です。与那国小学校と久部良小学校と比川小学校があります。'},
+				{q: '与那国島の人口はおおよそ何人？', a: ['1700人','540人','15000人'], e: '2018/07/31現在の人口は1680人です。外出先で知り合いに遭遇する確率100%(笑)'},
 			],
 			show: true,
+			judgment: '',
+			totalCorrectNum: 0
 		}
 	},
 	methods: {
-		showAnswer: function(){
+		showAnswer: function(index){
+			if(index === 0){
+				this.judgment = true
+				this.totalCorrectNum++
+				console.log('正解数' + this.totalCorrectNum);
+
+				this.$refs.judgment
+				this.$refs.totalCorrectNum
+			}else{
+				this.judgment = false
+			}
 			this.show = !this.show //false
 			this.$refs.explain.showExplain(this.show)
 		},
-		hideAndShow: function(tmp){
+		showQuiz: function(tmp){
 			if(!tmp){
-				this.show = "true"
+				this.show = true
+				this.quizNum++
 			}else{
-				this.show = "false"
+				this.show = false
 			}
+
 		},
 		alertResult: function(){
 			this.$refs.result.showResult()
-		}
+		},
 	}
 }
 </script>

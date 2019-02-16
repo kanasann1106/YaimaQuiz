@@ -1,20 +1,20 @@
 <template>
 <div id="explain" v-if="show">
-	<h2><i class="far fa-circle mr-4"></i>正解！</h2>
-	<!-- <h2><i class="fas fa-times mr-4"></i></i>不正解</h2> -->
-	<p><strong>解説：</strong>{{explain.text}}</p>
-	<button v-on:click="next()" type="button" class="btn btn-primary rounded-pill btn-block">次へ</button>
+	<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
+	<h2 v-else><i class="fas fa-times mr-4"></i></i>不正解</h2>
+	<p><strong>解説：</strong>{{quizData[quizNum-1].e}}</p>
+	<button v-on:click="next" type="button" class="btn btn-primary rounded-pill btn-block">次へ</button>
 </div>
 </template>
 
 <script>
 export default{
 	name: 'quizExplain',
+	props: ['quizData', 'quizNum', 'judgment'],
 	data: function(){
 		return{
-			explain: {id:1, text: 'カジキ祭りの醍醐味の一つはなんといってもカジキの丸焼き！体長2m超、重さ100kgものカジキマグロを実質食べ放題で召し上がることができます。中までじっくり蒸し焼きにするため6時間以上もかかるんだとか！！（すごい）'},
 			show: false,
-			questionNum: 3,
+			totalQuizNum: 5,
 			nextCounter: 0
 		}
 	},
@@ -27,7 +27,7 @@ export default{
 		next: function(){
 			this.nextCounter++
 			console.log(this.nextCounter)
-			if(this.nextCounter < this.questionNum){
+			if(this.nextCounter < this.totalQuizNum){
 				this.show = !this.show //false
 				this.$emit('showQuiz', this.show)
 			}else{
