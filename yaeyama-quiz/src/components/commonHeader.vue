@@ -11,10 +11,10 @@
 
 	<nav class="top-nav">
 		<ul>
-			<li><a href="#" id="food">食べ物</a></li>
-			<li><a href="#" id="creature">生物</a></li>
-			<li><a href="#" id="history">文化・歴史</a></li>
-			<li><a href="#" id="knowledge">雑学</a></li>
+			<li><router-link to="/food">食べ物</router-link></li>
+			<li><router-link to="/creature">生物</router-link></li>
+			<li><router-link to="/history">文化・歴史</router-link></li>
+			<li><router-link to="/knowledge">雑学</router-link></li>
 			<li class="dropdown">
 				<a class="dropdown-toggle" href="#" id="region" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					地域
@@ -35,10 +35,10 @@
 				</ul>
 			</li>
 			<li id="accordion-menu">
-				<a data-toggle="collapse" href="#sp-region" aria-controls="sp-region" aria-expanded="false">
+				<a v-b-toggle.sp-region data-toggle="collapse">
 					地域
 				</a>
-				<ul id="sp-region" class="collapse" data-parent="#accordion-menu">
+				<b-collapse id="sp-region" tag="ul">
 					<li><a href="#" id="island1">石垣島</a></li>
 					<li><a href="#" id="island2">与那国島</a>	</li>
 					<li><a href="#" id="island3">小浜島</a></li>
@@ -51,7 +51,8 @@
 					<li><a href="#" id="island10">西表島</a></li>
 					<li><a href="#" id="island11">西表島</a></li>
 					<li><a href="#" id="island12">ラスト</a></li>
-				</ul>
+				
+			</b-collapse>
 			</li>
 			<li><a href="#" id="all">すべて</a></li>
 		</ul>
@@ -217,6 +218,9 @@ header h1 a:hover{
 	#accordion-menu > li {
 		border: #ccc 1px solid;
 		margin-bottom: -1px;
+	}
+	#accordion-menu a{
+		color: #fff;
 	}
 	#accordion-menu a:hover{
 		background: #fff;

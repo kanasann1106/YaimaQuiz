@@ -7,6 +7,7 @@ Vue.use(Router)
 export default new Router({
 	routes: [
 		{ path: '/', name: 'quiz', component: quiz },
-		// { path: '/', name: 'Explain', component: Explain },
+		{ path: '/food', name: 'quiz', component: quiz },
+		{ path: '/island1', name: 'quiz', component: quiz },
 	]
 })
