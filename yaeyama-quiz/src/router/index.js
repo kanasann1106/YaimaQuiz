@@ -8,6 +8,9 @@ export default new Router({
 	routes: [
 		{ path: '/', name: 'quiz', component: quiz },
 		{ path: '/food', name: 'quiz', component: quiz },
-		{ path: '/island1', name: 'quiz', component: quiz },
+		{ path: '/creature', name: 'quiz', component: quiz },
+		{ path: '/history', name: 'quiz', component: quiz },
+		{ path: '/food', name: 'quiz', component: quiz },
+		{ path: '/knowledge', name: 'quiz', component: quiz },
 	]
 })

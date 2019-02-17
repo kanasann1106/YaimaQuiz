@@ -20,18 +20,18 @@
 					地域
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="region">
-					<li><a class="dropdown-item" href="#" id="island1">石垣島</a></li>
-					<li><a class="dropdown-item" href="#" id="island2">与那国島</a>	</li>
-					<li><a class="dropdown-item" href="#" id="island3">小浜島</a></li>
-					<li><a class="dropdown-item" href="#" id="island4">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island3">小浜島</a></li>
-					<li><a class="dropdown-item" href="#" id="island4">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island5">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island6">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island7">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island8">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island9">西表島</a></li>
-					<li><a class="dropdown-item" href="#" id="island12">ラスト</a></li>
+					<li><router-link to="/ishigaki" class="dropdown-item" >石垣島</router-link></li>
+					<li><router-link to="/yonaguni" class="dropdown-item" >与那国島</router-link></li>
+					<li><router-link to="/kohama" class="dropdown-item" >小浜島</router-link></li>
+					<li><router-link to="/iriomote" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >小浜島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
+					<li><router-link to="/" class="dropdown-item" >ラスト</router-link></li>
 				</ul>
 			</li>
 			<li id="accordion-menu">
@@ -54,7 +54,7 @@
 				
 			</b-collapse>
 			</li>
-			<li><a href="#" id="all">すべて</a></li>
+			<li><router-link to="/">すべて</router-link></li>
 		</ul>
 	</nav>
 </header>
