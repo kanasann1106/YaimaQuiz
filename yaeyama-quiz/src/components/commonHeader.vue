@@ -20,18 +20,7 @@
 					地域
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="region">
-					<li><router-link to="/ishigaki" class="dropdown-item" >石垣島</router-link></li>
-					<li><router-link to="/yonaguni" class="dropdown-item" >与那国島</router-link></li>
-					<li><router-link to="/kohama" class="dropdown-item" >小浜島</router-link></li>
-					<li><router-link to="/iriomote" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >小浜島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >西表島</router-link></li>
-					<li><router-link to="/" class="dropdown-item" >ラスト</router-link></li>
+					<li v-for="(region, index) in menus[4].sub"><router-link v-bind:to="region" class="dropdown-item" >{{region}}</router-link></li>
 				</ul>
 			</li>
 			<li id="accordion-menu">
@@ -39,20 +28,8 @@
 					地域
 				</a>
 				<b-collapse id="sp-region" tag="ul">
-					<li><a href="#" id="island1">石垣島</a></li>
-					<li><a href="#" id="island2">与那国島</a>	</li>
-					<li><a href="#" id="island3">小浜島</a></li>
-					<li><a href="#" id="island4">西表島</a></li>
-					<li><a href="#" id="island5">西表島</a></li>
-					<li><a href="#" id="island6">西表島</a></li>
-					<li><a href="#" id="island7">西表島</a></li>
-					<li><a href="#" id="island8">西表島</a></li>
-					<li><a href="#" id="island9">西表島</a></li>
-					<li><a href="#" id="island10">西表島</a></li>
-					<li><a href="#" id="island11">西表島</a></li>
-					<li><a href="#" id="island12">ラスト</a></li>
-				
-			</b-collapse>
+					<li v-for="region in menus[4].sub"><router-link v-bind:to="region">{{region}}</router-link></li>
+				</b-collapse>
 			</li>
 			<li><router-link to="/">すべて</router-link></li>
 		</ul>
@@ -64,19 +41,30 @@
 export default{
 	name: 'CommonHeader',
 	mounted: function(){
-		
-	// ハンバーガーメニュー
-	$('.js-toggle-nav').on('click', function(e){
-		$('.top-nav').toggleClass('show');
-		$(this).toggleClass('active');
-	});
-	// ハンバーガーとメニュー以外をクリックしたらナビメニューを閉じる
-	$(document).on('click', function(e){
-		if(!$(e.target).closest('.js-toggle-nav, .top-nav ul').length){
-			$('.top-nav').removeClass('show');
-			$('.js-toggle-nav').removeClass('active');
+		// ハンバーガーメニュー
+		$('.js-toggle-nav').on('click', function(e){
+			$('.top-nav').toggleClass('show');
+			$(this).toggleClass('active');
+		});
+		// ハンバーガーとメニュー以外をクリックしたらナビメニューを閉じる
+		$(document).on('click', function(e){
+			if(!$(e.target).closest('.js-toggle-nav, .top-nav ul').length){
+				$('.top-nav').removeClass('show');
+				$('.js-toggle-nav').removeClass('active');
+			}
+		});
+	},
+	data: function(){
+		return{
+			menus: [
+				{category: '食べ物', path: 'food', sub:[]},
+				{category: '生物', path: 'creature', sub:[]},
+				{category: '文化・歴史', path: 'history', sub:[]},
+				{category: '雑学', path: 'knowledge', sub:[]},
+				{category: '地域', path: 'region', sub:['石垣島','与那国島','小浜島','西表島','波照間島','黒島','石垣島','与那国島','小浜島','西表島','波照間島','黒島']},
+				{category: '全て', path: 'all', sub:[]}
+			],
 		}
-	});
 	}
 }
 </script>
