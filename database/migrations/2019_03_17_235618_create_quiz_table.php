@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuizCategoriesTable extends Migration
+class CreateQuizTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,23 @@ class CreateQuizCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('quiz_categories', function (Blueprint $table) {
+        Schema::create('quiz', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('quiz_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->string('title');
+            $table->string('correct');
+            $table->string('uncorrect1');
+            $table->string('uncorrect2');
+            $table->string('explain_sentence');
+            $table->string('image_name')->nullable()->default(NULL);
             $table->integer('category_id')->unsigned();
             $table->boolean('delete_flg')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
 
-            $table->foreign('quiz_id')
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('quiz')
+                ->on('users')
                 ->onDelete('cascade');
             $table->foreign('category_id')
                 ->references('id')
@@ -39,6 +45,6 @@ class CreateQuizCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quiz_categories');
+        Schema::dropIfExists('quiz');
     }
 }
