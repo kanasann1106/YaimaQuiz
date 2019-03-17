@@ -17,7 +17,8 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->boolean('delete_flg')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

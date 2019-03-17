@@ -18,7 +18,8 @@ class CreateQuizCategoriesTable extends Migration
             $table->integer('quiz_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->boolean('delete_flg')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
             $table->foreign('quiz_id')
                 ->references('id')

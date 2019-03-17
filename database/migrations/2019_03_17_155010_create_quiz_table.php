@@ -23,7 +23,8 @@ class CreateQuizTable extends Migration
             $table->string('explain_sentence');
             $table->string('image_name')->nullable()->default(NULL);;
             $table->boolean('delete_flg')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
             $table->foreign('user_id')
                 ->references('id')
