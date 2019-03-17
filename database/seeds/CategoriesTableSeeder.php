@@ -18,6 +18,7 @@ class CategoriesTableSeeder extends Seeder
             '雑学',
             '地域',
         ];
+
         foreach($categories as $category) {
             DB::table('categories')->insert([
                 'name' => $category,
