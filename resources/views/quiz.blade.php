@@ -88,7 +88,7 @@
 						</div>
 						<div id="answer-choices">
 							<ul>
-								<li v-for="choice in choices" v-on:click="showAnswer()">
+								<li v-for="choice in choices" @click="showAnswer()">
 									@{{ choice.message }}
 								</li>
 							</ul>
