@@ -81,7 +81,13 @@
 		<main id="quiz" class="cantainer">
 			<article id="question">
 				<section>
-					<h1>問題 @{{question.id}}. @{{question.sentence}}</h1>
+					@foreach($quizzes as $one_quiz)
+					<h1>問題 {{ $one_quiz -> title }}</h1>
+					@endforeach
+					{{--@foreach($quiz as $one_quiz)--}}
+					{{--<h1>問題 {{ $one_quiz -> id }}</h1>--}}
+					{{--@endforeach--}}
+					{{--{{var_dump()}}--}}
 					<div v-if="showQuestion">
 						<div class="img-wrap">
 							<img src="{{ asset('image/uma.jpg')}}">
