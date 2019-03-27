@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/{app}', function () {
-    return view('quiz/quiz');
-})->where('app', '.*');
+//Route::get('/{app}', function () {
+//    return view('quiz/index');
+//})->where('app', '.*');
 
 Route::get('/ino', 'InoController@index');
 

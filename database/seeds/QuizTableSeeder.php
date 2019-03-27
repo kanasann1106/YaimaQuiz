@@ -11,7 +11,7 @@ class QuizTableSeeder extends Seeder
      */
     public function run()
     {
-        $quizzes = [
+        $allquiz = [
             $quiz1 = [
                 'user_id' => '1',
                 'title' => '長命草を食べるとどうなるといわれている？',
@@ -42,8 +42,8 @@ class QuizTableSeeder extends Seeder
             ]
         ];
 
-        foreach($quizzes as $quiz) {
-            DB::table('quiz')->insert($quiz);
+        foreach($allquiz as $quiz) {
+            DB::table('quizzes')->insert($quiz);
         }
     }
 }

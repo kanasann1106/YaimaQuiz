@@ -84,10 +84,6 @@
 					@foreach($quizzes as $one_quiz)
 					<h1>問題 {{ $one_quiz -> title }}</h1>
 					@endforeach
-					{{--@foreach($quiz as $one_quiz)--}}
-					{{--<h1>問題 {{ $one_quiz -> id }}</h1>--}}
-					{{--@endforeach--}}
-					{{--{{var_dump()}}--}}
 					<div v-if="showQuestion">
 						<div class="img-wrap">
 							<img src="{{ asset('image/uma.jpg')}}">
@@ -105,7 +101,7 @@
 						<h2><i class="far fa-circle mr-4"></i>正解！</h2>
 						<!-- <h2><i class="fas fa-times mr-4"></i></i>不正解</h2> -->
 						<p><strong>解説：</strong>カジキ祭りの醍醐味の一つはなんといってもカジキの丸焼き！体長2m超、重さ100kgものカジキマグロを実質食べ放題で召し上がることができます。中までじっくり蒸し焼きにするため6時間以上もかかるんだとか！！（すごい）</p>
-						<button v-on:click="next()" type="button" class="btn btn-primary rounded-pill btn-block">@{{btnname}}</button>
+						<button @click="next()" type="button" class="btn btn-primary rounded-pill btn-block">@{{btnname}}</button>
 					</div>
 				</section>
 			</article>
@@ -116,7 +112,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-5 offset-md-1">
-								<button v-on:click="start()" type="button" class="btn btn-primary rounded-pill btn-block">リトライ</button>
+								<button @click="start()" type="button" class="btn btn-primary rounded-pill btn-block">リトライ</button>
 							</div>
 							<div class="col-md-5">
 								<button type="button" class="btn btn-primary rounded-pill btn-block"><i class="fab fa-twitter fa-lg mr-3"></i>ツイート</button>
