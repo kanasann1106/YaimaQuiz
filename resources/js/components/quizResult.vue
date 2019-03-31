@@ -33,7 +33,7 @@
                 // this.$emit('show', this.show)
             },
             start: function(){
-                window.location.href = '/';
+                window.location.href = '/quiz';
             }
         }
 

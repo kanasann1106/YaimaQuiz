@@ -13,7 +13,7 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		{{--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">--}}
 		<link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
@@ -137,13 +137,12 @@
 		</footer>
 
 		<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.min.js"></script> -->
-		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		{{--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>--}}
+		{{--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>--}}
+		{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>--}}
+		{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>--}}
 		<script src=" {{ mix('js/app.js') }} "></script>
-		<script type="text/javascript" src="{{ asset('js/footerFixed.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('js/quizView.js') }}"></script>
+		{{--<script type="text/javascript" src="{{ asset('js/quizView.js') }}"></script>--}}
 	</body>
 </html>

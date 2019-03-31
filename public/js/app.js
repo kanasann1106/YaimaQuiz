@@ -1798,6 +1798,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1806,31 +1807,18 @@ __webpack_require__.r(__webpack_exports__);
     quizExplain: _quizExplain__WEBPACK_IMPORTED_MODULE_1__["default"],
     quizResult: _quizResult__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  mounted: function mounted() {
+    var self = this;
+    var url = '/ajax/quiz';
+    axios.get(url).then(function (response) {
+      self.quizzes = response.data;
+    });
+  },
   data: function data() {
     return {
       quizNum: 1,
-      totalQuizNum: 2,
-      quizData: [{
-        q: '与那国島から台湾までの距離はどのくらいでしょう？',
-        a: ['111km', '222km', '333km'],
-        e: '台湾までの距離は111kmです。たまーに西崎灯台から台湾が見えます！ちなみに石垣島との距離は127kmです。台湾の方が近い！！(笑)'
-      }, {
-        q: '与那国島の山の中には不思議な岩がありますがどんな岩でしょう？',
-        a: ['人面岩', '光岩', '浮遊岩'],
-        e: '人面岩は島の南側の「新川鼻」という岬の高台にあります。獣道を進んでいくと目の前に人面岩が現れます！ちょっとした冒険みたいで楽しいですよ〜♪'
-      }, {
-        q: '与那国島は日本のどこにある？',
-        a: ['日本最西端', '日本最東端', '日本最北端'],
-        e: '与那国島は日本の最西端の島で、沖縄県八重山諸島の一番西の端っこにあります。すぐお隣には台湾があります。（頑張れば泳げると思う。頑張れば。。）'
-      }, {
-        q: '小学校は何校あるでしょう？',
-        a: ['3校', '6校', '9校'],
-        e: '小学校は3校です。与那国小学校と久部良小学校と比川小学校があります。'
-      }, {
-        q: '与那国島の人口はおおよそ何人？',
-        a: ['1700人', '540人', '15000人'],
-        e: '2018/07/31現在の人口は1680人です。外出先で知り合いに遭遇する確率100%(笑)'
-      }],
+      totalQuizNum: 5,
+      quizzes: {},
       showQuiz: true,
       showExplain: false,
       judgment: '',
@@ -1909,7 +1897,7 @@ __webpack_require__.r(__webpack_exports__);
       // this.$emit('show', this.show)
     },
     start: function start() {
-      window.location.href = '/';
+      window.location.href = '/quiz';
     }
   }
 });
@@ -36968,8 +36956,9 @@ var render = function() {
             _vm._v(
               "問題 " +
                 _vm._s(_vm.quizNum) +
-                ". " +
-                _vm._s(_vm.quizData[_vm.quizNum - 1].q)
+                "." +
+                _vm._s(_vm.quizzes[_vm.quizNum - 1].title) +
+                " "
             )
           ]),
           _vm._v(" "),
@@ -36978,32 +36967,25 @@ var render = function() {
                 _c("div", { staticClass: "img-wrap" }),
                 _vm._v(" "),
                 _c("div", { attrs: { id: "answer-choices" } }, [
-                  _c(
-                    "ul",
-                    _vm._l(_vm.quizData[_vm.quizNum - 1].a, function(
-                      choice,
-                      index
-                    ) {
-                      return _c(
-                        "li",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.showAnswer(index)
-                            }
+                  _c("ul", [
+                    _c(
+                      "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.showAnswer(_vm.index)
                           }
-                        },
-                        [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(choice) +
-                              "\n                        "
-                          )
-                        ]
-                      )
-                    }),
-                    0
-                  )
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.quizzes[_vm.quizNum - 1].correct) +
+                            "\n                        "
+                        )
+                      ]
+                    )
+                  ])
                 ])
               ])
             : _vm._e(),
@@ -37022,7 +37004,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [
                   _c("strong", [_vm._v("解説：")]),
-                  _vm._v(_vm._s(_vm.quizData[_vm.quizNum - 1].e))
+                  _vm._v(_vm._s(_vm.quizzes[_vm.quizNum - 1].explain_sentence))
                 ]),
                 _vm._v(" "),
                 _c(

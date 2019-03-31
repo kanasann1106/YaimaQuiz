@@ -17,5 +17,6 @@
 
 Route::get('/ino', 'InoController@index');
 
-Route::get('/quiz', 'QuizController@index');
+Route::get('ajax/quiz', 'Ajax\QuizController@index');
+Route::get('quiz', 'QuizController@index');
 
