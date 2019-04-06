@@ -13,6 +13,12 @@
                             <li v-on:click="showAnswer(index)">
                                 {{ quizzes[quizNum-1].correct }}
                             </li>
+                            <li v-on:click="showAnswer(index)">
+                                {{ quizzes[quizNum-1].uncorrect1 }}
+                            </li>
+                            <li v-on:click="showAnswer(index)">
+                                {{ quizzes[quizNum-1].uncorrect2 }}
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -35,21 +41,21 @@
 <script>
     import quizResult from './quizResult'
     import quizExplain from "./quizExplain";
-    export default{
+    export default {
         name: 'quiz',
-        components:{
+        components: {
             quizExplain,
             quizResult
         },
         mounted() {
             var self = this;
             var url = '/ajax/quiz';
-            axios.get(url).then(function(response){
+            axios.get(url).then(function (response) {
                 self.quizzes = response.data;
             });
         },
-        data: function(){
-            return{
+        data: function () {
+            return {
                 quizNum: 1,
                 totalQuizNum: 5,
                 quizzes: {},
@@ -60,25 +66,25 @@
             }
         },
         methods: {
-            showAnswer: function(index){
+            showAnswer: function (index) {
                 this.showQuiz = !this.showQuiz //false
                 this.showExplain = !this.showExplain //true
 
-                if(index === 0){
+                if (index === 0) {
                     this.judgment = true
                     this.totalCorrectNum++
                     this.$refs.totalCorrectNum
-                }else{
+                } else {
                     this.judgment = false
                 }
             },
-            next: function(){
-                if(this.quizNum < this.totalQuizNum){
+            next: function () {
+                if (this.quizNum < this.totalQuizNum) {
                     this.showQuiz = true
                     this.showExplain = false
                     this.quizNum++
                     this.nextCounter++
-                }else{
+                } else {
                     this.$refs.result.showResult()
                 }
             },
