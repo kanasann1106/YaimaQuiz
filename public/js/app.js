@@ -1764,7 +1764,6 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quizResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./quizResult */ "./resources/js/components/quizResult.vue");
-/* harmony import */ var _quizExplain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./quizExplain */ "./resources/js/components/quizExplain.vue");
 //
 //
 //
@@ -1800,44 +1799,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'quiz',
   components: {
-    quizExplain: _quizExplain__WEBPACK_IMPORTED_MODULE_1__["default"],
     quizResult: _quizResult__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  mounted: function mounted() {
-    var self = this;
-    var url = '/ajax/quiz';
-    axios.get(url).then(function (response) {
-      self.quizzes = response.data;
-    });
   },
   data: function data() {
     return {
       quizNum: 1,
       totalQuizNum: 5,
-      quizzes: {},
+      quizzes: [],
+      aChoice: [],
       showQuiz: true,
       showExplain: false,
+      existImage: false,
       judgment: '',
       totalCorrectNum: 0
     };
   },
+  created: function created() {
+    this.getQuizzes();
+  },
   methods: {
-    showAnswer: function showAnswer(index) {
+    getQuizzes: function getQuizzes() {
+      var _this = this;
+
+      var url = '/ajax/quiz';
+      axios.get(url).then(function (res) {
+        _this.quizzes = res.data;
+
+        _this.getChoice(_this.quizNum - 1);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    getChoice: function getChoice(index) {
+      //前回の選択肢を削除してから新しく選択肢を追加する
+      this.aChoice = [];
+      this.aChoice.push(this.quizzes[index].correct, this.quizzes[index].uncorrect1, this.quizzes[index].uncorrect2);
+    },
+    showAnswer: function showAnswer(choice) {
       this.showQuiz = !this.showQuiz; //false
 
       this.showExplain = !this.showExplain; //true
 
-      if (index === 0) {
+      var answer = this.quizzes[this.quizNum - 1].correct;
+
+      if (choice === answer) {
         this.judgment = true;
         this.totalCorrectNum++;
         this.$refs.totalCorrectNum;
@@ -1851,6 +1860,7 @@ __webpack_require__.r(__webpack_exports__);
         this.showExplain = false;
         this.quizNum++;
         this.nextCounter++;
+        this.getChoice(this.quizNum - 1);
       } else {
         this.$refs.result.showResult();
       }
@@ -36963,72 +36973,51 @@ var render = function() {
               "問題 " +
                 _vm._s(_vm.quizNum) +
                 "." +
-                _vm._s(_vm.quizzes[_vm.quizNum - 1].title) +
-                " "
+                _vm._s(_vm.quizzes[_vm.quizNum - 1].title)
             )
           ]),
           _vm._v(" "),
           _vm.showQuiz
             ? _c("div", [
-                _c("div", { staticClass: "img-wrap" }),
+                _vm.quizzes[_vm.quizNum - 1].image_name
+                  ? _c("div", [
+                      _c("div", { staticClass: "img-wrap" }, [
+                        _c("img", {
+                          attrs: {
+                            src: _vm.quizzes[_vm.quizNum - 1].image_name,
+                            alt: "クイズ画像"
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
-                _c("div", { attrs: { id: "answer-choices" } }, [
-                  _c("ul", [
-                    _c(
-                      "li",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.showAnswer(_vm.index)
+                _c(
+                  "div",
+                  { attrs: { id: "answer-choices" } },
+                  _vm._l(_vm.aChoice, function(choice) {
+                    return _c("ul", [
+                      _c(
+                        "li",
+                        {
+                          on: {
+                            click: function($event) {
+                              return _vm.showAnswer(choice)
+                            }
                           }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.quizzes[_vm.quizNum - 1].correct) +
-                            "\n                        "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.showAnswer(_vm.index)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.quizzes[_vm.quizNum - 1].uncorrect1) +
-                            "\n                        "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.showAnswer(_vm.index)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.quizzes[_vm.quizNum - 1].uncorrect2) +
-                            "\n                        "
-                        )
-                      ]
-                    )
-                  ])
-                ])
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t" +
+                              _vm._s(choice) +
+                              "\n\t\t\t\t\t\t"
+                          )
+                        ]
+                      )
+                    ])
+                  }),
+                  0
+                )
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -49451,38 +49440,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_quiz_vue_vue_type_template_id_616f02a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/quizExplain.vue":
-/*!*************************************************!*\
-  !*** ./resources/js/components/quizExplain.vue ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "resources/js/components/quizExplain.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 

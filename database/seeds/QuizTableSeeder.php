@@ -50,6 +50,25 @@ class QuizTableSeeder extends Seeder
 				'image_name' => 'images/uma.jpg',
 				'category_id' => '4',
 				'delete_flg' => '1'
+			],
+			$quiz5 = [
+				'user_id' => '1',
+				'title' => '55与那国島の方言で「ありがとう」はなんという？',
+				'correct' => 'ふがらっさ〜',
+				'uncorrect1' => 'てんきゅ〜',
+				'uncorrect2' => 'かむさ〜',
+				'explain_sentence' => '与那国の方言でありがとうは「ふがらっさー」と言います。ネイティブの発音はぜひ現地で聞いてみてね〜♪',
+				'image_name' => 'images/uma.jpg',
+				'category_id' => '4',
+			],
+			$quiz6 = [
+				'user_id' => '2',
+				'title' => '66与那国島の方言で「ありがとう」はなんという？',
+				'correct' => 'ふがらっさ〜',
+				'uncorrect1' => 'てんきゅ〜',
+				'uncorrect2' => 'かむさ〜',
+				'explain_sentence' => '与那国の方言でありがとうは「ふがらっさー」と言います。ネイティブの発音はぜひ現地で聞いてみてね〜♪',
+				'category_id' => '2',
 			]
 		];
 

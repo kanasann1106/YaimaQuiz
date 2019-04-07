@@ -1,4 +1,4 @@
-<!--<template>-->
+<!-- <template>-->
     <!--<div id="explain" v-if="show">-->
         <!--<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>-->
         <!--<h2 v-else><i class="fas fa-times mr-4"></i>不正解</h2>-->
@@ -19,11 +19,11 @@
             <!--}-->
         <!--},-->
         <!--methods: {-->
-            <!--showExplain: function(tmp){-->
+            <!-- showExplain: function(tmp){-->
                 <!--if(!tmp){-->
                     <!--this.show = !this.show //true-->
                 <!--}-->
-            <!--},-->
+            <!--}, -->
             <!--next: function(){-->
                 <!--this.nextCounter++-->
                 <!--console.log(this.nextCounter)-->
@@ -41,4 +41,4 @@
 
 <!--<style scoped>-->
 
-<!--</style>-->
+<!--</style> -->
