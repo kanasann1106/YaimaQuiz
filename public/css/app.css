@@ -10981,28 +10981,6 @@ header h1 a:hover {
 }
 
 /* -------------------
-	button
----------------------*/
-
-.btn {
-  border-radius: 16px;
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  box-shadow: 0 1px #005bbb;
-  background: #007bff;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #007bff;
-  box-shadow: 0 6px #005bbb;
-}
-
-/* -------------------
 	quiz
 ---------------------*/
 
@@ -11160,5 +11138,42 @@ footer {
 
 footer a {
   color: #fff;
+}
+
+.form-heading {
+  text-align: center;
+  margin: 48px 0;
+}
+
+.form-heading h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.form .form-group .form-control {
+  padding: 16px 8px;
+}
+
+.btn {
+  border-radius: 32px;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32x;
+  padding: 8px;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  box-shadow: 0 6px #005bbb;
+}
+
+.btn-large {
+  width: 100%;
+}
+
+.btn:hover {
+  box-shadow: 0 1px #005bbb;
+  background: #007bff;
 }
 

@@ -8,6 +8,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -250,24 +252,7 @@ header h1 a:hover{
     color: #80cee0;
   }
 }
-/* -------------------
-	button
----------------------*/
-.btn{
-  border-radius: 16px;
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  transition: .3s;
-}
-.btn:hover {
-  box-shadow: 0 1px #005bbb;
-  background: #007bff;
-}
-.btn-primary{
-  color: #fff;
-  background-color: #007bff;
-  box-shadow: 0 6px #005bbb;
-}
+
 /* -------------------
 	quiz
 ---------------------*/
@@ -402,3 +387,6 @@ footer{
 footer a{
   color: #fff;
 }
+@import 'form';
+
+@import 'button';

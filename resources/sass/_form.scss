@@ -1,0 +1,15 @@
+.form {
+  &-heading {
+    text-align: center;
+    margin: 48px 0;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  .form-group {
+    .form-control {
+      padding: 16px 8px;
+    }
+  }
+}
