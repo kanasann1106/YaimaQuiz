@@ -36965,7 +36965,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "main",
-    { staticClass: "cantainer", attrs: { id: "quiz" } },
+    { staticClass: "l-default cantainer", attrs: { id: "quiz" } },
     [
       _c("article", { attrs: { id: "question" } }, [
         _c("section", [
@@ -37042,7 +37042,7 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary rounded-pill btn-block",
+                    staticClass: "btn btn-default rounded-pill btn-block",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -37102,7 +37102,7 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary rounded-pill btn-block",
+                    staticClass: "btn btn-default rounded-pill btn-block",
                     attrs: { type: "button" },
                     on: { click: _vm.start }
                   },
@@ -37126,7 +37126,7 @@ var staticRenderFns = [
       _c(
         "button",
         {
-          staticClass: "btn btn-primary rounded-pill btn-block",
+          staticClass: "btn btn-default rounded-pill btn-block",
           attrs: { type: "button" }
         },
         [

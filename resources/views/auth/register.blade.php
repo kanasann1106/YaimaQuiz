@@ -11,7 +11,7 @@
 
 <body>
   <!-- header -->
-  <header>
+  <!-- <header>
     <h1><a href="/quiz">八重山クイズ</a></h1>
     <div class="sp-menu js-toggle-nav">
       <span></span>
@@ -66,12 +66,11 @@
         <li><a href="#" id="all">すべて</a></li>
       </ul>
     </nav>
-  </header>
-  <main class="container">
-    <div class="overlay"></div>
+  </header> -->
+  <main class="l-form">
     <form action="" class="form">
       <div class="form-heading">
-        <h1>八重山クイズ</h1>
+        <h1>ユーザー登録</h1>
         <p>ユーザー登録し八重山に関するクイズを作成してみよう。</p>
       </div>
 
@@ -81,18 +80,22 @@
       </div>
       <div class="form-group">
         <input type="password" class="form-control" placeholder="Password(6文字)">
-        <small>半角英数字6文字で入力してください</small>
+        <small class="error_msg">半角英数字6文字で入力してください</small>
       </div>
       <div class="form-group">
         <input type="password" class="form-control" placeholder="Re password(6文字)">
       </div>
-      <button type="submit" class="btn btn-primary btn-large">Sign up</button>
+      <button type="submit" class="btn btn-default btn-large">Sign up</button>
+      <div>
+        <a href="/quiz" class="form-back_message">TOPへ　→</a>
+      </div>
     </form>
+
   </main>
   <!-- footer -->
-  <footer id="footer">
+  <!-- <footer id="footer">
     Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
-  </footer>
+  </footer> -->
 
   <script src=" {{ mix('js/app.js') }} "></script>
   <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>

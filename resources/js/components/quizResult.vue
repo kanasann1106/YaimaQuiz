@@ -7,10 +7,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 offset-md-1">
-						<button v-on:click="start" type="button" class="btn btn-primary rounded-pill btn-block">リトライ</button>
+						<button v-on:click="start" type="button" class="btn btn-default rounded-pill btn-block">リトライ</button>
 					</div>
 					<div class="col-md-5">
-						<button type="button" class="btn btn-primary rounded-pill btn-block"><i
+						<button type="button" class="btn btn-default rounded-pill btn-block"><i
 								class="fab fa-twitter fa-lg mr-3"></i>ツイート</button>
 					</div>
 				</div>

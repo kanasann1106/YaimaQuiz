@@ -1,5 +1,5 @@
 <template>
-	<main id="quiz" class="cantainer">
+	<main id="quiz" class="l-default cantainer">
 		<article id="question">
 			<section>
 				<h1>問題 {{quizNum}}.{{quizzes[quizNum - 1].title}}</h1>
@@ -23,7 +23,7 @@
 					<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
 					<h2 v-else><i class="fas fa-times mr-4"></i>不正解</h2>
 					<p><strong>解説：</strong>{{quizzes[quizNum-1].explain_sentence}}</p>
-					<button v-on:click="next()" type="button" class="btn btn-primary rounded-pill btn-block">次へ</button>
+					<button v-on:click="next()" type="button" class="btn btn-default rounded-pill btn-block">次へ</button>
 				</div>
 			</section>
 		</article>
