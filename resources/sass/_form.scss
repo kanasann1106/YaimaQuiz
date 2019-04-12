@@ -1,9 +1,11 @@
 .l-form {
-  position: relative;
-  width: 848px;
+  width: 1000px;
   margin: 0 auto;
   padding-top: 96px;
   padding-bottom: 40px;
+  @include mq-down(lg) {
+    width: 88%;
+  }
   @include mq-down(sm) {
     height: 100%;
     width: 100%;
@@ -53,6 +55,13 @@
     border-radius: 40px;
     padding: 0 24px;
     background-color: #ffffffc7;
+  }
+  &-message_list {
+    text-align: center;
+    margin-top: 24px;
+  }
+  &-check {
+    margin-bottom: 16px;
   }
   &-back_message {
     display: block;

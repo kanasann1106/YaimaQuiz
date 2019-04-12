@@ -1,6 +1,6 @@
 // min-width
 $breakpoint-up: (
-  "sm": "screen and (min-width: 450px)",
+  "sm": "screen and (min-width: 550px)",
   "md": "screen and (min-width: 768px)",
   "lg": "screen and (min-width: 1000px)",
   "xl": "screen and (min-width: 1200px)"
@@ -8,7 +8,7 @@ $breakpoint-up: (
 
 // max-width
 $breakpoint-down: (
-  "sm": "screen and (max-width: 449px)",
+  "sm": "screen and (max-width: 549px)",
   "md": "screen and (max-width: 767px)",
   "lg": "screen and (max-width: 999px)",
   "xl": "screen and (max-width: 1199px)"

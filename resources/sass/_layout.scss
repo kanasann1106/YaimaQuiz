@@ -1,12 +1,26 @@
-.l-default {
-  position: relative;
-  width: 848px;
-  margin: 0 auto;
-  padding-top: 96px;
-  padding-bottom: 40px;
-  /*animation: fadeIn 1s;*/
-  @include mq-down() {
-    max-width: 96%;
+.l {
+  &-default {
+    position: relative;
+    width: 848px;
+    margin: 0 auto;
+    padding-top: 96px;
+    padding-bottom: 40px;
+    /*animation: fadeIn 1s;*/
+    @include mq-down() {
+      max-width: 96%;
+    }
+  }
+  &-sns_list {
+    width: 380px;
+    margin: 24px auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+    :hover {
+      cursor: pointer;
+      -moz-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+    }
   }
 }
-
