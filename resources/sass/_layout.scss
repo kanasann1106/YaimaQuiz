@@ -15,12 +15,14 @@
     margin: 24px auto 0 auto;
     display: flex;
     justify-content: space-around;
+    transition-duration: 0.3s;
     :hover {
       cursor: pointer;
       -moz-transform: scale(1.2);
       -webkit-transform: scale(1.2);
       -o-transform: scale(1.2);
       -ms-transform: scale(1.2);
+      transition-duration: 0.3s;
     }
   }
 }
