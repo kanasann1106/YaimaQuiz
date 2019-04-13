@@ -90,6 +90,7 @@
         </div>
         <a href="" class="form-message">パスワードをお忘れですか？</a>
       </div>
+      <p class="title-border">or</p>
       <div class="l-sns_list">
         <img src="{{asset('/images/twitter-icon.png')}}" alt="twitter-icon">
         <img src="{{asset('/images/facebook-icon.png')}}" alt="facebook-icon">

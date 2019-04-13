@@ -10692,6 +10692,28 @@ body {
   transition-duration: 0.3s;
 }
 
+.title-border {
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-size: 20px;
+}
+
+.title-border:before,
+.title-border:after {
+  border-top: 1px solid #888;
+  content: "";
+  flex-grow: 1;
+}
+
+.title-border:before {
+  margin-right: 1rem;
+}
+
+.title-border:after {
+  margin-left: 1rem;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -11249,7 +11271,7 @@ footer a {
 
 .form-message_list {
   text-align: center;
-  margin-top: 24px;
+  margin: 24px 0;
 }
 
 .form-check {

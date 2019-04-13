@@ -1,4 +1,5 @@
 <template>
+	<!-- main -->
 	<main id="quiz" class="l-default cantainer">
 		<article id="question">
 			<section>
@@ -34,11 +35,11 @@
 </template>
 
 <script>
-	import quizResult from './quizResult'
+	import QuizResult from './QuizResult'
 	export default {
 		name: 'quiz',
 		components: {
-			quizResult
+			QuizResult
 		},
 		data: function () {
 			return {

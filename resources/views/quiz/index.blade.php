@@ -21,65 +21,9 @@
 </head>
 
 <body>
-	<!-- header -->
-	<header>
-		<h1><a href="/quiz">八重山クイズ</a></h1>
-		<div class="sp-menu js-toggle-nav">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-
-		<nav class="top-nav">
-			<ul>
-				<li><a href="#" id="food">食べ物</a></li>
-				<li><a href="#" id="creature">生物</a></li>
-				<li><a href="#" id="history">文化・歴史</a></li>
-				<li><a href="#" id="knowledge">雑学</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" href="#" id="region" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						地域
-					</a>
-					<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="region">
-						<li><a class="dropdown-item" href="#" id="island1">石垣島</a></li>
-						<li><a class="dropdown-item" href="#" id="island2">与那国島</a> </li>
-						<li><a class="dropdown-item" href="#" id="island3">小浜島</a></li>
-						<li><a class="dropdown-item" href="#" id="island4">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island3">小浜島</a></li>
-						<li><a class="dropdown-item" href="#" id="island4">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island5">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island6">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island7">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island8">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island9">西表島</a></li>
-						<li><a class="dropdown-item" href="#" id="island12">ラスト</a></li>
-					</ul>
-				</li>
-				<li id="accordion-menu">
-					<a data-toggle="collapse" href="#sp-region" aria-controls="sp-region" aria-expanded="false">
-						地域
-					</a>
-					<ul id="sp-region" class="collapse" data-parent="#accordion-menu">
-						<li><a href="#" id="island1">石垣島</a></li>
-						<li><a href="#" id="island2">与那国島</a> </li>
-						<li><a href="#" id="island3">小浜島</a></li>
-						<li><a href="#" id="island4">西表島</a></li>
-						<li><a href="#" id="island5">西表島</a></li>
-						<li><a href="#" id="island6">西表島</a></li>
-						<li><a href="#" id="island7">西表島</a></li>
-						<li><a href="#" id="island8">西表島</a></li>
-						<li><a href="#" id="island9">西表島</a></li>
-						<li><a href="#" id="island10">西表島</a></li>
-						<li><a href="#" id="island11">西表島</a></li>
-						<li><a href="#" id="island12">ラスト</a></li>
-					</ul>
-				</li>
-				<li><a href="#" id="all">すべて</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<!-- main -->
+	<div id="menu">
+		<quiz-header />
+	</div>
 	<div id="app">
 		<quiz />
 	</div>

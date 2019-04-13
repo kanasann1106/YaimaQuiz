@@ -24,3 +24,7 @@ Route::get('login', 'QuizController@login');
 Route::get('quiz', 'QuizController@index');
 
 Route::get('ajax/quiz', 'Ajax\QuizController@getQuizAll');
+
+Route::get('ajax/category', 'Ajax\QuizController@getQuizCategory');
+
+Route::get('ajax/region', 'Ajax\QuizController@getRegion');

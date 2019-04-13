@@ -19,6 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('QuizHeader', require('./components/QuizHeader.vue').default);
 Vue.component('quiz', require('./components/quiz.vue').default);
 
 /**
@@ -28,5 +29,8 @@ Vue.component('quiz', require('./components/quiz.vue').default);
  */
 
 const app = new Vue({
-    el: '#app',
+	el: '#app',
+});
+const menu = new Vue({
+	el: '#menu',
 });
