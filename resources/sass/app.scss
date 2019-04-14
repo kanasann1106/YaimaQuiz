@@ -11,35 +11,14 @@
 @import "base/mixins";
 @import "layout";
 @import "decoration";
+@import "form";
+@import "button";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-body {
-  color: #555;
-  /*	height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;*/
-}
-a {
-  color: #fff;
-}
-a:hover {
-  color: #fff;
-}
-h1,
-h2,
-p {
-  margin: 0;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+// .navbar-laravel {
+//   background-color: #fff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// }
+
 /* -------------------
 	animation
 ---------------------*/
@@ -377,6 +356,9 @@ header h1 a:hover {
 	footer
 ---------------------*/
 footer {
+  position: fixed;
+  bottom: 0;
+  height: 44px;
   font-size: 14px;
   width: 100%;
   padding: 8px;
@@ -387,6 +369,3 @@ footer {
 footer a {
   color: #fff;
 }
-@import "form";
-
-@import "button";

@@ -21,19 +21,21 @@
 </head>
 
 <body>
-	<div id="menu">
-		<quiz-header />
+	<div class="l-wrapper">
+		<!-- header -->
+		<div id="header-contents">
+			<quiz-header />
+		</div>
+		<!-- main -->
+		<div id="quiz-contents">
+			<quiz />
+		</div>
+		<!-- footer -->
+		<footer id="footer">
+			Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
+		</footer>
 	</div>
-	<div id="app">
-		<quiz />
-	</div>
-	<!-- footer -->
-	<footer id="footer">
-		Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
-	</footer>
-
 	<script src=" {{ mix('js/app.js') }} "></script>
-	<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>

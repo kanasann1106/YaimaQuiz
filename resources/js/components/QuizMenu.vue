@@ -1,15 +1,17 @@
 <template>
   <nav class="top-nav">
     <ul>
-      <li v-for="category in categories" :data-menu-id="category.id">{{ category.name }}</li>
+      <li v-for="category in categories">
+        <a :href="'/quiz/'+category.id">{{ category.name }}</a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" href="#" id="region" role="button" data-toggle="dropdown" aria-haspopup="true"
+        <a class="dropdown-toggle" href="#" id="region" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           地域
         </a>
-        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="region">
-          <li v-for="island in region" :data-region-id="island.id"><a class="dropdown-item"
-              href="#">{{ island.name }}</a></li>
+        <ul class="dropdown-menu" aria-labelledby="region">
+          <li v-for="island in region">
+            <a class="dropdown-item" :href="'/quiz/region/'+island.id">{{ island.name }}</a>
+          </li>
         </ul>
       </li>
       <li id="accordion-menu">
@@ -17,10 +19,10 @@
           地域
         </a>
         <ul id="sp-region" class="collapse" data-parent="#accordion-menu">
-          <li v-for="island in region" :data-region-id="island.id"><a href="#" id="island1">{{ island.name }}</a></li>
+          <li v-for="island in region"><a :href="'/quiz/region/'+island.id">{{ island.name }}</a></li>
         </ul>
       </li>
-      <li data-menu-id="0">すべて</li>
+      <li><a href="/quiz">すべて</a></li>
     </ul>
   </nav>
 </template>
@@ -31,7 +33,10 @@
     data: function () {
       return {
         categories: [],
-        region: []
+        region: [],
+        request: {
+          menuId: ''
+        }
       }
     },
     created() {
@@ -62,5 +67,7 @@
 </script>
 
 <style scoped>
-
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 </style>

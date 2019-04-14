@@ -140,9 +140,9 @@ header h1 a:hover {
   transition: all 0.5s;
 }
 /*ドロップダウンメニュー*/
-.dropdown:hover .dropdown-menu {
+/* .dropdown:hover .dropdown-menu {
   display: block;
-}
+} */
 .top-nav .dropdown-menu {
   display: none;
   background: #80cee0;

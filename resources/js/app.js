@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./script');
 
 window.Vue = require('vue');
 
@@ -28,9 +29,9 @@ Vue.component('quiz', require('./components/quiz.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-	el: '#app',
+const quizContents = new Vue({
+	el: '#quiz-contents',
 });
-const menu = new Vue({
-	el: '#menu',
+const headerContents = new Vue({
+	el: '#header-contents',
 });

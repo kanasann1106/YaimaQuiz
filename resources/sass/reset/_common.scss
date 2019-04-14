@@ -2,3 +2,22 @@ html,
 body {
   height: 100%;
 }
+body {
+  color: #555;
+}
+a {
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+h1,
+h2,
+p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

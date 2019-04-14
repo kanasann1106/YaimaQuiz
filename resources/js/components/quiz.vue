@@ -1,5 +1,4 @@
 <template>
-	<!-- main -->
 	<main id="quiz" class="l-default cantainer">
 		<article id="question">
 			<section>
@@ -13,7 +12,7 @@
 
 					<div id="answer-choices">
 						<ul v-for="choice in aChoice">
-							<li v-on:click="showAnswer(choice)">
+							<li @click="showAnswer(choice)">
 								{{ choice }}
 							</li>
 						</ul>
@@ -24,7 +23,7 @@
 					<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
 					<h2 v-else><i class="fas fa-times mr-4"></i>不正解</h2>
 					<p><strong>解説：</strong>{{quizzes[quizNum-1].explain_sentence}}</p>
-					<button v-on:click="next()" type="button" class="btn btn-default rounded-pill btn-block">次へ</button>
+					<button @click="next()" type="button" class="btn btn-default rounded-pill btn-block">次へ</button>
 				</div>
 			</section>
 		</article>

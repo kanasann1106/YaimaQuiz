@@ -15,16 +15,16 @@
 //    return view('quiz/index');
 //})->where('app', '.*');
 
-Route::get('/ino', 'InoController@index');
-
+//Auth
 Route::get('register', 'QuizController@register');
-
 Route::get('login', 'QuizController@login');
 
+//Quiz
 Route::get('quiz', 'QuizController@index');
+Route::get('quiz/{menuId}', 'QuizController@index');
+// Route::get('quiz/{menuId}', 'Ajax\QuizController@getQuizByCategory');
 
+// ajax通信
 Route::get('ajax/quiz', 'Ajax\QuizController@getQuizAll');
-
 Route::get('ajax/category', 'Ajax\QuizController@getQuizCategory');
-
 Route::get('ajax/region', 'Ajax\QuizController@getRegion');

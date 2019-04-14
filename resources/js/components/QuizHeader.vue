@@ -1,5 +1,4 @@
 <template>
-  <!-- header -->
   <header>
     <h1><a href="/quiz">八重山クイズ</a></h1>
     <div class="sp-menu js-toggle-nav">
