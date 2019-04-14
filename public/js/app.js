@@ -1826,15 +1826,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'QuizMenu',
   data: function data() {
     return {
       categories: [],
-      region: [],
-      request: {
-        menuId: ''
-      }
+      region: []
     };
   },
   created: function created() {
@@ -1857,6 +1856,16 @@ __webpack_require__.r(__webpack_exports__);
       var url = '/ajax/region';
       axios.get(url).then(function (res) {
         _this2.region = res.data;
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    selectMenu: function selectMenu(menuId) {
+      var url = '/ajax/quiz';
+      menuId = 3;
+      axios.get(url, menuId).then(function (res) {
+        console.log('ok');
+        console.log('respons:' + menuId);
       }).catch(function (error) {
         console.log(error);
       });
@@ -37774,11 +37783,17 @@ var render = function() {
       "ul",
       [
         _vm._l(_vm.categories, function(category) {
-          return _c("li", [
-            _c("a", { attrs: { href: "/quiz/" + category.id } }, [
-              _vm._v(_vm._s(category.name))
-            ])
-          ])
+          return _c(
+            "li",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.selectMenu(category.id)
+                }
+              }
+            },
+            [_vm._v("\n      " + _vm._s(category.name))]
+          )
         }),
         _vm._v(" "),
         _c("li", { staticClass: "dropdown" }, [

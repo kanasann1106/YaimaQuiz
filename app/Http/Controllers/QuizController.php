@@ -13,7 +13,6 @@ class QuizController extends Controller
 	{
 		return view('quiz/index');
 	}
-	
 	public function register()
 	{
 		return view('auth/register');
