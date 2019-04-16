@@ -21,10 +21,10 @@ Route::get('login', 'QuizController@login');
 
 //Quiz
 Route::get('quiz', 'QuizController@index');
-Route::get('quiz/{menuId}', 'QuizController@index');
-// Route::get('quiz/{menuId}', 'Ajax\QuizController@getQuizByCategory');
+Route::get('quiz/{menuId}', 'QuizController@indexNum');
 
 // ajax通信
-Route::get('ajax/quiz', 'Ajax\QuizController@getQuizAll');
+Route::get('ajax/menu', 'Ajax\QuizController@getQuizAll');
+Route::get('quiz/ajax/menu{menuId}', 'Ajax\QuizController@getQuizByCategory');
 Route::get('ajax/category', 'Ajax\QuizController@getQuizCategory');
 Route::get('ajax/region', 'Ajax\QuizController@getRegion');

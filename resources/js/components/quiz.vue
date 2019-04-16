@@ -2,6 +2,7 @@
 	<main id="quiz" class="l-default cantainer">
 		<article id="question">
 			<section>
+				<p v-if="alertMsg">クイズはまだ登録されていません。</p>
 				<h1>問題 {{quizNum}}.{{quizzes[quizNum - 1].title}}</h1>
 				<div v-if="showQuiz">
 					<div v-if="quizzes[quizNum - 1].image_name">
@@ -44,22 +45,34 @@
 			return {
 				quizNum: 1,
 				totalQuizNum: 5,
+				totalCorrectNum: 0,
 				quizzes: [],
 				aChoice: [],
 				showQuiz: true,
 				showExplain: false,
 				existImage: false,
+				alertMsg: false,
 				judgment: '',
-				totalCorrectNum: 0
+				axiosUrl: ''
 			}
 		},
 		created() {
 			this.getQuizzes()
+			//クイズが登録されていない場合のmsg表示
+			if (true) {
+				this.alertMsg = true
+			}
 		},
 		methods: {
 			getQuizzes: function () {
-				const url = '/ajax/quiz';
-				axios.get(url).then(res => {
+				let path = location.pathname;
+				let pathNum = path.slice(-1) //ex. quiz/1 -> 1を取得
+				if (path == '/quiz') {
+					this.axiosUrl = 'ajax/menu'
+				} else {
+					this.axiosUrl = 'ajax/menu' + pathNum;
+				}
+				axios.get(this.axiosUrl).then(res => {
 					this.quizzes = res.data;
 					this.getChoice(this.quizNum - 1)
 				})

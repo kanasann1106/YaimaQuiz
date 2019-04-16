@@ -1,10 +1,10 @@
 <template>
   <nav class="top-nav">
     <ul>
+      <li v-for="category in categories">
+        <a :href="'/quiz/'+category.id">{{ category.name }}</a></li>
       <!-- <li v-for="category in categories" @click="selectMenu(category.id)">
-        <a :href="'/quiz/'+category.id">{{ category.name }}</a></li> -->
-      <li v-for="category in categories" @click="selectMenu(category.id)">
-        {{ category.name }}</li>
+        {{ category.name }}</li> -->
       <li class="dropdown">
         <a class="dropdown-toggle" href="#" id="region" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+  const eventHub = global.eventHub = new Vue()
   export default {
     name: 'QuizMenu',
     data: function () {
@@ -61,17 +62,17 @@
             console.log(error)
           });
       },
-      selectMenu: function (menuId) {
-        const url = '/ajax/quiz';
-        menuId = 3
-        axios.get(url, menuId).then(res => {
-          console.log('ok')
-          console.log('respons:' + menuId)
-        })
-          .catch(error => {
-            console.log(error)
-          })
-      }
+      // selectMenu: function (menuId) {
+      //   const url = 'ajax/menu' + menuId;
+      //   axios.get(url)
+      //     .then(res => {
+      //       console.log('ok')
+      //       console.log(url)
+      //     })
+      //     .catch(error => {
+      //       console.log(error)
+      //     })
+      // }
     }
   }
 </script>

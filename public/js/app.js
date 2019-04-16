@@ -1797,6 +1797,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {//
 //
 //
 //
@@ -1827,7 +1828,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+var eventHub = global.eventHub = new Vue();
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'QuizMenu',
   data: function data() {
@@ -1859,19 +1860,21 @@ __webpack_require__.r(__webpack_exports__);
       }).catch(function (error) {
         console.log(error);
       });
-    },
-    selectMenu: function selectMenu(menuId) {
-      var url = '/ajax/quiz';
-      menuId = 3;
-      axios.get(url, menuId).then(function (res) {
-        console.log('ok');
-        console.log('respons:' + menuId);
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
+    } // selectMenu: function (menuId) {
+    //   const url = 'ajax/menu' + menuId;
+    //   axios.get(url)
+    //     .then(res => {
+    //       console.log('ok')
+    //       console.log(url)
+    //     })
+    //     .catch(error => {
+    //       console.log(error)
+    //     })
+    // }
+
   }
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -1971,6 +1974,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'quiz',
@@ -1981,24 +1985,38 @@ __webpack_require__.r(__webpack_exports__);
     return {
       quizNum: 1,
       totalQuizNum: 5,
+      totalCorrectNum: 0,
       quizzes: [],
       aChoice: [],
       showQuiz: true,
       showExplain: false,
       existImage: false,
+      alertMsg: false,
       judgment: '',
-      totalCorrectNum: 0
+      axiosUrl: ''
     };
   },
   created: function created() {
-    this.getQuizzes();
+    this.getQuizzes(); //クイズが登録されていない場合のmsg表示
+
+    if (true) {
+      this.alertMsg = true;
+    }
   },
   methods: {
     getQuizzes: function getQuizzes() {
       var _this = this;
 
-      var url = '/ajax/quiz';
-      axios.get(url).then(function (res) {
+      var path = location.pathname;
+      var pathNum = path.slice(-1); //ex. quiz/1 -> 1を取得
+
+      if (path == '/quiz') {
+        this.axiosUrl = 'ajax/menu';
+      } else {
+        this.axiosUrl = 'ajax/menu' + pathNum;
+      }
+
+      axios.get(this.axiosUrl).then(function (res) {
         _this.quizzes = res.data;
 
         _this.getChoice(_this.quizNum - 1);
@@ -37783,17 +37801,11 @@ var render = function() {
       "ul",
       [
         _vm._l(_vm.categories, function(category) {
-          return _c(
-            "li",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.selectMenu(category.id)
-                }
-              }
-            },
-            [_vm._v("\n      " + _vm._s(category.name))]
-          )
+          return _c("li", [
+            _c("a", { attrs: { href: "/quiz/" + category.id } }, [
+              _vm._v(_vm._s(category.name))
+            ])
+          ])
         }),
         _vm._v(" "),
         _c("li", { staticClass: "dropdown" }, [
@@ -37977,6 +37989,10 @@ var render = function() {
     [
       _c("article", { attrs: { id: "question" } }, [
         _c("section", [
+          _vm.alertMsg
+            ? _c("p", [_vm._v("クイズはまだ登録されていません。")])
+            : _vm._e(),
+          _vm._v(" "),
           _c("h1", [
             _vm._v(
               "問題 " +
