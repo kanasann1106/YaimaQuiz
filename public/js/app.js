@@ -1975,6 +1975,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'quiz',
@@ -1986,22 +1990,28 @@ __webpack_require__.r(__webpack_exports__);
       quizNum: 1,
       totalQuizNum: 5,
       totalCorrectNum: 0,
-      quizzes: [],
+      quizzes: [{
+        title: '',
+        correct: '',
+        uncorrect1: '',
+        uncorrect2: '',
+        image_name: '',
+        explain_sentence: ''
+      }],
       aChoice: [],
       showQuiz: true,
       showExplain: false,
       existImage: false,
+      hidden: false,
       alertMsg: false,
       judgment: '',
       axiosUrl: ''
     };
   },
   created: function created() {
-    this.getQuizzes(); //クイズが登録されていない場合のmsg表示
-
-    if (true) {
-      this.alertMsg = true;
-    }
+    //DOM構築前にクイズデータをaxiosで取得(そうしないとエラーでる↓)
+    //"TypeError: Cannot read property 'title' of undefined"
+    this.getQuizzes();
   },
   methods: {
     getQuizzes: function getQuizzes() {
@@ -2017,7 +2027,13 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(this.axiosUrl).then(function (res) {
-        _this.quizzes = res.data;
+        _this.quizzes = res.data; //クイズがない場合は無いですメッセージを表示
+
+        if (_this.quizzes.length) {
+          _this.hidden = true;
+        } else {
+          _this.alertMsg = false;
+        }
 
         _this.getChoice(_this.quizNum - 1);
       }).catch(function (error) {
@@ -2034,6 +2050,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.showExplain = !this.showExplain; //true
 
+      console.log(this.quizzes);
       var answer = this.quizzes[this.quizNum - 1].correct;
 
       if (choice === answer) {
@@ -37989,62 +38006,66 @@ var render = function() {
     [
       _c("article", { attrs: { id: "question" } }, [
         _c("section", [
-          _vm.alertMsg
-            ? _c("p", [_vm._v("クイズはまだ登録されていません。")])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("h1", [
-            _vm._v(
-              "問題 " +
-                _vm._s(_vm.quizNum) +
-                "." +
-                _vm._s(_vm.quizzes[_vm.quizNum - 1].title)
-            )
-          ]),
-          _vm._v(" "),
-          _vm.showQuiz
+          _vm.hidden
             ? _c("div", [
-                _vm.quizzes[_vm.quizNum - 1].image_name
-                  ? _c("div", [
-                      _c("div", { staticClass: "img-wrap" }, [
-                        _c("img", {
-                          attrs: {
-                            src: _vm.quizzes[_vm.quizNum - 1].image_name,
-                            alt: "クイズ画像"
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e(),
+                _c("h1", [
+                  _vm._v(
+                    "問題 " +
+                      _vm._s(_vm.quizNum) +
+                      "." +
+                      _vm._s(_vm.quizzes[_vm.quizNum - 1].title)
+                  )
+                ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { attrs: { id: "answer-choices" } },
-                  _vm._l(_vm.aChoice, function(choice) {
-                    return _c("ul", [
+                _vm.showQuiz
+                  ? _c("div", [
+                      _vm.quizzes[_vm.quizNum - 1].image_name
+                        ? _c("div", [
+                            _c("div", { staticClass: "img-wrap" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: _vm.quizzes[_vm.quizNum - 1].image_name,
+                                  alt: "クイズ画像"
+                                }
+                              })
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
                       _c(
-                        "li",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.showAnswer(choice)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t\t" +
-                              _vm._s(choice) +
-                              "\n\t\t\t\t\t\t"
-                          )
-                        ]
+                        "div",
+                        { attrs: { id: "answer-choices" } },
+                        _vm._l(_vm.aChoice, function(choice) {
+                          return _c("ul", [
+                            _c(
+                              "li",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    return _vm.showAnswer(choice)
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\t\t" +
+                                    _vm._s(choice) +
+                                    "\n\t\t\t\t\t\t\t"
+                                )
+                              ]
+                            )
+                          ])
+                        }),
+                        0
                       )
                     ])
-                  }),
-                  0
-                )
+                  : _vm._e()
               ])
             : _vm._e(),
+          _vm._v(" "),
+          _c("p", { attrs: { else: "alertMsg" } }, [
+            _vm._v("クイズはまだ登録されていません。")
+          ]),
           _vm._v(" "),
           _vm.showExplain
             ? _c("div", { attrs: { id: "explain" } }, [

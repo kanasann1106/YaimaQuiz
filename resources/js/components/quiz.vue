@@ -2,29 +2,33 @@
 	<main id="quiz" class="l-default cantainer">
 		<article id="question">
 			<section>
-				<p v-if="alertMsg">クイズはまだ登録されていません。</p>
-				<h1>問題 {{quizNum}}.{{quizzes[quizNum - 1].title}}</h1>
-				<div v-if="showQuiz">
-					<div v-if="quizzes[quizNum - 1].image_name">
-						<div class="img-wrap">
-							<img :src="quizzes[quizNum - 1].image_name" alt="クイズ画像">
+				<div v-if="hidden">
+					<h1>問題 {{quizNum}}.{{quizzes[quizNum - 1].title}}</h1>
+					<div v-if="showQuiz">
+						<div v-if="quizzes[quizNum - 1].image_name">
+							<div class="img-wrap">
+								<img :src="quizzes[quizNum - 1].image_name" alt="クイズ画像">
+							</div>
+						</div>
+
+						<div id="answer-choices">
+							<ul v-for="choice in aChoice">
+								<li @click="showAnswer(choice)">
+									{{ choice }}
+								</li>
+							</ul>
 						</div>
 					</div>
-
-					<div id="answer-choices">
-						<ul v-for="choice in aChoice">
-							<li @click="showAnswer(choice)">
-								{{ choice }}
-							</li>
-						</ul>
-					</div>
 				</div>
+
+				<p else="alertMsg">クイズはまだ登録されていません。</p>
 
 				<div id="explain" v-if="showExplain">
 					<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
 					<h2 v-else><i class="fas fa-times mr-4"></i>不正解</h2>
 					<p><strong>解説：</strong>{{quizzes[quizNum-1].explain_sentence}}</p>
 					<button @click="next()" type="button" class="btn btn-default rounded-pill btn-block">次へ</button>
+				</div>
 				</div>
 			</section>
 		</article>
@@ -46,22 +50,21 @@
 				quizNum: 1,
 				totalQuizNum: 5,
 				totalCorrectNum: 0,
-				quizzes: [],
+				quizzes: [{ title: '', correct: '', uncorrect1: '', uncorrect2: '', image_name: '', explain_sentence: '' }],
 				aChoice: [],
 				showQuiz: true,
 				showExplain: false,
 				existImage: false,
+				hidden: false,
 				alertMsg: false,
 				judgment: '',
 				axiosUrl: ''
 			}
 		},
 		created() {
+			//DOM構築前にクイズデータをaxiosで取得(そうしないとエラーでる↓)
+			//"TypeError: Cannot read property 'title' of undefined"
 			this.getQuizzes()
-			//クイズが登録されていない場合のmsg表示
-			if (true) {
-				this.alertMsg = true
-			}
 		},
 		methods: {
 			getQuizzes: function () {
@@ -74,6 +77,12 @@
 				}
 				axios.get(this.axiosUrl).then(res => {
 					this.quizzes = res.data;
+					//クイズがない場合は無いですメッセージを表示
+					if (this.quizzes.length) {
+						this.hidden = true
+					} else {
+						this.alertMsg = false
+					}
 					this.getChoice(this.quizNum - 1)
 				})
 					.catch(error => {
@@ -88,6 +97,7 @@
 			showAnswer: function (choice) {
 				this.showQuiz = !this.showQuiz //false
 				this.showExplain = !this.showExplain //true
+				console.log(this.quizzes)
 
 				let answer = this.quizzes[this.quizNum - 1].correct
 				if (choice === answer) {
