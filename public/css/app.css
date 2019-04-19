@@ -10746,6 +10746,24 @@ ul {
   margin-left: 1rem;
 }
 
+.alert_msg {
+  font-size: 20px;
+  text-align: center;
+  margin: 160px auto;
+}
+
+@media screen and (max-width: 549px) {
+  .alert_msg {
+    font-size: 15px;
+  }
+}
+
+.alert_msg a {
+  color: #aaa;
+  position: relative;
+  top: 32px;
+}
+
 .l-form {
   width: 1000px;
   margin: 0 auto;

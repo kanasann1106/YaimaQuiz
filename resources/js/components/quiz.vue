@@ -21,14 +21,16 @@
 					</div>
 				</div>
 
-				<p else="alertMsg">クイズはまだ登録されていません。</p>
+				<section class="alert_msg" v-if="alertMsg">
+					<p><i class="far mr-2 fa-lg fa-tired"></i>クイズはまだ登録されていません。<i class="far fa-lg fa-tired"></i></p>
+					<a href="quiz/">Back to TOP</a>
+				</section>
 
 				<div id="explain" v-if="showExplain">
 					<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
 					<h2 v-else><i class="fas fa-times mr-4"></i>不正解</h2>
 					<p><strong>解説：</strong>{{quizzes[quizNum-1].explain_sentence}}</p>
 					<button @click="next()" type="button" class="btn btn-default rounded-pill btn-block">次へ</button>
-				</div>
 				</div>
 			</section>
 		</article>
@@ -77,11 +79,12 @@
 				}
 				axios.get(this.axiosUrl).then(res => {
 					this.quizzes = res.data;
-					//クイズがない場合は無いですメッセージを表示
+					console.log(this.quizzes.length)
+					//クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
 					if (this.quizzes.length) {
 						this.hidden = true
 					} else {
-						this.alertMsg = false
+						this.alertMsg = true
 					}
 					this.getChoice(this.quizNum - 1)
 				})

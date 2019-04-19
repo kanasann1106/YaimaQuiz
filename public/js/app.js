@@ -1979,6 +1979,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'quiz',
@@ -2027,12 +2029,13 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(this.axiosUrl).then(function (res) {
-        _this.quizzes = res.data; //クイズがない場合は無いですメッセージを表示
+        _this.quizzes = res.data;
+        console.log(_this.quizzes.length); //クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
 
         if (_this.quizzes.length) {
           _this.hidden = true;
         } else {
-          _this.alertMsg = false;
+          _this.alertMsg = true;
         }
 
         _this.getChoice(_this.quizNum - 1);
@@ -38063,9 +38066,13 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("p", { attrs: { else: "alertMsg" } }, [
-            _vm._v("クイズはまだ登録されていません。")
-          ]),
+          _vm.alertMsg
+            ? _c("section", { staticClass: "alert_msg" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "quiz/" } }, [_vm._v("Back to TOP")])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _vm.showExplain
             ? _c("div", { attrs: { id: "explain" } }, [
@@ -38110,7 +38117,18 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "far mr-2 fa-lg fa-tired" }),
+      _vm._v("クイズはまだ登録されていません。"),
+      _c("i", { staticClass: "far fa-lg fa-tired" })
+    ])
+  }
+]
 render._withStripped = true
 
 

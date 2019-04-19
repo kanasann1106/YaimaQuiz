@@ -1,0 +1,13 @@
+.alert_msg {
+  font-size: 20px;
+  text-align: center;
+  margin: 160px auto;
+  @include mq-down(sm) {
+    font-size: 15px;
+  }
+  a {
+    color: #aaa;
+    position: relative;
+    top: 32px;
+  }
+}
