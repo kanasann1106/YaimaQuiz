@@ -2029,8 +2029,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(this.axiosUrl).then(function (res) {
-        _this.quizzes = res.data;
-        console.log(_this.quizzes.length); //クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
+        _this.quizzes = res.data; //クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
 
         if (_this.quizzes.length) {
           _this.hidden = true;

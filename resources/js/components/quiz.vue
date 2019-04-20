@@ -79,7 +79,6 @@
 				}
 				axios.get(this.axiosUrl).then(res => {
 					this.quizzes = res.data;
-					console.log(this.quizzes.length)
 					//クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
 					if (this.quizzes.length) {
 						this.hidden = true

@@ -1,0 +1,236 @@
+@include mq-down(md2) {
+  .sp-menu,
+  .sp-menu span {
+    display: inline-block;
+    transition: all 0.6s;
+    box-sizing: border-box;
+  }
+  .sp-menu {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 4px;
+      &:nth-of-type(1) {
+        top: 11px;
+      }
+      &:nth-of-type(2) {
+        top: 22px;
+      }
+      &:nth-of-type(3) {
+        bottom: 3px;
+      }
+    }
+  }
+  .sp-menu.active span {
+    &:nth-of-type(1) {
+      -webkit-transform: translateY(11px) rotate(-45deg);
+      transform: translateY(11px) rotate(-45deg);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      -webkit-transform: translateY(-11px) rotate(45deg);
+      transform: translateY(-11px) rotate(45deg);
+    }
+  }
+}
+.top-nav {
+  width: 560px;
+}
+#accordion-menu {
+  display: none;
+}
+.top-nav {
+  ul {
+    display: flex;
+    justify-content: space-around;
+    line-height: 64px;
+  }
+  a {
+    display: block;
+    width: 88px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+      background: #fff;
+      color: #80cee0;
+      transition: all 0.5s;
+    }
+  }
+}
+/*ドロップダウンメニュー*/
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.top-nav .dropdown-menu {
+  display: none;
+  background: #80cee0;
+  border: 3px solid #80cee0;
+  border-radius: unset;
+  padding: 0;
+  a {
+    width: 100%;
+    height: 48px;
+    line-height: 42px;
+  }
+}
+@include mq-down(md2) {
+  .dropdown,
+  .top-nav {
+    display: none;
+  }
+  .top-nav {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: #80cee0db;
+    overflow: scroll;
+    height: 100vh;
+  }
+  /*-- accordion-menu ここから ---*/
+  #accordion-menu,
+  .show {
+    display: block;
+  }
+  #accordion-menu ul,
+  #accordion-menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #accordion-menu > li {
+    border: #ccc 1px solid;
+    margin-bottom: -1px;
+  }
+  #accordion-menu a:hover {
+    background: #fff;
+    color: #80cee0;
+  }
+  #accordion-menu a[data-toggle="collapse"] {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    position: relative;
+    &:hover {
+      background: #fff;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-top: #fff 3px solid;
+      border-right: #fff 3px solid;
+      position: absolute;
+      right: 20%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    &:hover::after {
+      border-top: #80cee0 3px solid;
+      border-right: #80cee0 3px solid;
+    }
+  }
+  #accordion-menu a[aria-expanded="false"]::after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition-duration: 0.3s;
+  }
+  #accordion-menu a[aria-expanded="true"]::after {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    transition-duration: 0.3s;
+  }
+  [id^="sp-region"] li {
+    padding: 10px 10px 10px 20px;
+  }
+  /*-- accordion-menu ここまで ---*/
+
+  .top-nav {
+    ul {
+      display: block;
+    }
+    a {
+      width: unset;
+      &:hover {
+        text-decoration: none;
+        background: #fff;
+        color: #80cee0;
+      }
+    }
+  }
+}
+/* -------------------
+	explain
+---------------------*/
+#explain {
+  border: 4px solid #80cee0;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  margin-top: 32px;
+  padding: 16px;
+  h2 {
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 20px;
+  }
+  button {
+    width: 56%;
+    height: 56px;
+    margin: 16px auto 0 auto;
+  }
+}
+/* -------------------
+	result
+---------------------*/
+#result {
+  border: 1px solid #000;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  padding: 40px 0;
+  width: 72%;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 160px;
+  left: 14%;
+  background: #eee;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: SlideDown 1.5s;
+  h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  button {
+    margin-top: 24px;
+    height: 56px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #result {
+    width: 88%;
+    left: 6%;
+  }
+}
