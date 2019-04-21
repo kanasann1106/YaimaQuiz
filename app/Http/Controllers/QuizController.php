@@ -34,10 +34,10 @@ class QuizController extends Controller
 		}
 		return self::index();
 	}
-	public function register()
-	{
-		return view('auth/register');
-	}
+	// public function register()
+	// {
+	// 	return view('auth/register');
+	// }
 	public function login()
 	{
 		return view('auth/login');

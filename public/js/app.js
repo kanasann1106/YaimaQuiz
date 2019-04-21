@@ -2010,7 +2010,10 @@ __webpack_require__.r(__webpack_exports__);
 
       var quizUrl = location.pathname;
       var catId = quizUrl.match(/\d/g);
-      var catNum = catId.join('');
+
+      if (catId) {
+        var catNum = catId.join('');
+      }
 
       if (quizUrl == '/quiz/' + catNum) {
         this.axiosUrl = 'ajax/menu' + catNum;

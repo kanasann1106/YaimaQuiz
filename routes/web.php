@@ -16,8 +16,9 @@
 //})->where('app', '.*');
 
 //Auth
-Route::get('register', 'QuizController@register');
-Route::get('login', 'QuizController@login');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('login', 'QuizController@login');
 
 //Quiz
 Route::get('quiz', 'QuizController@index');
