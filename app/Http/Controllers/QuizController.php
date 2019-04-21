@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class QuizController extends Controller
@@ -14,10 +15,21 @@ class QuizController extends Controller
 	{
 		return view('quiz/index');
 	}
-	//パラメータが4より上0未満の場合quiz topへリダイレクトさせる
-	public function indexNum($menuId)
+	//パラメータがカテゴリ総数と以上または負の数の時quiz topへリダイレクトさせる
+	public function indexCatNum($menuId)
 	{
-		if ($menuId > 4 || $menuId < 1) {
+		$totalCategoryNum = DB::table('categories')->count();
+		if ($menuId > $totalCategoryNum || $menuId < 1) {
+			return Redirect('quiz');
+		}
+		return self::index();
+	}
+
+	//パラメータが地域総数と以上または負の数の時quiz topへリダイレクトさせる
+	public function indexRegNum($islandId)
+	{
+		$totalCategoryNum = DB::table('region')->count();
+		if ($islandId > $totalCategoryNum || $islandId < 1) {
 			return Redirect('quiz');
 		}
 		return self::index();

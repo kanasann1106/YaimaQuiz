@@ -1860,18 +1860,7 @@ var eventHub = global.eventHub = new Vue();
       }).catch(function (error) {
         console.log(error);
       });
-    } // selectMenu: function (menuId) {
-    //   const url = 'ajax/menu' + menuId;
-    //   axios.get(url)
-    //     .then(res => {
-    //       console.log('ok')
-    //       console.log(url)
-    //     })
-    //     .catch(error => {
-    //       console.log(error)
-    //     })
-    // }
-
+    }
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
@@ -2019,13 +2008,16 @@ __webpack_require__.r(__webpack_exports__);
     getQuizzes: function getQuizzes() {
       var _this = this;
 
-      var path = location.pathname;
-      var pathNum = path.slice(-1); //ex. quiz/1 -> 1を取得
+      var quizUrl = location.pathname;
+      var catId = quizUrl.match(/\d/g);
+      var catNum = catId.join('');
 
-      if (path == '/quiz') {
-        this.axiosUrl = 'ajax/menu';
+      if (quizUrl == '/quiz/' + catNum) {
+        this.axiosUrl = 'ajax/menu' + catNum;
+      } else if (quizUrl == '/quiz/region/' + catNum) {
+        this.axiosUrl = 'ajax/region' + catNum;
       } else {
-        this.axiosUrl = 'ajax/menu' + pathNum;
+        this.axiosUrl = 'ajax/menu';
       }
 
       axios.get(this.axiosUrl).then(function (res) {

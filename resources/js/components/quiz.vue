@@ -70,13 +70,18 @@
 		},
 		methods: {
 			getQuizzes: function () {
-				let path = location.pathname;
-				let pathNum = path.slice(-1) //ex. quiz/1 -> 1を取得
-				if (path == '/quiz') {
-					this.axiosUrl = 'ajax/menu'
+				let quizUrl = location.pathname;
+				var catId = quizUrl.match(/\d/g);
+				var catNum = catId.join('');
+
+				if (quizUrl == '/quiz/' + catNum) {
+					this.axiosUrl = 'ajax/menu' + catNum;
+				} else if (quizUrl == '/quiz/region/' + catNum) {
+					this.axiosUrl = 'ajax/region' + catNum;
 				} else {
-					this.axiosUrl = 'ajax/menu' + pathNum;
+					this.axiosUrl = 'ajax/menu'
 				}
+
 				axios.get(this.axiosUrl).then(res => {
 					this.quizzes = res.data;
 					//クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示

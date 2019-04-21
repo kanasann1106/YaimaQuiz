@@ -61,18 +61,7 @@
           .catch(error => {
             console.log(error)
           });
-      },
-      // selectMenu: function (menuId) {
-      //   const url = 'ajax/menu' + menuId;
-      //   axios.get(url)
-      //     .then(res => {
-      //       console.log('ok')
-      //       console.log(url)
-      //     })
-      //     .catch(error => {
-      //       console.log(error)
-      //     })
-      // }
+      }
     }
   }
 </script>

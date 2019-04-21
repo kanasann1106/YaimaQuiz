@@ -23,26 +23,6 @@ class QuizController extends Controller
 		return json_encode($quizzes, JSON_UNESCAPED_UNICODE);
 	}
 	/**
-	 * ex.カテゴリー選択に応じてカテゴリ別のクイズデータをjsonで返す
-	 */
-	public function getQuizByCategory($menuId)
-	{
-		if ($menuId > 4) {
-			//パラメータがnullの時は全クイズデータを返す
-			return self::getQuizAll();
-		}
-		$select = DB::table('quizzes')
-			->select('title', 'category_id', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
-			->where([
-				['delete_flg', '=', 0],
-				['category_id', '=', $menuId]
-			])
-			->get();
-
-		return json_encode($select, JSON_UNESCAPED_UNICODE);
-	}
-
-	/**
 	 * クイズカテゴリーを取得しjson形式で返す
 	 */
 	public function getQuizCategory()
@@ -55,6 +35,21 @@ class QuizController extends Controller
 		return json_encode($quizCategories, JSON_UNESCAPED_UNICODE);
 	}
 	/**
+	 * ex.カテゴリー選択に応じてカテゴリ別のクイズデータをjsonで返す
+	 */
+	public function getQuizByCategory($menuId)
+	{
+		$select = DB::table('quizzes')
+			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
+			->where([
+				['delete_flg', '=', 0],
+				['category_id', '=', $menuId]
+			])
+			->get();
+
+		return json_encode($select, JSON_UNESCAPED_UNICODE);
+	}
+	/**
 	 * 地域を取得しjson形式で返す
 	 */
 	public function getRegion()
@@ -65,5 +60,21 @@ class QuizController extends Controller
 			->get();
 
 		return json_encode($region, JSON_UNESCAPED_UNICODE);
+	}
+	/**
+	 * ex.地域選択に応じて地域別のクイズデータをjsonで返す
+	 */
+	public function getQuizByRegion($islandId)
+	{
+		$select = DB::table('quizzes')
+			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence', 'categories.region_id')
+			->join('categories', 'quizzes.category_id', '=', 'categories.id')
+			->where([
+				['categories.region_id', '=', $islandId],
+				['quizzes.delete_flg', '=', 0]
+			])
+			->get();
+
+		return json_encode($select, JSON_UNESCAPED_UNICODE);
 	}
 }
