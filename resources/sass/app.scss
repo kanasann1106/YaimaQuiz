@@ -76,13 +76,17 @@ header h1 a:hover {
 footer {
   position: fixed;
   bottom: 0;
-  height: 44px;
+  height: 40px;
   font-size: 14px;
   width: 100%;
   padding: 8px;
   text-align: center;
   color: #fff;
   background: #444;
+  @include mq-down(sm) {
+    height: 32px;
+    font-size: 12px;
+  }
 }
 footer a {
   color: #fff;

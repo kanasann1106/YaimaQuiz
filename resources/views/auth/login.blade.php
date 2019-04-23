@@ -94,7 +94,7 @@
           <input type="checkbox" class="form-check-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
           <label class="form-check-label">次回から自動ログインする</label>
         </div>
-        <a href="" class="form-message">パスワードをお忘れですか？</a>
+        <a href="{{ route('password.request') }}" class="form-message">パスワードをお忘れですか？</a>
       </div>
       <p class="title-border">or</p>
       <div class="l-sns_list">
@@ -107,12 +107,10 @@
 
   </main>
   <!-- footer -->
-  <!-- <footer id="footer">
+  <footer id="footer">
     Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
-  </footer> -->
+  </footer>
 
-  <script src=" {{ mix('js/app.js') }} "></script>
-  <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
