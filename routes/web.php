@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('login', 'QuizController@login');
 
+//UserPage
+Route::get('quiz_post', 'User\QuizPostController@index')->name('quiz_post');
+
 //Quiz
 Route::get('quiz', 'QuizController@index');
 Route::get('quiz/{menuId}', 'QuizController@indexCatNum');

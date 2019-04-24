@@ -1,15 +1,8 @@
 .l-form {
-  width: 1000px;
   margin: 0 auto;
-  padding-top: 96px;
-  padding-bottom: 40px;
-  @include mq-down(lg) {
-    width: 88%;
-  }
+  padding: 32px 0;
   @include mq-down(sm) {
     height: 100%;
-    width: 100%;
-    margin: 0;
     padding: 0;
   }
 }

@@ -10706,7 +10706,7 @@ ul {
 }
 
 .l-sns_list {
-  width: 380px;
+  width: 100%;
   margin: 24px auto 0 auto;
   display: flex;
   justify-content: space-around;
@@ -11097,23 +11097,13 @@ ul {
 }
 
 .l-form {
-  width: 1000px;
   margin: 0 auto;
-  padding-top: 96px;
-  padding-bottom: 40px;
-}
-
-@media screen and (max-width: 999px) {
-  .l-form {
-    width: 88%;
-  }
+  padding: 32px 0;
 }
 
 @media screen and (max-width: 549px) {
   .l-form {
     height: 100%;
-    width: 100%;
-    margin: 0;
     padding: 0;
   }
 }
