@@ -22,7 +22,7 @@
       </div>
       <div class="col-6">
         <label>地域選択</label>
-        <select class="form-control" id="region" name="rerion_id">
+        <select class="form-control" id="region" name="region_id">
           <option value="1">全地域</option>
           <option value="2">石垣島</option>
           <option value="3">与那国島</option>

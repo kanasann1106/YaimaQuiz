@@ -15,7 +15,7 @@ class CategoriesTableSeeder extends Seeder
 
         foreach ($categories as $category) {
             DB::table('categories')->insert([
-                'name' => $categories,
+                'name' => $category,
             ]);
         }
     }

@@ -20,6 +20,7 @@ class QuizTableSeeder extends Seeder
 				'uncorrect2' => '空を飛べる',
 				'explain_sentence' => '長命草には豊富な栄養素が含まれています。皆さんも摂取して健康長寿！',
 				'category_id' => '2',
+				'region_id' => '2',
 			],
 			$quiz2 = [
 				'user_id' => '2',
@@ -29,6 +30,7 @@ class QuizTableSeeder extends Seeder
 				'uncorrect2' => 'オオシロサン',
 				'explain_sentence' => '与那国島で初めて発見されたことから「ヨナグニサン」という名前になりました。羽を広げると18cm~24cmにもなります。（でか！）ちなみに与那国の方言では「アヤミハビル」と言います。',
 				'category_id' => '3',
+				'region_id' => '4',
 			],
 			$quiz3 = [
 				'user_id' => '3',
@@ -39,6 +41,7 @@ class QuizTableSeeder extends Seeder
 				'explain_sentence' => '与那国の方言でありがとうは「ふがらっさー」と言います。ネイティブの発音はぜひ現地で聞いてみてね〜♪',
 				'image_name' => 'images/uma.jpg',
 				'category_id' => '4',
+				'region_id' => '6',
 			],
 			$quiz4 = [
 				'user_id' => '4',
@@ -49,6 +52,7 @@ class QuizTableSeeder extends Seeder
 				'explain_sentence' => '与那国の方言でありがとうは「ふがらっさー」と言います。ネイティブの発音はぜひ現地で聞いてみてね〜♪',
 				'image_name' => 'images/uma.jpg',
 				'category_id' => '4',
+				'region_id' => '10',
 				'delete_flg' => '1'
 			],
 			$quiz5 = [
@@ -60,6 +64,7 @@ class QuizTableSeeder extends Seeder
 				'explain_sentence' => '与那国の方言でありがとうは「ふがらっさー」と言います。ネイティブの発音はぜひ現地で聞いてみてね〜♪',
 				'image_name' => 'images/uma.jpg',
 				'category_id' => '4',
+				'region_id' => '5',
 			],
 			$quiz6 = [
 				'user_id' => '2',
@@ -69,6 +74,7 @@ class QuizTableSeeder extends Seeder
 				'uncorrect2' => 'かむさ〜',
 				'explain_sentence' => '与那国の方言でありがとうは「ふがらっさー」と言います。ネイティブの発音はぜひ現地で聞いてみてね〜♪',
 				'category_id' => '2',
+				'region_id' => '7',
 			]
 		];
 

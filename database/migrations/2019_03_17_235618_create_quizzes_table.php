@@ -23,6 +23,7 @@ class CreateQuizzesTable extends Migration
             $table->string('explain_sentence');
             $table->string('image_name')->nullable()->default(NULL);
             $table->integer('category_id')->unsigned();
+            $table->integer('region_id')->unsigned();
             $table->boolean('delete_flg')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
@@ -34,6 +35,10 @@ class CreateQuizzesTable extends Migration
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
+                ->onDelete('cascade');
+            $table->foreign('region_id')
+                ->references('id')
+                ->on('region')
                 ->onDelete('cascade');
         });
     }
