@@ -3,7 +3,7 @@
 @section('title','クイズ作成')
 
 @section('content')
-<form method="POST" action="{{ route('quiz_post') }}" class="form">
+<form method="POST" action="{{ route('quiz.create') }}" class="form">
   @csrf
 
   <div class="form-heading">
@@ -15,17 +15,17 @@
     <div class="row">
       <div class="col-6">
         <label>カテゴリ選択</label>
-        <select class="form-control" id="category">
-          <option>生物</option>
-          <option>雑学</option>
+        <select class="form-control" id="category" name="category_id">
+          <option value="1">生物</option>
+          <option value="2">雑学</option>
         </select>
       </div>
       <div class="col-6">
         <label>地域選択</label>
-        <select class="form-control" id="region">
-          <option>全地域</option>
-          <option>石垣島</option>
-          <option>与那国島</option>
+        <select class="form-control" id="region" name="rerion_id">
+          <option value="1">全地域</option>
+          <option value="2">石垣島</option>
+          <option value="3">与那国島</option>
         </select>
       </div>
     </div>
@@ -65,6 +65,14 @@
     <input type="file" class="form-image{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name">
     @if($errors->has('image_name'))
     <span>{{ $errors->first('image_name') }}</span>
+    @endif
+  </div>
+  <!-- explain -->
+  <div class="form-group">
+    <label>解説を入力</label>
+    <textarea cols="40" rows="3" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" placeholder="解説）解説を書きます" required></textarea>
+    @if($errors->has('explain_sentence'))
+    <span>{{ $errors->first('explain_sentence') }}</span>
     @endif
   </div>
   <button type="submit" class="btn btn-default btn-large">確認画面</button>

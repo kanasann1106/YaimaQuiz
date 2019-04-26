@@ -18,10 +18,13 @@
 //Auth
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('login', 'QuizController@login');
 
 //UserPage
-Route::get('quiz_post', 'User\QuizPostController@index')->name('quiz_post');
+//クイズ投稿フォーム
+Route::get('quiz_post', 'User\QuizPostController@showCreateForm')->name('quiz.create');
+Route::post('quiz_post', 'User\QuizPostController@create');
+//投稿確認ページ
+Route::get('quiz_post/{postId}', 'User\QuizPostController@detail')->name('quiz.detail');
 
 //Quiz
 Route::get('quiz', 'QuizController@index');
