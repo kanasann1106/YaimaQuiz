@@ -66,11 +66,10 @@ class QuizController extends Controller
 	public function getQuizByRegion($islandId)
 	{
 		$select = DB::table('quizzes')
-			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence', 'categories.region_id')
-			->join('categories', 'quizzes.category_id', '=', 'categories.id')
+			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
 			->where([
-				['categories.region_id', '=', $islandId],
-				['quizzes.delete_flg', '=', 0]
+				['delete_flg', '=', 0],
+				['region_id', '=', $islandId]
 			])
 			->get();
 
