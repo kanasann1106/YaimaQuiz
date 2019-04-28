@@ -21,10 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //UserPage
 //クイズ投稿フォーム
-Route::get('quiz_post', 'User\QuizPostController@showCreateForm')->name('quiz.create');
-Route::post('quiz_post', 'User\QuizPostController@create');
-//投稿確認ページ
-Route::get('quiz_post/{postId}', 'User\QuizPostController@detail')->name('quiz.detail');
+Route::resource('quiz_posts', 'User\QuizPostController');
 
 //Quiz
 Route::get('quiz', 'QuizController@index');

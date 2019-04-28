@@ -3,14 +3,41 @@
 @section('title','クイズ詳細')
 
 @section('content')
-<p>userId ：{{ $user_id }}</p>
-<p>カテゴリ ：{{ $category_id }}</p>
-<p>地域 ：{{ $region_id }}</p>
-<p>タイトル：{{ $title }}</p>
-<p>正解：{{ $correct }}</p>
-<p>選択肢１：{{ $uncorrect1 }}</p>
-<p>選択肢２：{{ $uncorrect2 }}</p>
-<p>解説：{{ $explain_sentence }}</p>
-<p>画像：{{ $image_name }}</p>
-<p>画像：{{ $test }}</p>
+<div class="container">
+  <h1 id="post-title">@yield('title')</h1>
+
+  {{-- 編集・削除ボタン --}}
+  <div class="edit">
+    <a href="{{ url('quiz_posts/'.$quiz->id.'/edit') }}" class="btn btn-primary">
+      {{ __('Edit') }}
+    </a>
+    <form style="display:inline" action="{{ url($quiz.'/'.$quiz->id) }}" method="post">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="btn btn-danger">
+        {{ __('Delete') }}
+      </button>
+    </form>
+  </div>
+
+  {{-- 記事内容 --}}
+  <dl class="row">
+    <dt class="col-md-2">{{ __('Created') }}:</dt>
+    <dd class="col-md-10">
+      <time itemprop="dateCreated" datetime="{{ $quiz->created_at }}">
+        {{ $quiz->created_at }}
+      </time>
+    </dd>
+    <dt class="col-md-2">{{ __('Updated') }}:</dt>
+    <dd class="col-md-10">
+      <time itemprop="dateModified" datetime="{{ $quiz->updated_at }}">
+        {{ $quiz->updated_at }}
+      </time>
+    </dd>
+  </dl>
+  <hr>
+  <div id="post-body">
+    {{ $quiz->title }}
+  </div>
+</div>
 @endsection

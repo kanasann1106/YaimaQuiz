@@ -27,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function quizzes() // 複数形
+    {
+        // 記事を新しい順で取得する
+        return $this->hasMany('App\Models\Quiz')->latest();
+    }
 }
