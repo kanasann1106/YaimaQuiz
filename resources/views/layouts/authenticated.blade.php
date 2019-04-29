@@ -21,9 +21,9 @@
 
     <nav class="top-nav">
       <ul>
-        <li><a href="#">クイズに挑戦</a></li>
-        <li><a href="#">クイズ作成</a></li>
-        <li><a href="#">マイページ</a></li>
+        <li><a href="/quiz">クイズに挑戦</a></li>
+        <li><a href="/quiz_posts/create">クイズ作成</a></li>
+        <li><a href="/home">マイページ</a></li>
         <li><a href="#">ログアウト</a></li>
       </ul>
     </nav>

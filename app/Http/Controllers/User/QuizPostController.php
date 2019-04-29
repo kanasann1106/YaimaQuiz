@@ -9,7 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Quiz;
 use Log;
-use Illuminate\Auth\Recaller;
 
 class QuizPostController extends Controller
 {
@@ -18,6 +17,15 @@ class QuizPostController extends Controller
 	{
 		$quiz_posts = Quiz::latest()->get();
 		return view('userpage.quiz_posts', ['quiz_posts' => $quiz_posts]);
+	}
+
+	//クイズ詳細
+	public function show($quiz_id)
+	{
+		$quiz = Quiz::findOrFail($quiz_id);
+		return view('userpage.detail_quiz', [
+			'quiz' => $quiz,
+		]);
 	}
 
 	//クイズ作成フォーム
@@ -55,13 +63,40 @@ class QuizPostController extends Controller
 		return redirect('quiz_posts/' . $quiz->id);
 	}
 
-	//クイズ詳細
-	public function show($quiz_id)
+	//クイズ編集
+	public function edit($quiz_id)
 	{
-		Log::debug("詳細：：" . $quiz_id);
-		$quiz=Quiz::findOrFail($quiz_id);
-		return view('userpage.detail_quiz', [
-			'quiz' => $quiz,
-		]);
+		// カテゴリと地域をviewに渡す
+		$categories = DB::table('categories')
+			->select('id', 'name')
+			->where('delete_flg', '=', 0)
+			->get();
+		$region = DB::table('region')
+			->select('id', 'name')
+			->where('delete_flg', '=', 0)
+			->get();
+
+		$quiz = Quiz::findOrFail($quiz_id);
+		return view(
+			'userpage.edit_quiz',
+			compact('quiz', 'categories', 'region')
+
+		);
+	}
+	public function update(Request $request, $quiz_id)
+	{
+		Log::debug('update、、$request::' . $request);
+		$quiz = Quiz::findOrFail($quiz_id);
+		$quiz->category_id = $request->category_id;
+		$quiz->region_id = $request->region_id;
+		$quiz->title = $request->title;
+		$quiz->correct = $request->correct;
+		$quiz->uncorrect1 = $request->uncorrect1;
+		$quiz->uncorrect2 = $request->uncorrect2;
+		$quiz->explain_sentence = $request->explain_sentence;
+		$quiz->image_name = $request->image_name;
+
+		$quiz->save();
+		return redirect('quiz_posts/' . $quiz->id);
 	}
 }

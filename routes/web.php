@@ -19,11 +19,10 @@
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-//UserPage
-//クイズ投稿フォーム
+//クイズCRUD(only login user)
 Route::resource('quiz_posts', 'User\QuizPostController');
 
-//Quiz
+//Quiz(public)
 Route::get('quiz', 'QuizController@index');
 Route::get('quiz/{menuId}', 'QuizController@indexCatNum');
 Route::get('quiz/region/{islandId}', 'QuizController@indexRegNum');

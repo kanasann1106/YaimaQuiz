@@ -33,9 +33,9 @@
   </div>
   <div class="form-group">
     <label>問題文を入力</label>
-    <textarea cols="40" rows="3" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" placeholder="例）日本最西端の島はどこでしょう？"></textarea>
+    <textarea cols="40" rows="3" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" placeholder="例）日本最西端の島はどこでしょう？"></textarea>
     @if($errors->has('title'))
-    <span>{{ $errors->first('title') }}</span>
+    <span　class="invalid-feedback" role="alert">{{ $errors->first('title') }}</span>
     @endif
   </div>
   <div class="form-group">
@@ -45,37 +45,37 @@
       ・クイズの回答は一番上に入力してください。<br>
       ・カテゴリで選択したことに関するクイズを投稿すること。</p>
     <!-- correct -->
-    <input type="text" class="form-control{{ $errors->has('correct') ? ' is-invalid' : '' }}" name="correct" placeholder="答え）与那国島">
+    <input type="text" class="form-control{{ $errors->has('correct') ? ' is-invalid' : '' }}" name="correct" value="{{ old('correct') }}" placeholder="答え）与那国島">
     @if($errors->has('correct'))
-    <span>{{ $errors->first('correct') }}</span>
+    <span　class="invalid-feedback" role="alert">{{ $errors->first('correct') }}</span>
     @endif
     <!-- uncorrect1 -->
-    <input type="text" class="form-control{{ $errors->has('uncorrect1') ? ' is-invalid' : '' }} mt-2" name="uncorrect1" placeholder="選択肢1）択捉島">
+    <input type="text" class="form-control{{ $errors->has('uncorrect1') ? ' is-invalid' : '' }} mt-2" name="uncorrect1" value="{{ old('uncorrect1') }}" placeholder="選択肢1）択捉島">
     @if($errors->has('uncorrect1'))
-    <span>{{ $errors->first('uncorrect1') }}</span>
+    <span　class="invalid-feedback" role="alert">{{ $errors->first('uncorrect1') }}</span>
     @endif
     <!-- uncorrect2 -->
-    <input type="text" class="form-control{{ $errors->has('uncorrect2') ? ' is-invalid' : '' }} mt-2" name="uncorrect2" placeholder="選択肢2）沖ノ鳥島">
+    <input type="text" class="form-control{{ $errors->has('uncorrect2') ? ' is-invalid' : '' }} mt-2" name="uncorrect2" value="{{ old('uncorrect2') }}" placeholder="選択肢2）沖ノ鳥島">
     @if($errors->has('uncorrect2'))
-    <span>{{ $errors->first('uncorrect2') }}</span>
+    <span　class="invalid-feedback" role="alert">{{ $errors->first('uncorrect2') }}</span>
     @endif
   </div>
   <!-- image -->
   <div class="form-group">
     <label>画像挿入（任意）</label>
-    <input type="file" class="form-image{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name">
+    <input type="file" class="form-image{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name" value="{{ old('image_name') }}">
     @if($errors->has('image_name'))
-    <span>{{ $errors->first('image_name') }}</span>
+    <span　class="invalid-feedback" role="alert">{{ $errors->first('image_name') }}</span>
     @endif
   </div>
   <!-- explain -->
   <div class="form-group">
     <label>解説を入力</label>
-    <textarea cols="40" rows="3" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" placeholder="解説）解説を書きます"></textarea>
+    <textarea cols="40" rows="3" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" value="{{ old('explain_sentence') }}" placeholder="解説）解説を書きます"></textarea>
     @if($errors->has('explain_sentence'))
-    <span>{{ $errors->first('explain_sentence') }}</span>
+    <span　class="invalid-feedback" role="alert">{{ $errors->first('explain_sentence') }}</span>
     @endif
   </div>
-  <button type="submit" class="btn btn-default btn-large">確認画面</button>
+  <button type="submit" class="btn btn-default btn-large">投稿</button>
 </form>
 @endsection
