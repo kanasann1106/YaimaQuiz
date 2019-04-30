@@ -63,4 +63,31 @@
     margin-top: 32px;
     text-align: right;
   }
+  &-image-area {
+    position: relative;
+    i {
+      position: absolute;
+      top: 55px;
+      left: 80px;
+    }
+    input {
+      opacity: 0;
+      width: 50%;
+      height: 130px;
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+  &-image {
+    width: 50%;
+    height: 130px;
+    position: absolute;
+    top: 31px;
+    left: 0;
+    object-fit: cover;
+    background-color: #ffffffc7;
+    border-radius: 16px;
+  }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Quiz;
+use Image;
 use Log;
 
 class QuizPostController extends Controller
@@ -29,7 +30,7 @@ class QuizPostController extends Controller
 	}
 
 	//クイズ作成フォーム
-	public function create(StorePost $request)
+	public function create()
 	{
 		// カテゴリと地域をviewに渡す
 		$categories = DB::table('categories')
@@ -45,8 +46,13 @@ class QuizPostController extends Controller
 	}
 
 	//投稿されたデータをDBへ保存する
-	public function store(Request $request)
+	public function store(StorePost $request)
 	{
+		//画像ファイル名をランダムの文字列へ＆path変更
+		$file = $request->file('image_name');
+		$fileName = str_random(20) . '.' . $file->getClientOriginalExtension();
+		Image::make($file)->save(public_path('images/' . $fileName));
+
 		$quiz = new Quiz();
 		$quiz->user_id = $request->user()->id;
 		$quiz->category_id = $request->category_id;
@@ -56,7 +62,7 @@ class QuizPostController extends Controller
 		$quiz->uncorrect1 = $request->uncorrect1;
 		$quiz->uncorrect2 = $request->uncorrect2;
 		$quiz->explain_sentence = $request->explain_sentence;
-		$quiz->image_name = $request->image_name;
+		$quiz->image_name = '/images/' . $fileName;
 
 		$quiz->save();
 
@@ -85,6 +91,11 @@ class QuizPostController extends Controller
 	}
 	public function update(StorePost $request, $quiz_id)
 	{
+		//画像ファイル名をランダムの文字列へ＆path変更
+		$file = $request->file('image_name');
+		$fileName = str_random(20) . '.' . $file->getClientOriginalExtension();
+		Image::make($file)->save(public_path('images/' . $fileName));
+
 		$quiz = Quiz::findOrFail($quiz_id);
 		$quiz->category_id = $request->category_id;
 		$quiz->region_id = $request->region_id;
@@ -93,7 +104,7 @@ class QuizPostController extends Controller
 		$quiz->uncorrect1 = $request->uncorrect1;
 		$quiz->uncorrect2 = $request->uncorrect2;
 		$quiz->explain_sentence = $request->explain_sentence;
-		$quiz->image_name = $request->image_name;
+		$quiz->image_name = '/images/' . $fileName;
 
 		$quiz->save();
 		return redirect('quiz_posts/' . $quiz->id);

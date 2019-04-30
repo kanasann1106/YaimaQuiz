@@ -9,6 +9,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>{{ __('NO.') }}</th>
           <th>{{ __('Title') }}</th>
           <th>{{ __('correct') }}</th>
           <th>{{ __('uncorrect1') }}</th>

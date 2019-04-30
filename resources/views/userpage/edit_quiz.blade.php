@@ -17,7 +17,7 @@
         <label>カテゴリ選択</label>
         <select class="form-control" id="category" name="category_id">
           @foreach ($categories as $category)
-          <option value="{{ $category->id }}" {{$category->id== old('category_id',$quiz->category_id) ? 'selected' : ''}}>
+          <option value="{{ $category->id }}" {{ $category->id == old('category_id',$quiz->category_id) ? 'selected' : '' }}>
             {{ $category->name }}
           </option>
           @endforeach
@@ -27,7 +27,7 @@
         <label>地域選択</label>
         <select class="form-control" id="region" name="region_id">
           @foreach($region as $island)
-          <option value="{{ $island->id }}" {{ $island->id== old('region_id', $quiz->region_id) ? 'selected' : '' }}>
+          <option value="{{ $island->id }}" {{ $island->id == old('region_id', $quiz->region_id) ? 'selected' : '' }}>
             {{ $island->name }}
           </option>
           @endforeach

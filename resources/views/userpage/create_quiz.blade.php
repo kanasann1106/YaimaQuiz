@@ -17,7 +17,9 @@
         <label>カテゴリ選択</label>
         <select class="form-control" id="category" name="category_id">
           @foreach ($categories as $category)
-          <option value="{{ $category->id }}">{{ $category->name }}</option>
+          <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}>
+            {{ $category->name }}
+          </option>
           @endforeach
         </select>
       </div>
@@ -25,7 +27,9 @@
         <label>地域選択</label>
         <select class="form-control" id="region" name="region_id">
           @foreach($region as $island)
-          <option value="{{ $island->id }}">{{ $island->name }}</option>
+          <option value="{{ $island->id }}" {{ $island->id == old('region_id') ? 'selected' : '' }}>
+            {{ $island->name }}
+          </option>
           @endforeach
         </select>
       </div>
@@ -33,9 +37,13 @@
   </div>
   <div class="form-group">
     <label>問題文を入力</label>
-    <textarea cols="40" rows="3" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" placeholder="例）日本最西端の島はどこでしょう？"></textarea>
+    <textarea cols="40" rows="3" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" placeholder="例）日本最西端の島はどこでしょう？">
+    {{ old('title') }}
+    </textarea>
     @if($errors->has('title'))
-    <span　class="invalid-feedback" role="alert">{{ $errors->first('title') }}</span>
+    <span class="invalid-feedback" role="alert">
+      {{ $errors->first('title') }}
+    </span>
     @endif
   </div>
   <div class="form-group">
@@ -47,33 +55,47 @@
     <!-- correct -->
     <input type="text" class="form-control{{ $errors->has('correct') ? ' is-invalid' : '' }}" name="correct" value="{{ old('correct') }}" placeholder="答え）与那国島">
     @if($errors->has('correct'))
-    <span　class="invalid-feedback" role="alert">{{ $errors->first('correct') }}</span>
+    <span class="invalid-feedback" role="alert">
+      {{ $errors->first('correct') }}
+    </span>
     @endif
     <!-- uncorrect1 -->
     <input type="text" class="form-control{{ $errors->has('uncorrect1') ? ' is-invalid' : '' }} mt-2" name="uncorrect1" value="{{ old('uncorrect1') }}" placeholder="選択肢1）択捉島">
     @if($errors->has('uncorrect1'))
-    <span　class="invalid-feedback" role="alert">{{ $errors->first('uncorrect1') }}</span>
+    <span class="invalid-feedback" role="alert">
+      {{ $errors->first('uncorrect1') }}
+    </span>
     @endif
     <!-- uncorrect2 -->
     <input type="text" class="form-control{{ $errors->has('uncorrect2') ? ' is-invalid' : '' }} mt-2" name="uncorrect2" value="{{ old('uncorrect2') }}" placeholder="選択肢2）沖ノ鳥島">
     @if($errors->has('uncorrect2'))
-    <span　class="invalid-feedback" role="alert">{{ $errors->first('uncorrect2') }}</span>
+    <span class="invalid-feedback" role="alert">
+      {{ $errors->first('uncorrect2') }}
+    </span>
     @endif
   </div>
   <!-- image -->
-  <div class="form-group">
+  <div class="form-group form-image-area">
     <label>画像挿入（任意）</label>
-    <input type="file" class="form-image{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name" value="{{ old('image_name') }}">
+    <i class="far fa-image fa-5x"></i>
+    <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }} js-area-drop" name="image_name">
+    <img class="form-image" src="" alt="投稿画像">
     @if($errors->has('image_name'))
-    <span　class="invalid-feedback" role="alert">{{ $errors->first('image_name') }}</span>
+    <span class="invalid-feedback" role="alert">
+      {{ $errors->first('image_name') }}
+    </span>
     @endif
   </div>
   <!-- explain -->
   <div class="form-group">
     <label>解説を入力</label>
-    <textarea cols="40" rows="3" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" value="{{ old('explain_sentence') }}" placeholder="解説）解説を書きます"></textarea>
+    <textarea cols="40" rows="3" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" value="{{ old('explain_sentence') }}" placeholder="解説）解説を書きます">
+    {{ old('explain_sentence') }}
+    </textarea>
     @if($errors->has('explain_sentence'))
-    <span　class="invalid-feedback" role="alert">{{ $errors->first('explain_sentence') }}</span>
+    <span class="invalid-feedback" role="alert">
+      {{ $errors->first('explain_sentence') }}
+    </span>
     @endif
   </div>
   <button type="submit" class="btn btn-default btn-large">投稿</button>

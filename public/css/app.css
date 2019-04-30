@@ -11182,6 +11182,38 @@ ul {
   text-align: right;
 }
 
+.form-image-area {
+  position: relative;
+}
+
+.form-image-area i {
+  position: absolute;
+  top: 55px;
+  left: 80px;
+}
+
+.form-image-area input {
+  opacity: 0;
+  width: 50%;
+  height: 130px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.form-image {
+  width: 50%;
+  height: 130px;
+  position: absolute;
+  top: 31px;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #ffffffc7;
+  border-radius: 16px;
+}
+
 .btn {
   border-radius: 40px;
   -webkit-border-radius: 40px;
