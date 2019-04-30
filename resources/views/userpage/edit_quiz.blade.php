@@ -77,7 +77,7 @@
   <!-- image -->
   <div class="form-group">
     <label>画像挿入（任意）</label>
-    <input type="file" class="form-image{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name" value="{{ old('image_name', $quiz->image_name) }}">
+    <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name" value="{{ old('image_name', $quiz->image_name) }}">
     @if($errors->has('image_name'))
     <span class="invalid-feedback" role="alert">
       {{ $errors->first('image_name') }}

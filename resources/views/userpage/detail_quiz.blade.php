@@ -11,7 +11,7 @@
     <a href="{{ url('quiz_posts/'.$quiz->id.'/edit') }}" class="btn btn-primary">
       {{ __('Edit') }}
     </a>
-    <form style="display:inline" action="{{ url($quiz.'/'.$quiz->id) }}" method="post">
+    <form style="display:inline" action="{{ url('quiz_posts/'.$quiz->id) }}" method="post">
       @csrf
       @method('DELETE')
       <button type="submit" class="btn btn-danger">

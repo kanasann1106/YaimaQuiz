@@ -29,7 +29,7 @@ class QuizPostController extends Controller
 	}
 
 	//クイズ作成フォーム
-	public function create(Request $request)
+	public function create(StorePost $request)
 	{
 		// カテゴリと地域をviewに渡す
 		$categories = DB::table('categories')
@@ -83,9 +83,8 @@ class QuizPostController extends Controller
 
 		);
 	}
-	public function update(Request $request, $quiz_id)
+	public function update(StorePost $request, $quiz_id)
 	{
-		Log::debug('update、、$request::' . $request);
 		$quiz = Quiz::findOrFail($quiz_id);
 		$quiz->category_id = $request->category_id;
 		$quiz->region_id = $request->region_id;
@@ -98,5 +97,13 @@ class QuizPostController extends Controller
 
 		$quiz->save();
 		return redirect('quiz_posts/' . $quiz->id);
+	}
+
+	//削除
+	public function destroy($quiz_id)
+	{
+		$quiz = Quiz::findOrFail($quiz_id);
+		$quiz->delete();
+		return redirect('/quiz_posts');
 	}
 }
