@@ -97,11 +97,19 @@
 					.catch(error => {
 						console.log(error);
 					});
+			},shuffleAry: function(array) {
+  				const ary = array.slice();
+  				for (let i = ary.length - 1; 0 < i; i--) {
+    				let r = Math.floor(Math.random() * (i + 1));
+				    [ary[i], ary[r]] = [ary[r], ary[i]];
+  				}
+  				return ary;
 			},
 			getChoice: function (index) {
 				//前回の選択肢を削除してから新しく選択肢を追加する
 				this.aChoice = []
 				this.aChoice.push(this.quizzes[index].correct, this.quizzes[index].uncorrect1, this.quizzes[index].uncorrect2)
+				this.aChoice = this.shuffleAry(this.aChoice)
 			},
 			showAnswer: function (choice) {
 				this.showQuiz = !this.showQuiz //false
