@@ -1,0 +1,23 @@
+.btn {
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40x;
+  padding: 4px;
+  font-size: 20px;
+  transition: 0.3s;
+  &-default {
+    color: #fff;
+    font-weight: bold;
+    background-color: #facf4cf7;
+    border-color: #e8c048f7;
+    box-shadow: 0 6px #e5c564f7;
+    &:hover {
+      box-shadow: 0 1px #facf4cf7;
+      background: #facf4cf7;
+      color: #fff;
+    }
+  }
+  &-large {
+    width: 100%;
+  }
+}

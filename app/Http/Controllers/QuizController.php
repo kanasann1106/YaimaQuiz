@@ -1,17 +1,45 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Quiz;
+
+use App\Models\Quiz;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
-class QuizController extends Controller {
+class QuizController extends Controller
+{
 
-    public function index() {
-        $quizzes = Quiz::all();
+	public function index()
+	{
+		return view('quiz/index');
+	}
+	//パラメータがカテゴリ総数と以上または負の数の時quiz topへリダイレクトさせる
+	public function indexCatNum($menuId)
+	{
+		$totalCategoryNum = DB::table('categories')->count();
+		if ($menuId > $totalCategoryNum || $menuId < 1) {
+			return Redirect('quiz');
+		}
+		return self::index();
+	}
 
-        return view('quiz/index', [
-            'quizzes' => $quizzes,
-        ]);
-    }
+	//パラメータが地域総数と以上または負の数の時quiz topへリダイレクトさせる
+	public function indexRegNum($islandId)
+	{
+		$totalCategoryNum = DB::table('region')->count();
+		if ($islandId > $totalCategoryNum || $islandId < 1) {
+			return Redirect('quiz');
+		}
+		return self::index();
+	}
+	// public function register()
+	// {
+	// 	return view('auth/register');
+	// }
+	public function login()
+	{
+		return view('auth/login');
+	}
 }
-

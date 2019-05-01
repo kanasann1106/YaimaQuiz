@@ -15,16 +15,10 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('region_id')->unsigned();
             $table->string('name');
             $table->boolean('delete_flg')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
-
-            $table->foreign('region_id')
-                ->references('id')
-                ->on('region')
-                ->onDelete('cascade');
         });
     }
 

@@ -1,14 +1,93 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+@import "reset/common.scss";
+@import "base/mixins";
+@import "layout";
+@import "decoration";
+@import "quiz";
+@import "nav";
+@import "form";
+@import "button";
+
+/* -------------------
+	animation
+---------------------*/
+@keyframes SlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* -------------------
+	header
+---------------------*/
+header {
+  background-color: #80cee0;
+  height: 64px;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+header h1 a {
+  display: block;
+  font-weight: bold;
+  line-height: 64px;
+}
+header h1 a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+@media screen and (max-width: 856px) {
+  header {
+    padding: 0 24px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+  }
+  header h1 a {
+    font-size: 28px;
+    line-height: 48px;
+  }
+}
+/* -------------------
+	footer
+---------------------*/
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  font-size: 14px;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  color: #fff;
+  background: #444;
+  @include mq-down(sm) {
+    height: 32px;
+    font-size: 12px;
+  }
+}
+footer a {
+  color: #fff;
 }
