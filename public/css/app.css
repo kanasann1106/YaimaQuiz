@@ -10872,11 +10872,7 @@ ul {
 }
 
 .top-nav {
-  width: 560px;
-}
-
-#accordion-menu {
-  display: none;
+  width: 700px;
 }
 
 .top-nav ul {
@@ -10898,6 +10894,10 @@ ul {
   background: #fff;
   color: #80cee0;
   transition: all 0.5s;
+}
+
+#accordion-menu {
+  display: none;
 }
 
 /*ドロップダウンメニュー*/

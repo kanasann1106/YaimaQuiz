@@ -1828,6 +1828,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var eventHub = global.eventHub = new Vue();
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'QuizMenu',
@@ -37891,7 +37892,11 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2)
       ],
       2
     )
@@ -37903,6 +37908,22 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [_c("a", { attrs: { href: "/quiz" } }, [_vm._v("すべて")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/register" } }, [_vm._v("登録")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/login" } }, [_vm._v("ログイン")])
+    ])
   }
 ]
 render._withStripped = true
