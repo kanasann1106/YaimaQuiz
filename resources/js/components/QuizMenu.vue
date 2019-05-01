@@ -3,8 +3,6 @@
     <ul>
       <li v-for="category in categories">
         <a :href="'/quiz/'+category.id">{{ category.name }}</a></li>
-      <!-- <li v-for="category in categories" @click="selectMenu(category.id)">
-        {{ category.name }}</li> -->
       <li class="dropdown">
         <a class="dropdown-toggle" href="#" id="region" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
@@ -25,6 +23,9 @@
         </ul>
       </li>
       <li><a href="/quiz">すべて</a></li>
+      <li><a href="/register">登録</a></li>
+      <li><a href="/login">ログイン</a></li>
+      <!-- <li><a href="#"> ログアウト</a></li> -->
     </ul>
   </nav>
 </template>

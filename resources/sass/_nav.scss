@@ -42,12 +42,7 @@
   }
 }
 .top-nav {
-  width: 560px;
-}
-#accordion-menu {
-  display: none;
-}
-.top-nav {
+  width: 700px;
   ul {
     display: flex;
     justify-content: space-around;
@@ -66,6 +61,9 @@
       transition: all 0.5s;
     }
   }
+}
+#accordion-menu {
+  display: none;
 }
 /*ドロップダウンメニュー*/
 .dropdown:hover .dropdown-menu {
