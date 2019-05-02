@@ -1903,7 +1903,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['totalCorrectNum'],
   data: function data() {
     return {
-      show: false
+      show: false,
+      totalCorrectNum: this.totalCorrectNum
     };
   },
   methods: {
@@ -1913,6 +1914,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     start: function start() {
       window.location.href = '/quiz';
+    },
+    tweet: function tweet() {
+      if (this.totalCorrectNum > 0) {
+        open('https://twitter.com/intent/tweet?text=' + this.totalCorrectNum + '%E5%95%8F%E6%AD%A3%E8%A7%A3%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A&url=https%3A%2F%2Fpoad.kanasann.com%2F&hashtags=test%2Ctest1', '_blank');
+      } else {
+        open('https://twitter.com/intent/tweet?text=%E6%AE%8B%E5%BF%B5%EF%BC%81%E5%85%A8%E5%95%8F%E4%B8%8D%E6%AD%A3%E8%A7%A3%E3%80%82%E3%80%82(%3E_%3C)%0A%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%E2%99%AA&url=https%3A%2F%2Fpoad.kanasann.com%2F&hashtags=test%2Ctest1', '_blank');
+      }
     }
   }
 });
@@ -2038,10 +2046,23 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     },
+    shuffleAry: function shuffleAry(array) {
+      var ary = array.slice();
+
+      for (var i = ary.length - 1; 0 < i; i--) {
+        var r = Math.floor(Math.random() * (i + 1));
+        var _ref = [ary[r], ary[i]];
+        ary[i] = _ref[0];
+        ary[r] = _ref[1];
+      }
+
+      return ary;
+    },
     getChoice: function getChoice(index) {
       //前回の選択肢を削除してから新しく選択肢を追加する
       this.aChoice = [];
       this.aChoice.push(this.quizzes[index].correct, this.quizzes[index].uncorrect1, this.quizzes[index].uncorrect2);
+      this.aChoice = this.shuffleAry(this.aChoice);
     },
     showAnswer: function showAnswer(choice) {
       this.showQuiz = !this.showQuiz; //false
@@ -37970,33 +37991,27 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm._m(0)
+              _c("div", { staticClass: "col-md-5" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-default rounded-pill btn-block",
+                    attrs: { type: "button" },
+                    on: { click: _vm.tweet }
+                  },
+                  [
+                    _c("i", { staticClass: "fab fa-twitter fa-lg mr-3" }),
+                    _vm._v("ツイート")
+                  ]
+                )
+              ])
             ])
           ])
         ])
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-5" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default rounded-pill btn-block",
-          attrs: { type: "button" }
-        },
-        [
-          _c("i", { staticClass: "fab fa-twitter fa-lg mr-3" }),
-          _vm._v("ツイート")
-        ]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
