@@ -1,0 +1,14 @@
+.news {
+  &-list {
+    width: 72%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-item {
+    border-bottom: 1px dashed #ccc;
+    margin: 8px 0;
+    time {
+      margin-right: 32px;
+    }
+  }
+}

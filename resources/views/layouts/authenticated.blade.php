@@ -13,7 +13,7 @@
 <body>
   <!-- header -->
   <header>
-    <h1><a href="/quiz">八重山クイズ</a></h1>
+    <h1><a href="/">八重山クイズ</a></h1>
     <div class="sp-menu js-toggle-nav">
       <span></span>
       <span></span>

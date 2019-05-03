@@ -1,18 +1,32 @@
-.title-border {
-  display: flex;
-  align-items: center;
-  color: #888;
-  font-size: 20px;
-  &:before,
-  &:after {
-    border-top: 1px solid #888;
-    content: "";
-    flex-grow: 1;
+.section {
+  &-title {
+    font-weight: bold;
+    padding-bottom: 8px;
   }
-  &:before {
-    margin-right: 1rem;
+}
+.title {
+  &-border {
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 20px;
+    &:before,
+    &:after {
+      border-top: 1px solid #888;
+      content: "";
+      flex-grow: 1;
+    }
+    &:before {
+      margin-right: 1rem;
+    }
+    &:after {
+      margin-left: 1rem;
+    }
   }
-  &:after {
-    margin-left: 1rem;
+  &-center {
+    text-align: center;
   }
+}
+.border-right {
+  border-right: 1px solid #ccc;
 }
