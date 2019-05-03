@@ -23,7 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('quiz_posts', 'User\QuizPostController');
 
 //Quiz(public)
-Route::get('quiz', 'QuizController@index');
+Route::get('/', 'QuizController@index');
+Route::get('quiz', 'QuizController@showQuiz');
 Route::get('quiz/{menuId}', 'QuizController@indexCatNum');
 Route::get('quiz/region/{islandId}', 'QuizController@indexRegNum');
 
