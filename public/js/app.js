@@ -1835,7 +1835,8 @@ var eventHub = global.eventHub = new Vue();
   data: function data() {
     return {
       categories: [],
-      region: []
+      region: [] // logoutUrl:
+
     };
   },
   created: function created() {
@@ -1903,14 +1904,13 @@ __webpack_require__.r(__webpack_exports__);
   props: ['totalCorrectNum'],
   data: function data() {
     return {
-      show: false,
-      totalCorrectNum: this.totalCorrectNum
+      show: false // totalCorrectNum: this.totalCorrectNum
+
     };
   },
   methods: {
     showResult: function showResult() {
       this.show = !this.show; //true
-      // this.$emit('show', this.show)
     },
     start: function start() {
       window.location.href = '/quiz';
@@ -2019,9 +2019,10 @@ __webpack_require__.r(__webpack_exports__);
 
       var quizUrl = location.pathname;
       var catId = quizUrl.match(/\d/g);
+      var catNum;
 
       if (catId) {
-        var catNum = catId.join('');
+        catNum = catId.join('');
       }
 
       if (quizUrl == '/quiz/' + catNum) {
@@ -37913,11 +37914,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2)
+        _vm._m(0)
       ],
       2
     )
@@ -37929,22 +37926,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [_c("a", { attrs: { href: "/quiz" } }, [_vm._v("すべて")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/register" } }, [_vm._v("登録")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/login" } }, [_vm._v("ログイン")])
-    ])
   }
 ]
 render._withStripped = true

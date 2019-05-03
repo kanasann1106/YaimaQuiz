@@ -23,9 +23,9 @@
         </ul>
       </li>
       <li><a href="/quiz">すべて</a></li>
-      <li><a href="/register">登録</a></li>
+      <!-- <li><a href="/register">登録</a></li>
       <li><a href="/login">ログイン</a></li>
-      <!-- <li><a href="#"> ログアウト</a></li> -->
+      <li><a :href="logoutUrl">ログアウト</a></li> -->
     </ul>
   </nav>
 </template>
@@ -38,6 +38,7 @@
       return {
         categories: [],
         region: [],
+        // logoutUrl:
       }
     },
     created() {

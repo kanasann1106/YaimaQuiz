@@ -71,9 +71,10 @@
 		methods: {
 			getQuizzes: function () {
 				let quizUrl = location.pathname;
-				var catId = quizUrl.match(/\d/g);
+				let catId = quizUrl.match(/\d/g);
+				let catNum;
 				if (catId) {
-					var catNum = catId.join('');
+					catNum = catId.join('');
 				}
 
 				if (quizUrl == '/quiz/' + catNum) {
@@ -98,13 +99,14 @@
 					.catch(error => {
 						console.log(error);
 					});
-			},shuffleAry: function(array) {
-  				const ary = array.slice();
-  				for (let i = ary.length - 1; 0 < i; i--) {
-    				let r = Math.floor(Math.random() * (i + 1));
-				    [ary[i], ary[r]] = [ary[r], ary[i]];
-  				}
-  				return ary;
+			},
+			shuffleAry: function (array) {
+				const ary = array.slice();
+				for (let i = ary.length - 1; 0 < i; i--) {
+					let r = Math.floor(Math.random() * (i + 1));
+					[ary[i], ary[r]] = [ary[r], ary[i]];
+				}
+				return ary;
 			},
 			getChoice: function (index) {
 				//前回の選択肢を削除してから新しく選択肢を追加する
