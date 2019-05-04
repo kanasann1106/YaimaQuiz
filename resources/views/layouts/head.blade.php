@@ -5,9 +5,9 @@
 	<meta charset=" utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta property="og:site_name" content="八重山クイズ" />
+  <meta property="og:site_name" content="やいまクイズ" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="八重山クイズ">
+  <meta property="og:title" content="やいまクイズ">
   <meta property="og:description" content="沖縄の南西に位置する八重山諸島(石垣島、西表島、竹富島、与那国島など)に関するクイズを楽しめるサービスです。訪れるだけではわからない島の魅力が発見できるかも！！">
   <meta property="og:url" content="https://yaeyama.kanasann.com">
   <meta property="og:image" content="">
