@@ -18,8 +18,8 @@
         <li><a href="#about-yaeyama">八重山とは</a></li>
         <li><a href="#can">できること</a></li>
         <li><a href="#news">お知らせ</a></li>
-        <li><a href="#">登録</a></li>
-        <li><a href="#">ログイン</a></li>
+        <!-- <li><a href="#">登録</a></li>
+        <li><a href="#">ログイン</a></li> -->
       </ul>
     </nav>
   </header>
@@ -27,7 +27,7 @@
     <section class="l-section l-section-top js-slider">
       <div class="top-copy">
         <div class="top-message">
-          訪れるだけではわからない魅力をクイズから。
+          訪れるだけではわからない魅力をクイズで。
         </div>
         <div class="top-link">
           <a href="/quiz">クイズに挑戦！</a>
@@ -87,7 +87,7 @@
       </div>
 
     </section>
-    <section id="news" class="l-default l-section">
+    <section id="news" class="l-default l-section mb-4">
       <h2 class="section-title title-center title-border">お知らせ</h2>
       <ul class="news-list">
         <li class="news-item"><time>2019.05.07</time>やいまクイズver1リリースしました。</li>
