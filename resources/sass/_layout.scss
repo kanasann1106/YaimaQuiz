@@ -11,10 +11,21 @@
     }
     @include mq-down(md2) {
       max-width: 96%;
+      padding-top: 64px;
     }
   }
-  &-section{
-    padding:30px 0;
+  &-section {
+    padding: 30px 0;
+    &-top {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 700px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
   }
   &-sns_list {
     width: 100%;
@@ -30,12 +41,5 @@
       -ms-transform: scale(1.2);
       transition-duration: 0.3s;
     }
-  }
-  &-wrapper {
-    width: 100%;
-    position: relative;
-    height: auto !important;
-    height: 100%;
-    min-height: 100%;
   }
 }

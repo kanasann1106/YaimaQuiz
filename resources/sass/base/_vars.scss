@@ -1,0 +1,14 @@
+.fixed {
+  position: fixed;
+  z-index: 9999;
+}
+body,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}

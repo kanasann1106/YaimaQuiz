@@ -7,7 +7,7 @@ $(function () {
 	});
 	// ハンバーガーとメニュー以外をクリックしたらナビメニューを閉じる
 	$(document).on('click', function (e) {
-		if (!$(e.target).closest('.js-toggle-nav, .top-nav ul').length) {
+		if (!$(e.target).closest('.js-toggle-nav, .top-nav #accordion-menu').length) {
 			$('.top-nav').removeClass('show');
 			$('.js-toggle-nav').removeClass('active');
 		}

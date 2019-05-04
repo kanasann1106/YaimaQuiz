@@ -9,14 +9,14 @@
 
 @import "reset/common.scss";
 @import "base/mixins";
+@import "base/vars";
 @import "layout";
 @import "decoration";
 @import "quiz";
 @import "nav";
-@import"news";
 @import "form";
 @import "button";
-
+@import "toppage";
 /* -------------------
 	animation
 ---------------------*/
@@ -42,10 +42,8 @@
 	header
 ---------------------*/
 header {
-  background-color: #80cee0;
+  background-color: #03b6f48f;
   height: 64px;
-  position: fixed;
-  z-index: 9999;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -75,7 +73,7 @@ header h1 a:hover {
 	footer
 ---------------------*/
 footer {
-  position: fixed;
+  margin-top: 24px;
   bottom: 0;
   height: 40px;
   font-size: 14px;

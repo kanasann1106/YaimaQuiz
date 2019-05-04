@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="fixed">
     <h1><a href="/">八重山クイズ</a></h1>
     <div class="sp-menu js-toggle-nav">
       <span></span>
