@@ -1,5 +1,5 @@
 @include('layouts.head')
-<title>Login | 八重山クイズ</title>
+<title>Login | やいまクイズ</title>
 </head>
 
 <body>

@@ -1,13 +1,13 @@
 @include('layouts.head')
 
-<title>@yield('title') | 八重山クイズ</title>
+<title>@yield('title') | やいまクイズ</title>
 </head>
 
 <body>
   <div class="wrapper">
     <!-- header -->
     <header>
-      <h1><a href="/">八重山クイズ</a></h1>
+      <h1><a href="/">やいまクイズ</a></h1>
       <div class="sp-menu js-toggle-nav">
         <span></span>
         <span></span>

@@ -37797,7 +37797,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", [
-      _c("a", { attrs: { href: "/" } }, [_vm._v("八重山クイズ")])
+      _c("a", { attrs: { href: "/" } }, [_vm._v("やいまクイズ")])
     ])
   },
   function() {
