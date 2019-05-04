@@ -10665,6 +10665,13 @@ body {
   font-family: "M PLUS Rounded 1c";
 }
 
+body,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 a {
   color: #fff;
 }
@@ -10688,17 +10695,6 @@ ul {
 .fixed {
   position: fixed;
   z-index: 9999;
-}
-
-body,
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-footer {
-  margin-top: auto;
 }
 
 .l-default {
@@ -11483,7 +11479,7 @@ header h1 a:hover {
 ---------------------*/
 
 footer {
-  margin-top: 24px;
+  margin-top: auto;
   bottom: 0;
   height: 40px;
   font-size: 14px;

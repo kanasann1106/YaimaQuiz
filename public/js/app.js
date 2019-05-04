@@ -1917,9 +1917,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     tweet: function tweet() {
       if (this.totalCorrectNum > 0) {
-        open('https://twitter.com/intent/tweet?text=' + this.totalCorrectNum + '%E5%95%8F%E6%AD%A3%E8%A7%A3%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A&url=https%3A%2F%2Fpoad.kanasann.com%2F&hashtags=test%2Ctest1', '_blank');
+        open('https://twitter.com/intent/tweet?text=' + this.totalCorrectNum + '%E5%95%8F%E6%AD%A3%E8%A7%A3%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A&url=https%3A%2F%2Fyaima-quiz.kanasann.com&hashtags=%E3%82%84%E3%81%84%E3%81%BE%E3%82%AF%E3%82%A4%E3%82%BA%2C%E5%85%AB%E9%87%8D%E5%B1%B1%2C%E6%B2%96%E7%B8%84', '_blank');
       } else {
-        open('https://twitter.com/intent/tweet?text=%E6%AE%8B%E5%BF%B5%EF%BC%81%E5%85%A8%E5%95%8F%E4%B8%8D%E6%AD%A3%E8%A7%A3%E3%80%82%E3%80%82(%3E_%3C)%0A%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%E2%99%AA&url=https%3A%2F%2Fpoad.kanasann.com%2F&hashtags=test%2Ctest1', '_blank');
+        open('https://twitter.com/intent/tweet?text=%E6%AE%8B%E5%BF%B5%EF%BC%81%E5%85%A8%E5%95%8F%E4%B8%8D%E6%AD%A3%E8%A7%A3%E3%80%82%E3%80%82(%3E_%3C)%0A%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%E2%99%AA&url=https%3A%2F%2Fyaima-quiz.kanasann.com&hashtags=%E3%82%84%E3%81%84%E3%81%BE%E3%82%AF%E3%82%A4%E3%82%BA%2C%E5%85%AB%E9%87%8D%E5%B1%B1%2C%E6%B2%96%E7%B8%84', '_blank');
       }
     }
   }
@@ -38082,7 +38082,7 @@ var render = function() {
             ? _c("section", { staticClass: "alert_msg" }, [
                 _vm._m(0),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "quiz/" } }, [_vm._v("Back to TOP")])
+                _c("a", { attrs: { href: "quiz/" } }, [_vm._v("クイズTOPへ")])
               ])
             : _vm._e(),
           _vm._v(" "),

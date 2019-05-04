@@ -48,11 +48,6 @@ class QuizPostController extends Controller
 	//投稿されたデータをDBへ保存する
 	public function store(StorePost $request)
 	{
-		//画像ファイル名をランダムの文字列へ＆path変更
-		$file = $request->file('image_name');
-		$fileName = str_random(20) . '.' . $file->getClientOriginalExtension();
-		Image::make($file)->save(public_path('images/' . $fileName));
-
 		$quiz = new Quiz();
 		$quiz->user_id = $request->user()->id;
 		$quiz->category_id = $request->category_id;
@@ -62,7 +57,14 @@ class QuizPostController extends Controller
 		$quiz->uncorrect1 = $request->uncorrect1;
 		$quiz->uncorrect2 = $request->uncorrect2;
 		$quiz->explain_sentence = $request->explain_sentence;
-		$quiz->image_name = '/images/' . $fileName;
+
+		//画像ファイル名をランダムの文字列へ＆path変更
+		$file = $request->file('image_name');
+		if ($file != null) {
+			$fileName = str_random(20) . '.' . $file->getClientOriginalExtension();
+			Image::make($file)->save(public_path('images/' . $fileName));
+			$quiz->image_name = '/images/' . $fileName;
+		}
 
 		$quiz->save();
 

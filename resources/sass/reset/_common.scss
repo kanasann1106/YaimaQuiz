@@ -6,6 +6,12 @@ body {
   color: #555;
   font-family: "M PLUS Rounded 1c";
 }
+body,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 a {
   color: #fff;
 }
