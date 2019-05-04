@@ -1988,7 +1988,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       quizNum: 1,
-      totalQuizNum: 5,
+      totalQuizNum: 0,
       totalCorrectNum: 0,
       quizzes: [{
         title: '',
@@ -2034,9 +2034,10 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(this.axiosUrl).then(function (res) {
-        _this.quizzes = res.data; //クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
+        _this.quizzes = res.data;
+        _this.totalQuizNum = _this.quizzes.length; //クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
 
-        if (_this.quizzes.length) {
+        if (_this.totalQuizNum) {
           _this.hidden = true;
         } else {
           _this.alertMsg = true;
