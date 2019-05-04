@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html>
+@include('layouts.head')
 
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta property="og:site_name" content="" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="">
-	<meta property="og:description" content="">
-	<meta property="og:url" content="">
-	<meta property="og:image" content="">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-
-	<link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-
-	<title>クイズ</title>
+<title>八重山クイズ</title>
 </head>
 
 <body>
-	<div class="l-wrapper">
+	<div class="wrapper">
 		<!-- header -->
 		<div id="header-contents">
 			<quiz-header />
@@ -31,7 +14,7 @@
 			<quiz />
 		</div>
 		<!-- footer -->
-		<footer id="footer">
+		<footer id="footer" style="position: fixed;">
 			Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
 		</footer>
 	</div>

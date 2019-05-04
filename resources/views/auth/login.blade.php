@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
-  <title>Login | 八重山クイズ</title>
+@include('layouts.head')
+<title>Login | 八重山クイズ</title>
 </head>
 
 <body>
@@ -45,7 +38,7 @@
         <img src="{{asset('/images/facebook-icon.png')}}" alt="facebook-icon">
         <img src="{{asset('/images/google-icon.png')}}" alt="google-icon">
       </div>
-      <a href="/quiz" class="form-back_message">TOPへ　→</a>
+      <a href="/" class="form-back_message">TOPへ　→</a>
     </form>
 
   </main>

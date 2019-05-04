@@ -37786,6 +37786,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "header",
+    { staticClass: "fixed" },
     [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("quiz-menu")],
     1
   )
@@ -50693,7 +50694,7 @@ $(function () {
   }); // ハンバーガーとメニュー以外をクリックしたらナビメニューを閉じる
 
   $(document).on('click', function (e) {
-    if (!$(e.target).closest('.js-toggle-nav, .top-nav ul').length) {
+    if (!$(e.target).closest('.js-toggle-nav, .top-nav #accordion-menu').length) {
       $('.top-nav').removeClass('show');
       $('.js-toggle-nav').removeClass('active');
     }
