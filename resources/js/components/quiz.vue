@@ -50,7 +50,7 @@
 		data: function () {
 			return {
 				quizNum: 1,
-				totalQuizNum: 5,
+				totalQuizNum: 0,
 				totalCorrectNum: 0,
 				quizzes: [{ title: '', correct: '', uncorrect1: '', uncorrect2: '', image_name: '', explain_sentence: '' }],
 				aChoice: [],
@@ -86,8 +86,9 @@
 
 				axios.get(this.axiosUrl).then(res => {
 					this.quizzes = res.data;
+					this.totalQuizNum = this.quizzes.length
 					//クイズがある時はDOMを表示しクイズがない場合は無いですメッセージを表示
-					if (this.quizzes.length) {
+					if (this.totalQuizNum) {
 						this.hidden = true
 					} else {
 						this.alertMsg = true
