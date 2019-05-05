@@ -24,13 +24,13 @@ Route::resource('quiz_posts', 'User\QuizPostController');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');
-Route::get('quiz', 'QuizController@showQuiz');
-Route::get('quiz/{menuId}', 'QuizController@indexCatNum');
-Route::get('quiz/region/{islandId}', 'QuizController@indexRegNum');
+Route::get('/quiz', 'QuizController@showQuiz');
+Route::get('/quiz/{menuId}', 'QuizController@indexCatNum');
+Route::get('/quiz/region/{islandId}', 'QuizController@indexRegNum');
 
 // ajax通信
-Route::get('ajax/menu', 'Ajax\QuizController@getQuizAll');
-Route::get('quiz/ajax/menu{menuId}', 'Ajax\QuizController@getQuizByCategory');
+Route::get('/ajax/menu', 'Ajax\QuizController@getQuizAll');
+Route::get('/quiz/ajax/menu{menuId}', 'Ajax\QuizController@getQuizByCategory');
 Route::get('quiz/region/ajax/region{islandId}', 'Ajax\QuizController@getQuizByRegion');
-Route::get('ajax/category', 'Ajax\QuizController@getQuizCategory');
-Route::get('ajax/region', 'Ajax\QuizController@getRegion');
+Route::get('/ajax/category', 'Ajax\QuizController@getQuizCategory');
+Route::get('/ajax/region', 'Ajax\QuizController@getRegion');

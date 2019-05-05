@@ -38083,7 +38083,7 @@ var render = function() {
             ? _c("section", { staticClass: "alert_msg" }, [
                 _vm._m(0),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "quiz/" } }, [_vm._v("クイズTOPへ")])
+                _c("a", { attrs: { href: "/quiz" } }, [_vm._v("クイズTOPへ")])
               ])
             : _vm._e(),
           _vm._v(" "),

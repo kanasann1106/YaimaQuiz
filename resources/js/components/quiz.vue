@@ -23,7 +23,7 @@
 
 				<section class="alert_msg" v-if="alertMsg">
 					<p><i class="far mr-2 fa-lg fa-tired"></i>クイズはまだ登録されていません。<i class="far fa-lg fa-tired"></i></p>
-					<a href="quiz/">クイズTOPへ</a>
+					<a href="/quiz">クイズTOPへ</a>
 				</section>
 
 				<div id="explain" v-if="showExplain">
