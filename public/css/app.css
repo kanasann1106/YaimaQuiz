@@ -10881,6 +10881,14 @@ ul {
   font-weight: bold;
 }
 
+#explain .correct {
+  color: #e91e63;
+}
+
+#explain .uncorrect {
+  color: #1e88e5;
+}
+
 #explain p {
   font-size: 20px;
 }

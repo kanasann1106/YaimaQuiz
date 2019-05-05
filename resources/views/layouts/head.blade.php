@@ -10,7 +10,7 @@
   <meta property="og:title" content="やいまクイズ">
   <meta property="og:description" content="沖縄の南西に位置する八重山諸島(石垣島、西表島、竹富島、与那国島など)に関するクイズを楽しめるサービスです。訪れるだけではわからない島の魅力が発見できるかも！！">
   <meta property="og:url" content="https://yaeyama.kanasann.com">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="images/thumnail.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 

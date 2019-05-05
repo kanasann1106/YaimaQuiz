@@ -38090,11 +38090,11 @@ var render = function() {
           _vm.showExplain
             ? _c("div", { attrs: { id: "explain" } }, [
                 _vm.judgment
-                  ? _c("h2", [
+                  ? _c("h2", { staticClass: "correct" }, [
                       _c("i", { staticClass: "far fa-circle mr-4" }),
                       _vm._v("正解！")
                     ])
-                  : _c("h2", [
+                  : _c("h2", { staticClass: "uncorrect" }, [
                       _c("i", { staticClass: "fas fa-times mr-4" }),
                       _vm._v("不正解")
                     ]),

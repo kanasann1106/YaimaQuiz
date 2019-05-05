@@ -27,8 +27,8 @@
 				</section>
 
 				<div id="explain" v-if="showExplain">
-					<h2 v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
-					<h2 v-else><i class="fas fa-times mr-4"></i>不正解</h2>
+					<h2 class="correct" v-if="judgment"><i class="far fa-circle mr-4"></i>正解！</h2>
+					<h2 class="uncorrect" v-else><i class="fas fa-times mr-4"></i>不正解</h2>
 					<p><strong>解説：</strong>{{quizzes[quizNum-1].explain_sentence}}</p>
 					<button @click="next()" type="button" class="btn btn-default rounded-pill btn-block">次へ</button>
 				</div>
