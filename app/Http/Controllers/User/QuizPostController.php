@@ -93,11 +93,6 @@ class QuizPostController extends Controller
 	}
 	public function update(StorePost $request, $quiz_id)
 	{
-		//画像ファイル名をランダムの文字列へ＆path変更
-		$file = $request->file('image_name');
-		$fileName = str_random(20) . '.' . $file->getClientOriginalExtension();
-		Image::make($file)->save(public_path('images/' . $fileName));
-
 		$quiz = Quiz::findOrFail($quiz_id);
 		$quiz->category_id = $request->category_id;
 		$quiz->region_id = $request->region_id;
@@ -106,9 +101,17 @@ class QuizPostController extends Controller
 		$quiz->uncorrect1 = $request->uncorrect1;
 		$quiz->uncorrect2 = $request->uncorrect2;
 		$quiz->explain_sentence = $request->explain_sentence;
-		$quiz->image_name = '/images/' . $fileName;
+
+		//画像ファイル名をランダムの文字列へ＆path変更
+		$file = $request->file('image_name');
+		if ($file != null) {
+			$fileName = str_random(20) . '.' . $file->getClientOriginalExtension();
+			Image::make($file)->save(public_path('images/' . $fileName));
+			$quiz->image_name = '/images/' . $fileName;
+		}
 
 		$quiz->save();
+
 		return redirect('quiz_posts/' . $quiz->id);
 	}
 
