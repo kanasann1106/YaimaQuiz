@@ -8,8 +8,8 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-@import "reset/common.scss";
 @import "base/mixins";
+@import "reset/common.scss";
 @import "base/vars";
 @import "layout";
 @import "decoration";
