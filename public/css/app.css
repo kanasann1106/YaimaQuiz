@@ -10683,7 +10683,14 @@ a:hover {
 h1,
 h2,
 p {
+  line-height: 30px;
   margin: 0;
+}
+
+@media screen and (max-width: 549px) {
+  p {
+    font-size: 14px;
+  }
 }
 
 ul {
@@ -10795,9 +10802,9 @@ ul {
   font-size: 24px;
 }
 
-@media screen and (max-width: 856px) {
+@media screen and (max-width: 767px) {
   #question h1 {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
@@ -10889,8 +10896,10 @@ ul {
   color: #1e88e5;
 }
 
-#explain p {
-  font-size: 20px;
+@media screen and (min-width: 550px) {
+  #explain p {
+    font-size: 20px;
+  }
 }
 
 #explain button {
@@ -10899,12 +10908,19 @@ ul {
   margin: 16px auto 0 auto;
 }
 
+@media screen and (max-width: 549px) {
+  #explain button {
+    width: 50%;
+    height: 44px;
+  }
+}
+
 /* -------------------
 	result
 ---------------------*/
 
 #result {
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   border-radius: 24px;
   -webkit-border-radius: 24px;
   -moz-border-radius: 24px;
@@ -10915,7 +10931,7 @@ ul {
   position: absolute;
   top: 160px;
   left: 14%;
-  background: #eee;
+  background: #deebfb;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   -webkit-animation: SlideDown 1.5s;
           animation: SlideDown 1.5s;
@@ -10929,6 +10945,16 @@ ul {
 #result p {
   font-size: 24px;
   margin-bottom: 24px;
+}
+
+@media screen and (max-width: 549px) {
+  #result h1 {
+    font-size: 28px;
+  }
+
+  #result p {
+    font-size: 22px;
+  }
 }
 
 #result button {
@@ -11371,10 +11397,6 @@ ul {
 .can-body {
   width: 50%;
   margin: 16px 0;
-}
-
-.section-message {
-  line-height: 30px;
 }
 
 .news-list {

@@ -6,8 +6,8 @@
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     font-size: 24px;
-    @include mq-down(md2) {
-      font-size: 20px;
+    @include mq-down(md) {
+      font-size: 19px;
     }
   }
   .img-wrap {
@@ -80,19 +80,25 @@
     color: #1e88e5;
   }
   p {
-    font-size: 20px;
+    @include mq-up(sm) {
+      font-size: 20px;
+    }
   }
   button {
     width: 56%;
     height: 56px;
     margin: 16px auto 0 auto;
+    @include mq-down(sm) {
+      width: 50%;
+      height: 44px;
+    }
   }
 }
 /* -------------------
 	result
 ---------------------*/
 #result {
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   border-radius: 24px;
   -webkit-border-radius: 24px;
   -moz-border-radius: 24px;
@@ -103,7 +109,7 @@
   position: absolute;
   top: 160px;
   left: 14%;
-  background: #eee;
+  background: #deebfb;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   animation: SlideDown 1.5s;
   h1 {
@@ -113,6 +119,14 @@
   p {
     font-size: 24px;
     margin-bottom: 24px;
+  }
+  @include mq-down(sm) {
+    h1 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 22px;
+    }
   }
   button {
     margin-top: 24px;

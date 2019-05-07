@@ -21,7 +21,13 @@ a:hover {
 h1,
 h2,
 p {
+  line-height: 30px;
   margin: 0;
+}
+p {
+  @include mq-down(sm) {
+    font-size: 14px;
+  }
 }
 ul {
   list-style: none;
