@@ -35,14 +35,14 @@ class QuizController extends Controller
 	{
 		$totalCategoryNum = DB::table('region')->count();
 		if ($islandId > $totalCategoryNum || $islandId < 1) {
-			return Redirect( 'show_quiz');
+			return Redirect('show_quiz');
 		}
 		return self::showQuiz();
 	}
-	// public function register()
-	// {
-	// 	return view('auth/register');
-	// }
+	public function register()
+	{
+		return view('auth/register');
+	}
 	public function login()
 	{
 		return view('auth/login');
