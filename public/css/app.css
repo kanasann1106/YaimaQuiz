@@ -10662,6 +10662,8 @@ body {
 
 body {
   color: #555;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: "M PLUS Rounded 1c";
 }
 
@@ -11480,7 +11482,7 @@ header {
 
 header h1 a {
   display: block;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 64px;
   font-family: "Nico Moji";
 }
