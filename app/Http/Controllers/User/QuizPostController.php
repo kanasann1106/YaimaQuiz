@@ -13,6 +13,16 @@ use Log;
 
 class QuizPostController extends Controller
 {
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 	//投稿クイズ一覧
 	public function index()
 	{

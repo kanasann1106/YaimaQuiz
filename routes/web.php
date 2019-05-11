@@ -11,16 +11,15 @@
 |
 */
 
-//Route::get('/{app}', function () {
+// Route::get('/{app}', function () {
 //    return view('quiz/index');
-//})->where('app', '.*');
+// })->where('app', '.*');
 
 //Auth
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
 //クイズCRUD(only login user)
-Route::resource('quiz_posts', 'User\QuizPostController');
+Route::resource( '/mypage', 'User\QuizPostController');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');

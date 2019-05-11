@@ -18,8 +18,14 @@
         <li><a href="#about-yaeyama">八重山とは</a></li>
         <li><a href="#can">できること</a></li>
         <li><a href="#news">お知らせ</a></li>
-        <!-- <li><a href="#">登録</a></li>
-        <li><a href="#">ログイン</a></li> -->
+        @guest
+        @if(Route::has('register'))
+        <li><a href="/register">登録</a></li>
+        @endif
+        <li><a href="/login">ログイン</a></li>
+        @else
+        <li><a href="/mypage">マイページ</a></li>
+        @endguest
       </ul>
     </nav>
   </header>
