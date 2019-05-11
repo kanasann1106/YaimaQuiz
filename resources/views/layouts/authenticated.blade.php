@@ -17,10 +17,13 @@
       <nav class="top-nav">
         <ul>
           <li><a href="/quiz">クイズに挑戦</a></li>
-          <li><a href="/quiz_posts/">クイズ一覧</a></li>
-          <li><a href="/quiz_posts/create">クイズ作成</a></li>
-          <li><a href="/home">マイページ</a></li>
-          <li><a href="#">ログアウト</a></li>
+          <li><a href="/mypage/create">クイズ作成</a></li>
+          <li><a href="/mypage/setting">ユーザー設定</a></li>
+          <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">ログアウト</a></li>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
         </ul>
       </nav>
     </header>
@@ -30,7 +33,7 @@
     </main>
 
     <!-- footer -->
-    <footer id="footer">
+    <footer id="footer" class="fixed">
       Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
     </footer>
   </div>
