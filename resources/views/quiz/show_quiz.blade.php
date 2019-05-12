@@ -14,7 +14,7 @@
 			<quiz />
 		</div>
 		<!-- footer -->
-		<footer id="footer" style="position: fixed;">
+		<footer id="footer">
 			Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
 		</footer>
 	</div>

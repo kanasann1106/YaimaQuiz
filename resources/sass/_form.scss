@@ -19,13 +19,13 @@
   @include mq-down(sm) {
     width: 100%;
     height: 100%;
-    border-radius: initial;
-    -webkit-border-radius: initial;
-    -moz-border-radius: initial;
+    // border-radius: initial;
+    // -webkit-border-radius: initial;
+    // -moz-border-radius: initial;
   }
   &-heading {
     text-align: center;
-    margin: 48px 0;
+    margin: 24px 0;
     h1 {
       color: #ffffff;
       font-size: 24px;
@@ -59,7 +59,7 @@
     display: block;
     font-size: 22px;
     color: #fff;
-    margin-top: 32px;
+    margin: 32px 0;
     text-align: right;
   }
   &-image-area {

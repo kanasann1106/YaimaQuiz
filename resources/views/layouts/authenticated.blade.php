@@ -33,7 +33,7 @@
     </main>
 
     <!-- footer -->
-    <footer id="footer" class="fixed">
+    <footer id="footer">
       Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
     </footer>
   </div>

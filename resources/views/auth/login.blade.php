@@ -42,11 +42,6 @@
     </form>
 
   </main>
-  <!-- footer -->
-  <footer id="footer" class="fixed">
-    Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
-  </footer>
-
 </body>
 
 </html>
