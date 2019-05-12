@@ -11179,7 +11179,6 @@ ul {
 
 @media screen and (max-width: 549px) {
   .l-form {
-    height: 100%;
     padding: 0;
   }
 }
@@ -11189,7 +11188,7 @@ ul {
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8x;
-  background-color: #40c1fcb3;
+  background-color: #7ad3fc;
   width: 64%;
   margin: 0 auto;
 }
@@ -11204,6 +11203,9 @@ ul {
   .form {
     width: 100%;
     height: 100%;
+    border-radius: initial;
+    -webkit-border-radius: initial;
+    -moz-border-radius: initial;
   }
 }
 
@@ -11245,6 +11247,10 @@ ul {
 
 .form-check {
   margin-bottom: 16px;
+}
+
+.form-check label {
+  cursor: pointer;
 }
 
 .form-back_message {
