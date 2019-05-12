@@ -1,7 +1,7 @@
 .l-form {
   padding: 32px 0;
   @include mq-down(sm) {
-    height: 100%;
+    // height: 100%;
     padding: 0;
   }
 }
@@ -10,7 +10,7 @@
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8x;
-  background-color: #40c1fcb3;
+  background-color: #7ad3fc;
   width: 64%;
   margin: 0 auto;
   @include mq-down() {
@@ -19,9 +19,9 @@
   @include mq-down(sm) {
     width: 100%;
     height: 100%;
-    // border-radius: initial;
-    // -webkit-border-radius: initial;
-    // -moz-border-radius: initial;
+    border-radius: initial;
+    -webkit-border-radius: initial;
+    -moz-border-radius: initial;
   }
   &-heading {
     text-align: center;
@@ -54,6 +54,9 @@
   }
   &-check {
     margin-bottom: 16px;
+    label {
+      cursor: pointer;
+    }
   }
   &-back_message {
     display: block;

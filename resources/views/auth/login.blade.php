@@ -27,8 +27,10 @@
       <button type="submit" class="btn btn-default btn-large">Login</button>
       <div class="form-message_list">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
-          <label class="form-check-label">次回から自動ログインする</label>
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
+            次回から自動ログインする
+          </label>
         </div>
         <a href="{{ route('password.request') }}" class="form-message">パスワードをお忘れですか？</a>
       </div>
