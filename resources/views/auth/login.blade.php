@@ -13,15 +13,15 @@
       </div>
 
       <div class="form-group">
-        <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+        <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email">
         @if($errors->has('email'))
-        <span>{{ $errors->first('email') }}</span>
+        <span class="error_msg">{{ $errors->first('email') }}</span>
         @endif
       </div>
       <div class="form-group">
-        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password(6文字)" required>
+        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password(6文字)">
         @if($errors->has('password'))
-        <span>{{ $errors->first('password') }}</span>
+        <span class="error_msg">{{ $errors->first('password') }}</span>
         @endif
       </div>
       <button type="submit" class="btn btn-default btn-large">Login</button>
