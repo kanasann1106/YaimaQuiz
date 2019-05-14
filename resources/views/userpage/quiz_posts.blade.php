@@ -11,11 +11,8 @@
         <tr>
           <th>{{ __('NO.') }}</th>
           <th>{{ __('Title') }}</th>
-          <th>{{ __('correct') }}</th>
-          <th>{{ __('uncorrect1') }}</th>
-          <th>{{ __('uncorrect2') }}</th>
-          <th>{{ __('explain_sentence') }}</th>
-          <th>{{ __('image_name') }}</th>
+          <th>{{ __('Category') }}</th>
+          <th>{{ __('地域') }}</th>
           <th>{{ __('updated_at') }}</th>
         </tr>
       </thead>
@@ -26,11 +23,8 @@
           <td>
             <a href="{{ url('quiz_posts/'.$quiz->id) }}">{{ $quiz->title }}</a>
           </td>
-          <td>{{ $quiz->correct }}</td>
-          <td>{{ $quiz->uncorrect1 }}</td>
-          <td>{{ $quiz->uncorrect2 }}</td>
-          <td>{{ $quiz->explain_sentence }}</td>
-          <td>{{ $quiz->image_name }}</td>
+          <td>{{ $quiz->user.email }}</td>
+          <td>{{ $quiz->region }}</td>
           <td>{{ $quiz->updated_at }}</td>
         </tr>
         @endforeach

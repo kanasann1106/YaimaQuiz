@@ -11231,6 +11231,7 @@ ul {
 
 .form-group .error_msg {
   padding-left: 24px;
+  color: #e3342f;
 }
 
 .form-control {

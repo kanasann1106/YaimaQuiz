@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/{app}', function () {
-//    return view('quiz/index');
-// })->where('app', '.*');
-
 //Auth
 Auth::routes();
 
