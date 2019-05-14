@@ -122,7 +122,7 @@ class QuizPostController extends Controller
 
 		$quiz->save();
 
-		return redirect('quiz_posts/' . $quiz->id);
+		return redirect('/mypage');
 	}
 
 	//削除
@@ -130,6 +130,6 @@ class QuizPostController extends Controller
 	{
 		$quiz = Quiz::findOrFail($quiz_id);
 		$quiz->delete();
-		return redirect('/quiz_posts');
+		return redirect('/mypage');
 	}
 }

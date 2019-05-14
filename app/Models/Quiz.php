@@ -10,8 +10,14 @@ class Quiz extends Model
 	{
 		return $this->belongsTo('App\User');
 	}
+
 	public function category()
 	{
-		return $this->belongsTo('App\User');
+		return $this->belongsTo('App\Models\Category');
+	}
+
+	public function region()
+	{
+		return $this->belongsTo('App\Models\Region');
 	}
 }

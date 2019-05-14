@@ -3,7 +3,7 @@
 @section('title','クイズ編集')
 
 @section('content')
-<form method="post" action="{{ url('quiz_posts/'.$quiz->id) }}" enctype="multipart/form-data" class="form">
+<form method="post" action="{{ url('mypage/'.$quiz->id) }}" enctype="multipart/form-data" class="form">
   @csrf
   @method('PUT')
   <div class="form-heading">
