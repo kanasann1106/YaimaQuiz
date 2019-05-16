@@ -73,6 +73,8 @@ class QuizController extends Controller
 				['delete_flg', '=', 0],
 				['region_id', '=', $islandId]
 			])
+			->inRandomOrder()
+			->take(5)
 			->get();
 
 		return json_encode($select, JSON_UNESCAPED_UNICODE);
