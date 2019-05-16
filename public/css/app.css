@@ -11234,11 +11234,30 @@ ul {
   color: #e3342f;
 }
 
+.form-group .attention {
+  margin: 0 4px;
+  padding: 2px 8px;
+  background: #f97b71;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  color: #fff;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
 .form-control {
   height: 48px;
   border-radius: 40px;
   padding: 0 24px;
   background-color: #ffffffc7;
+}
+
+.form .update-date {
+  text-align: right;
+  margin: 12px 0;
 }
 
 .form-message_list {
@@ -11315,6 +11334,12 @@ ul {
   box-shadow: 0 1px #facf4cf7;
   background: #facf4cf7;
   color: #fff;
+}
+
+.btn-edit {
+  color: #fff;
+  background-color: #26A69A;
+  border-color: #26A69A;
 }
 
 .btn-large {
@@ -11418,6 +11443,26 @@ ul {
 
 .news-item time {
   margin-right: 8px;
+}
+
+.mypage-quizlist .table td {
+  padding: 0.5rem;
+}
+
+.mypage-quizlist h1 {
+  font-size: 20px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.mypage-quizlist .btn {
+  padding: 4px 20px;
+}
+
+@media screen and (max-width: 549px) {
+  .mypage-quizlist .btn {
+    padding: 2px 12px;
+  }
 }
 
 /* -------------------
