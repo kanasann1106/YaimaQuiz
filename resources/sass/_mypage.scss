@@ -1,0 +1,18 @@
+.mypage {
+  &-quizlist {
+    .table td {
+      padding: 0.5rem;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 16px 0;
+      text-align: center;
+    }
+    .btn {
+      padding: 4px 20px;
+      @include mq-down(sm) {
+        padding: 2px 12px;
+      }
+    }
+  }
+}

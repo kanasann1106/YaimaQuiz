@@ -12,9 +12,10 @@
   </div>
 
   <div class="form-group">
+    <div class="update-date">最終更新日：<time>{{ $quiz->updated_at->format('Y/m/d') }}</time></div>
     <div class="row">
       <div class="col-6">
-        <label>カテゴリ選択</label>
+        <label>カテゴリ選択<span class="attention">必須</span></label>
         <select class="form-control" id="category" name="category_id">
           @foreach ($categories as $category)
           <option value="{{ $category->id }}" {{ $category->id == old('category_id',$quiz->category_id) ? 'selected' : '' }}>
@@ -24,7 +25,7 @@
         </select>
       </div>
       <div class="col-6">
-        <label>地域選択</label>
+        <label>地域選択<span class="attention">必須</span></label>
         <select class="form-control" id="region" name="region_id">
           @foreach($region as $island)
           <option value="{{ $island->id }}" {{ $island->id == old('region_id', $quiz->region_id) ? 'selected' : '' }}>
@@ -36,7 +37,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label>問題文を入力</label>
+    <label>問題文を入力<span class="attention">必須</span></label>
     <textarea cols="40" rows="3" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" placeholder="例）日本最西端の島はどこでしょう？">
     {{ old('title', $quiz->title) }}
     </textarea>
@@ -47,8 +48,8 @@
     @endif
   </div>
   <div class="form-group">
-    <label>選択肢を入力</label>
-    <span>注意</span>
+    <label>選択肢を入力<span class="attention">必須</span></label>
+    <p>注意</p>
     <p>・同じ内容の選択肢は入力しないでください。<br>
       ・クイズの回答は一番上に入力してください。<br>
       ・カテゴリで選択したことに関するクイズを投稿すること。</p>
@@ -76,7 +77,7 @@
   </div>
   <!-- image -->
   <div class="form-group">
-    <label>画像挿入（任意）</label>
+    <label>画像挿入</label>
     <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name" value="{{ old('image_name', $quiz->image_name) }}">
     @if($errors->has('image_name'))
     <span class="invalid-feedback" role="alert">
@@ -86,7 +87,7 @@
   </div>
   <!-- explain -->
   <div class="form-group">
-    <label>解説を入力</label>
+    <label>解説を入力　<span class="attention">必須</span></label>
     <textarea cols="40" rows="5" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" placeholder="解説）解説を書きます">
     {{ old('explain_sentence', $quiz->explain_sentence) }}
     </textarea>

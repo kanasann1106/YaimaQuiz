@@ -42,12 +42,28 @@
       padding-left: 24px;
       color: #e3342f;
     }
+    .attention {
+      margin: 0 4px;
+      padding: 2px 8px;
+      background: #f97b71;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      color: #fff;
+    }
+    label {
+      font-weight: bold;
+    }
   }
   &-control {
     height: 48px;
     border-radius: 40px;
     padding: 0 24px;
     background-color: #ffffffc7;
+  }
+  .update-date {
+    text-align: right;
+    margin: 12px 0;
   }
   &-message_list {
     text-align: center;
