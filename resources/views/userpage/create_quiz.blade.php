@@ -14,7 +14,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-6">
-        <label>カテゴリ選択</label>
+        <label>カテゴリ<span class="attention">必須</span></label>
         <select class="form-control" id="category" name="category_id">
           @foreach ($categories as $category)
           <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}>
@@ -24,7 +24,7 @@
         </select>
       </div>
       <div class="col-6">
-        <label>地域選択</label>
+        <label>地域<span class="attention">必須</span></label>
         <select class="form-control" id="region" name="region_id">
           @foreach($region as $island)
           <option value="{{ $island->id }}" {{ $island->id == old('region_id') ? 'selected' : '' }}>
@@ -36,7 +36,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label>問題文を入力</label>
+    <label>問題文を入力<span class="attention">必須</span></label>
     <textarea cols="40" rows="3" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" placeholder="例）日本最西端の島はどこでしょう？">
     {{ old('title') }}
     </textarea>
@@ -47,7 +47,7 @@
     @endif
   </div>
   <div class="form-group">
-    <label>選択肢を入力</label>
+    <label>選択肢を入力<span class="attention">必須</span></label>
     <span>注意</span>
     <p>・同じ内容の選択肢は入力しないでください。<br>
       ・クイズの回答は一番上に入力してください。<br>
@@ -76,7 +76,7 @@
   </div>
   <!-- image -->
   <div class="form-group form-image-area">
-    <label>画像挿入（任意）</label>
+    <label>画像挿入</label>
     <i class="far fa-image fa-5x"></i>
     <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }} js-area-drop" name="image_name">
     <img class="form-image" src="" alt="投稿画像">
@@ -88,7 +88,7 @@
   </div>
   <!-- explain -->
   <div class="form-group">
-    <label>解説を入力</label>
+    <label>解説を入力<span class="attention">必須</span></label>
     <textarea cols="40" rows="3" class="form-control{{ $errors->has('explain_sentence') ? ' is-invalid' : '' }}" name="explain_sentence" value="{{ old('explain_sentence') }}" placeholder="解説）解説を書きます">
     {{ old('explain_sentence') }}
     </textarea>
