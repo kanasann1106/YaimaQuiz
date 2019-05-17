@@ -17,10 +17,14 @@
       color: #fff;
     }
   }
-  &-edit{
+  &-edit {
     color: #fff;
-    background-color: #26A69A;
-    border-color:#26A69A;
+    background-color: #26a69a;
+    border-color: #26a69a;
+    &:hover {
+      color: #fff;
+      background-color: #209287;
+    }
   }
   &-large {
     width: 100%;

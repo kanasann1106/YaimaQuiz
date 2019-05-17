@@ -10,6 +10,6 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'failed'   => 'アカウントが見つかりません。もう再度入力してください。',
+    'failed'   => 'メールアドレスまたはパスワードが正しくありません。',
     'throttle' => 'ログインの試行回数が多すぎます。:seconds 秒後にお試しください。',
 ];
