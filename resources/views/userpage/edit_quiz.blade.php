@@ -78,10 +78,10 @@
   <!-- image -->
   <div class="form-group form-image-area">
     <label>画像挿入</label>
-    <i class="far fa-image fa-5x"></i>
-    <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }} js-area-drop" name="image_name">
-    <div class="form-image">
-      <img class="" src="{{ old('image_name', $quiz->image_name) }}" style="@if(!($quiz->image_name)) {{ 'display:none' }} @endif" alt="投稿画像">
+    <div class="form-image js-area-drop">
+      <i class="far fa-image fa-5x"></i>
+      <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }}" name="image_name">
+      <img class="prev-img" src="{{ old('image_name', $quiz->image_name) }}" style="@if(!($quiz->image_name)) {{ 'display:none' }} @endif" alt="投稿画像">
     </div>
     @if($errors->has('image_name'))
     <span class="invalid-feedback" role="alert">
