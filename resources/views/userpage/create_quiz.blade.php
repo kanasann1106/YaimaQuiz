@@ -3,7 +3,7 @@
 @section('title','クイズ作成')
 
 @section('content')
-<form method="post" action="{{ url('quiz_posts') }}" enctype="multipart/form-data" class="form">
+<form method="post" action="{{ url('mypage') }}" enctype="multipart/form-data" class="form">
   @csrf
   @method('POST')
   <div class="form-heading">
@@ -77,9 +77,11 @@
   <!-- image -->
   <div class="form-group form-image-area">
     <label>画像挿入</label>
-    <i class="far fa-image fa-5x"></i>
-    <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }} js-area-drop" name="image_name">
-    <img class="form-image" src="" alt="投稿画像">
+    <div class="form-image js-area-drop">
+      <i class="far fa-image fa-5x"></i>
+      <input type="file" class="form-control-file{{ $errors->has('image_name') ? ' is-invalid' : '' }} input-file" name="image_name">
+      <img class="prev-img" src="" style="@if(!(old('image_name'))) {{ 'display:none' }} @endif" alt="投稿画像">
+    </div>
     @if($errors->has('image_name'))
     <span class="invalid-feedback" role="alert">
       {{ $errors->first('image_name') }}

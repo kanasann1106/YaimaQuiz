@@ -27,11 +27,11 @@ class StorePost extends FormRequest
             'category_id' => 'required',
             'region_id' => 'required',
             'title' => 'required|max:255',
-            'correct' => 'required|max:255|different:uncorrect1|different:uncorrect2',
-            'uncorrect1' => 'required|max:255|different:correct|different:uncorrect2',
-            'uncorrect2' => 'required|max:255|different:correct|different:uncorrect1',
+            'correct' => 'bail|required|max:255|different:uncorrect1|different:uncorrect2',
+            'uncorrect1' => 'bail|required|max:255|different:correct|different:uncorrect2',
+            'uncorrect2' => 'bail|required|max:255|different:correct|different:uncorrect1',
             'explain_sentence' => 'required|max:255',
-            'image_name' => 'max:10240|mimes:jpg,jpeg,png',
+            'image_name' => 'bail|max:10240|mimes:jpg,jpeg,png',
         ];
     }
 
@@ -41,7 +41,7 @@ class StorePost extends FormRequest
             'correct.different'  => '同じ内容の選択肢は入力できません。',
             'uncorrect1.different' => '同じ内容の選択肢は入力できません。',
             'uncorrect2.different' => '同じ内容の選択肢は入力できません。',
-            'image_name.mimes'=> 'jpg, jpeg, pngタイプのファイルを指定してください。'
+            'image_name.mimes' => 'jpg, jpeg, pngタイプのファイルを指定してください。'
         ];
     }
 }

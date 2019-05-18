@@ -86,15 +86,15 @@
     position: relative;
     i {
       position: absolute;
-      top: 75px;
-      left: 80px;
+      top: 47px;
+      left: 34%;
+      color: #aaa;
       @include mq-down(sm) {
         left: 35%;
       }
     }
     input {
       opacity: 0;
-      width: 50%;
       height: 165px;
       position: relative;
       top: 0;
@@ -106,12 +106,9 @@
     }
   }
   &-image {
+    position: relative;
     width: 50%;
     height: 165px;
-    position: absolute;
-    top: 31px;
-    left: 0;
-
     background-color: #ffffffc7;
     border-radius: 16px;
     img {
@@ -119,6 +116,8 @@
       width: 100%;
       height: 100%;
       border-radius: 16px;
+      position: absolute;
+      top: 0;
     }
     @include mq-down(sm) {
       width: 100%;

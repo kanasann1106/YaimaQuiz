@@ -78,7 +78,7 @@ class QuizPostController extends Controller
 
 		$quiz->save();
 
-		return redirect('quiz_posts/' . $quiz->id);
+		return redirect('/mypage');
 	}
 
 	//クイズ編集
