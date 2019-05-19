@@ -16,7 +16,6 @@ class QuizController extends Controller
 	{
 		$quizzes = DB::table('quizzes')
 			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
-			->where('delete_flg', '=', 0)
 			->inRandomOrder()
 			->take(5)
 			->get();
@@ -30,7 +29,6 @@ class QuizController extends Controller
 	{
 		$quizCategories = DB::table('categories')
 			->select('id', 'name')
-			->where('delete_flg', '=', 0)
 			->get();
 
 		return json_encode($quizCategories, JSON_UNESCAPED_UNICODE);
@@ -43,7 +41,6 @@ class QuizController extends Controller
 		$select = DB::table('quizzes')
 			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
 			->where([
-				['delete_flg', '=', 0],
 				['category_id', '=', $menuId]
 			])
 			->get();
@@ -57,7 +54,6 @@ class QuizController extends Controller
 	{
 		$region = DB::table('region')
 			->select('id', 'name')
-			->where('delete_flg', '=', 0)
 			->get();
 
 		return json_encode($region, JSON_UNESCAPED_UNICODE);
@@ -70,7 +66,6 @@ class QuizController extends Controller
 		$select = DB::table('quizzes')
 			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
 			->where([
-				['delete_flg', '=', 0],
 				['region_id', '=', $islandId]
 			])
 			->inRandomOrder()
