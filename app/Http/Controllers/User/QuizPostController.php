@@ -26,18 +26,23 @@ class QuizPostController extends Controller
 	//投稿クイズ一覧
 	public function index()
 	{
-		$quiz_posts = Quiz::latest()->get();
+		$id = Auth::id();
+		$quiz_posts = Quiz::latest()
+			->where([
+				['user_id', '=', $id]
+			])
+			->get();
 		return view('userpage.quiz_posts', ['quiz_posts' => $quiz_posts]);
 	}
 
 	//クイズ詳細
-	public function show($quiz_id)
-	{
-		$quiz = Quiz::findOrFail($quiz_id);
-		return view('userpage.detail_quiz', [
-			'quiz' => $quiz,
-		]);
-	}
+	// public function show($quiz_id)
+	// {
+	// 	$quiz = Quiz::findOrFail($quiz_id);
+	// 	return view('userpage.detail_quiz', [
+	// 		'quiz' => $quiz,
+	// 	]);
+	// }
 
 	//クイズ作成フォーム
 	public function create()
@@ -45,11 +50,9 @@ class QuizPostController extends Controller
 		// カテゴリと地域をviewに渡す
 		$categories = DB::table('categories')
 			->select('id', 'name')
-			->where('delete_flg', '=', 0)
 			->get();
 		$region = DB::table('region')
 			->select('id', 'name')
-			->where('delete_flg', '=', 0)
 			->get();
 
 		return view('userpage.create_quiz', compact('categories', 'region'));
@@ -87,11 +90,9 @@ class QuizPostController extends Controller
 		// カテゴリと地域をviewに渡す
 		$categories = DB::table('categories')
 			->select('id', 'name')
-			->where('delete_flg', '=', 0)
 			->get();
 		$region = DB::table('region')
 			->select('id', 'name')
-			->where('delete_flg', '=', 0)
 			->get();
 
 		$quiz = Quiz::findOrFail($quiz_id);

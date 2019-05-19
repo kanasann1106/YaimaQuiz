@@ -34,12 +34,12 @@
         </div>
         <a href="{{ route('password.request') }}" class="form-message">パスワードをお忘れですか？</a>
       </div>
-      <p class="title-border">or</p>
+      <!-- <p class="title-border">or</p>
       <div class="l-sns_list">
         <img src="{{asset('/images/twitter-icon.png')}}" alt="twitter-icon">
         <img src="{{asset('/images/facebook-icon.png')}}" alt="facebook-icon">
         <img src="{{asset('/images/google-icon.png')}}" alt="google-icon">
-      </div>
+      </div> -->
       <a href="/" class="form-back_message">TOPへ　→</a>
     </form>
 
