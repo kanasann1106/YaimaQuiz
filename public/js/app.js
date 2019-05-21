@@ -50688,7 +50688,21 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(function () {
-  // ハンバーガーメニュー
+  //アニメーション
+  $(window).on('load scroll', function () {
+    var elem = $('.animated');
+    elem.each(function () {
+      var isAnimate = $(this).data('animate');
+      var elemOffset = $(this).offset().top;
+      var scrollPos = $(window).scrollTop();
+      var wh = $(window).height();
+
+      if (scrollPos > elemOffset - wh + wh / 2) {
+        $(this).addClass(isAnimate);
+      }
+    });
+  }); // ハンバーガーメニュー
+
   $('.js-toggle-nav').on('click', function (e) {
     $('.top-nav').toggleClass('show');
     $(this).toggleClass('active');

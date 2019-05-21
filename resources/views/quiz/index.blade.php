@@ -31,7 +31,7 @@
   </header>
   <main>
     <section class="l-section l-section-top js-slider">
-      <div class="top-copy">
+      <div class="top-copy animated" data-animate="fadeIn">
         <div class="top-message">
           訪れるだけではわからない魅力をクイズで。
         </div>
@@ -58,12 +58,12 @@
     </section>
     <section id="can" class="l-section l-default">
       <h2 class="section-title title-center title-border">できること</h2>
-      <div class="can">
+      <div class=" can">
         <div class="can-head">
           <h3>01</h3>
           <p>クイズに挑戦！</p>
         </div>
-        <img class="can-body" src="images/can01.png" alt="できること01">
+        <img class="animated can-body" data-animate="bounce" src="images/can01.png" alt="できること01">
         <div class="can-text">
           <p>やいまクイズを色々なジャンルから楽しむ事ができます。<br>
             一度訪れた事がある方も八重山について知らないことがまだまだたくさんあるはず！</p>
@@ -74,7 +74,7 @@
           <h3>02</h3>
           <p>クイズを作成<span class="notice">現在開発中</span></p>
         </div>
-        <img class="can-body" src="images/can02.png" alt="できること02">
+        <img class="animated can-body" data-animate="bounce" src="images/can02.png" alt="できること02">
         <div class="can-text">
           <p>地元の人、地元以外の人、誰でも八重山に関するクイズを作成することができます。<br>
             あなたが作成したクイズをみんなに解いてもらおう！</p>
@@ -85,7 +85,7 @@
           <h3>03</h3>
           <p>クイズを管理<span class="notice">現在開発中</span></p>
         </div>
-        <img class="can-body" src="images/can03.png" alt="できること03">
+        <img class="animated can-body" data-animate="bounce" src=" images/can03.png" alt="できること03">
         <div class="can-text">
           <p>作成したクイズをマイページから管理することができます。<br>
             今まで作成したクイズを振り返ることができるよ！</p>

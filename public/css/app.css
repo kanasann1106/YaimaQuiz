@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -11383,8 +11383,6 @@ ul {
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
 }
 
 .top-link {
@@ -11456,7 +11454,7 @@ ul {
 }
 
 .can-body {
-  width: 50%;
+  width: 100%;
   margin: 16px 0;
 }
 
