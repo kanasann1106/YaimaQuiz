@@ -5,6 +5,7 @@
 @section('content')
 
 <div class="container mypage-quizlist">
+  @if(count($quiz_posts)=== 1)
   <h1>@yield('title')</h1>
   <div class="table-responsive">
     <table class="table table-striped">
@@ -14,7 +15,6 @@
           <th style="width:400px">{{ __('タイトル') }}</th>
           <th style="width:80px">{{ __('編集') }}</th>
           <th style="width:80px">{{ __('削除') }}</th>
-
         </tr>
       </thead>
       <tbody>
@@ -22,7 +22,6 @@
         <tr>
           <td>{{ $key+1 }}</td>
           <td>{{ $quiz->title }}</td>
-          <!-- <td></td> -->
           <td>
             <a href="{{ url('mypage/'.$quiz->id.'/edit') }}" class="btn btn-edit">
               <i class="fas fa-pencil-alt"></i>
@@ -41,6 +40,12 @@
         @endforeach
       </tbody>
     </table>
+    @else
+    <p class="text-center my-5">まだ、作成したクイズはありません。<br>クイズを作成してみよう！</p>
+    <div class="top-link">
+      <a href="/mypage/create">クイズを作成<i class="fas fa-pencil-alt ml-2"></i></a>
+    </div>
+    @endif
   </div>
 </div>
 @endsection
