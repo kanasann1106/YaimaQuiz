@@ -6,7 +6,7 @@
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    animation: fadeIn 2s;
+    // animation: fadeIn 2s;
   }
   &-link {
     width: 240px;
@@ -68,7 +68,7 @@
     }
   }
   &-body {
-    width: 50%;
+    width: 100%;
     margin: 16px 0;
   }
 }
