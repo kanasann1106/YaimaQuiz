@@ -15,7 +15,10 @@
 Auth::routes();
 
 //クイズCRUD(only login user)
-Route::resource( '/mypage', 'User\QuizPostController');
+Route::resource('/mypage', 'User\QuizPostController', ['except' => ['show']]);
+
+//setting
+Route::get('/mypage/setting', 'User\SettingController@showPage');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');
