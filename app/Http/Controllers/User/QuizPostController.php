@@ -36,13 +36,10 @@ class QuizPostController extends Controller
 	}
 
 	//クイズ詳細
-	// public function show($quiz_id)
-	// {
-	// 	$quiz = Quiz::findOrFail($quiz_id);
-	// 	return view('userpage.detail_quiz', [
-	// 		'quiz' => $quiz,
-	// 	]);
-	// }
+	public function show()
+	{
+		return view('userpage.setting');
+	}
 
 	//クイズ作成フォーム
 	public function create()

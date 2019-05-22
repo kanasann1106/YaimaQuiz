@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container mypage-quizlist">
-  @if(count($quiz_posts)=== 1)
+  @if(count($quiz_posts)!= 0)
   <h1>@yield('title')</h1>
   <div class="table-responsive">
     <table class="table table-striped">
