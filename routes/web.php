@@ -19,6 +19,7 @@ Route::resource('/mypage', 'User\QuizPostController', ['except' => ['show']]);
 
 //setting
 Route::get('/mypage/setting', 'User\SettingController@showPage');
+Route::get('/withdraw', 'User\SettingController@withdraw');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');

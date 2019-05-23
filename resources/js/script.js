@@ -33,8 +33,8 @@ $(function () {
 	});
 
 	// 画像ライブプレビュー
-	var $dropArea = $('.js-area-drop');
-	var $fileInput = $('.input-file');
+	const $dropArea = $('.js-area-drop');
+	const $fileInput = $('.input-file');
 	$dropArea.on('dragover', function (e) {
 		e.stopPropagation();
 		e.preventDefault();
@@ -47,7 +47,7 @@ $(function () {
 	});
 	$fileInput.on('change', function (e) {
 		$dropArea.css('border', 'none');
-		var file = this.files[0],
+		const file = this.files[0],
 			$img = $(this).siblings('.prev-img'),
 			fileReader = new FileReader();
 
@@ -56,5 +56,24 @@ $(function () {
 		};
 
 		fileReader.readAsDataURL(file);
+	});
+
+	//アラートポップアップ
+	const $withdrawMenu = $('.js-alert');
+	const $alert = $('#alert');
+	const $withdraw = $('#withdraw');
+	const $cancel = $('#cancel');
+	const $overlay = $('#overlay');
+
+	$withdrawMenu.on('click', function () {
+		$alert.addClass('is-active');
+		$overlay.addClass('is-active');
+	});
+	$cancel.on('click', function () {
+		$alert.removeClass('is-active');
+		$overlay.removeClass('is-active');
+	});
+	$withdraw.on('click', function () {
+		window.location.href = "/withdraw";
 	});
 });
