@@ -50738,6 +50738,23 @@ $(function () {
     };
 
     fileReader.readAsDataURL(file);
+  }); //アラートポップアップ
+
+  var $withdrawMenu = $('.js-alert');
+  var $alert = $('#alert');
+  var $withdraw = $('#withdraw');
+  var $cancel = $('#cancel');
+  var $overlay = $('#overlay');
+  $withdrawMenu.on('click', function () {
+    $alert.addClass('is-active');
+    $overlay.addClass('is-active');
+  });
+  $cancel.on('click', function () {
+    $alert.removeClass('is-active');
+    $overlay.removeClass('is-active');
+  });
+  $withdraw.on('click', function () {
+    window.location.href = "/withdraw";
   });
 });
 
