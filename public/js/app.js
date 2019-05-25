@@ -1829,24 +1829,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var eventHub = global.eventHub = new Vue();
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'QuizMenu',
+  name: "QuizMenu",
   data: function data() {
     return {
       categories: [],
-      region: [] // logoutUrl:
-
+      region: []
     };
   },
   created: function created() {
     this.getQuizCategories(), this.getRegion();
   },
   methods: {
+    auth: function auth() {
+      var url = "/ajax/auth";
+      axios.get(url).then(function (res) {
+        var auth = res.data;
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
     getQuizCategories: function getQuizCategories() {
       var _this = this;
 
-      var url = '/ajax/category';
+      var url = "/ajax/category";
       axios.get(url).then(function (res) {
         _this.categories = res.data;
       }).catch(function (error) {
@@ -1856,7 +1877,7 @@ var eventHub = global.eventHub = new Vue();
     getRegion: function getRegion() {
       var _this2 = this;
 
-      var url = '/ajax/region';
+      var url = "/ajax/region";
       axios.get(url).then(function (res) {
         _this2.region = res.data;
       }).catch(function (error) {
@@ -37860,7 +37881,7 @@ var render = function() {
                 "aria-expanded": "false"
               }
             },
-            [_vm._v("\n        地域\n      ")]
+            [_vm._v("地域")]
           ),
           _vm._v(" "),
           _c(
@@ -37896,7 +37917,7 @@ var render = function() {
                 "aria-expanded": "false"
               }
             },
-            [_vm._v("\n        地域\n      ")]
+            [_vm._v("地域")]
           ),
           _vm._v(" "),
           _c(
@@ -37916,7 +37937,9 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _vm._m(0),
+        _vm._v(" "),
+        _vm.auth ? _c("li", [_vm._m(1)]) : _vm._e()
       ],
       2
     )
@@ -37928,6 +37951,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [_c("a", { attrs: { href: "/quiz" } }, [_vm._v("すべて")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/mypage" } }, [
+      _c("i", { staticClass: "fas fa-home mr-2" }),
+      _vm._v("HOME\n      ")
+    ])
   }
 ]
 render._withStripped = true

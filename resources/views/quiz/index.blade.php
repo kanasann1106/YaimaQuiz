@@ -24,7 +24,7 @@
         @endif
         <li><a href="/login">ログイン</a></li>
         @else
-        <li><a href="/mypage">マイページ</a></li>
+        <li><a href="/mypage"><i class="fas fa-home mr-2"></i>HOME</a></li>
         @endguest
       </ul>
     </nav>

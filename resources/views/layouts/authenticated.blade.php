@@ -18,7 +18,7 @@
         <ul>
           <li><a href="/quiz">クイズに挑戦</a></li>
           <li><a href="/mypage/create">クイズ作成</a></li>
-          <li><a href="/mypage">マイページ</a></li>
+          <li><a href="/mypage"><i class="fas fa-home mr-2"></i>HOME</a></li>
           <li><a href="/mypage/setting">ユーザー設定</a></li>
           <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">ログアウト</a></li>
