@@ -25,4 +25,13 @@ class SettingController extends Controller
     }
     return redirect('/');
   }
+  //メールアドレス変更
+  public function changeEmail()
+  {
+    return view('userpage.setting_menu.changeEmail');
+  }
+  //パスワード変更
+  public function changePassword(){
+    return view('userpage.setting_menu.changePassword');
+  }
 }

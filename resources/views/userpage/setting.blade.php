@@ -8,7 +8,7 @@
   <h1>ユーザー設定</h1>
   <ul class="menu-list">
     <li class="menu-item">
-      <a href="{{ Request::url()}}/change_pass">パスワード変更</a>
+      <a href="{{ Request::url()}}/change_password">パスワード変更</a>
     </li>
     <li class="menu-item">
       <a href="{{ Request::url()}}/change_email">メールアドレス変更</a>
