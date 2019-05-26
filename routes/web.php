@@ -20,6 +20,8 @@ Route::resource('/mypage', 'User\QuizPostController', ['except' => ['show']]);
 //setting
 Route::get('/mypage/setting', 'User\SettingController@showPage');
 Route::get('/withdraw', 'User\SettingController@withdraw');
+Route::get('/mypage/setting/change_email', 'User\SettingController@changeEmail');
+Route::get('/mypage/setting/change_password', 'User\SettingController@changePassword');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');
@@ -28,6 +30,7 @@ Route::get('/quiz/{menuId}', 'QuizController@indexCatNum');
 Route::get('/quiz/region/{islandId}', 'QuizController@indexRegNum');
 
 // ajax通信
+Route::get('/ajax/auth', 'Ajax\AuthController@auth');
 Route::get('/ajax/menu', 'Ajax\QuizController@getQuizAll');
 Route::get('/quiz/ajax/menu{menuId}', 'Ajax\QuizController@getQuizByCategory');
 Route::get('quiz/region/ajax/region{islandId}', 'Ajax\QuizController@getQuizByRegion');

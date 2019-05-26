@@ -51,19 +51,20 @@ export default {
   data: function() {
     return {
       categories: [],
-      region: []
+      region: [],
+      auth: false
     };
   },
   created() {
-    this.getQuizCategories(), this.getRegion();
+    this.checkAuth(), this.getQuizCategories(), this.getRegion();
   },
   methods: {
-    auth: function() {
+    checkAuth: function() {
       const url = "/ajax/auth";
       axios
         .get(url)
         .then(res => {
-          const auth = res.data;
+          this.auth = res.data;
         })
         .catch(error => {
           console.log(error);

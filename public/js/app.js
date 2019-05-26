@@ -1849,37 +1849,40 @@ var eventHub = global.eventHub = new Vue();
   data: function data() {
     return {
       categories: [],
-      region: []
+      region: [],
+      auth: false
     };
   },
   created: function created() {
-    this.getQuizCategories(), this.getRegion();
+    this.checkAuth(), this.getQuizCategories(), this.getRegion();
   },
   methods: {
-    auth: function auth() {
+    checkAuth: function checkAuth() {
+      var _this = this;
+
       var url = "/ajax/auth";
       axios.get(url).then(function (res) {
-        var auth = res.data;
+        _this.auth = res.data;
       }).catch(function (error) {
         console.log(error);
       });
     },
     getQuizCategories: function getQuizCategories() {
-      var _this = this;
+      var _this2 = this;
 
       var url = "/ajax/category";
       axios.get(url).then(function (res) {
-        _this.categories = res.data;
+        _this2.categories = res.data;
       }).catch(function (error) {
         console.log(error);
       });
     },
     getRegion: function getRegion() {
-      var _this2 = this;
+      var _this3 = this;
 
       var url = "/ajax/region";
       axios.get(url).then(function (res) {
-        _this2.region = res.data;
+        _this3.region = res.data;
       }).catch(function (error) {
         console.log(error);
       });
