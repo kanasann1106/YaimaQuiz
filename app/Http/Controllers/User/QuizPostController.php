@@ -35,7 +35,7 @@ class QuizPostController extends Controller
 		return view('userpage.quiz_posts', ['quiz_posts' => $quiz_posts]);
 	}
 
-	//クイズ詳細
+	//ユーザー設定
 	public function show()
 	{
 		return view('userpage.setting');
