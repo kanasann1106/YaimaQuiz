@@ -21,7 +21,7 @@ Route::resource('/mypage', 'User\QuizPostController', ['except' => ['show']]);
 Route::get('/mypage/setting', 'User\SettingController@showPage');
 Route::get('/withdraw', 'User\SettingController@withdraw');
 Route::get('/mypage/setting/change_email', 'User\SettingController@changeEmail');
-Route::get('/mypage/setting/change_password', 'User\SettingController@changePassword');
+Route::get('/mypage/setting/change_password', 'User\SettingController@showChangePassword');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');
