@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Validator;
+use App\Providers\ValidatorServiceProvider;
 
 class StoreUserSetting extends FormRequest
 {
@@ -24,19 +26,16 @@ class StoreUserSetting extends FormRequest
   public function rules()
   {
     return [
-      'old_password' => 'required',
-      'password' => 'required|min:6',
-      'password_confirmation' => 'required|confirmed',
+      'old_password' => 'required|dbpass',
+      'password' => 'required|min:6|confirmed',
+      'password_confirmation' => 'required',
     ];
   }
 
   public function messages()
   {
     return [
-      'old_password.required'  => '入力してください',
-      'uncorrect1.different' => '同じ内容の選択肢は入力できません。',
-      'uncorrect2.different' => '同じ内容の選択肢は入力できません。',
-      'image_name.mimes' => 'jpg, jpeg, pngタイプのファイルを指定してください。'
+      'dbpass' => '現在のパスワードが違います。',
     ];
   }
 }

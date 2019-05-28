@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUserSetting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use Log;
 
@@ -47,12 +48,10 @@ class SettingController extends Controller
   public function changePassword(StoreUserSetting $request)
   {
     $user = Auth::user();
-    Log::debug('ユーザー情報：' . $user);
-    $newPassword = $request['password'];
-    // if (Hash::check($$newPassword, $user->password)) {
-    //   // 一致したときの処理
-    // } else {
-    //   // 一致しなかったときの処理
-    // }
+    if ($user) {
+      $user->password = Hash::make($request->password);
+    }
+    $user->save();
+    return redirect('/mypage/setting/');
   }
 }

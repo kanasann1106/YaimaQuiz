@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form method="POST" action="{{ url('mypage') }}" class="form">
+<form method="POST" action="{{ url('/mypage/setting/change_password') }}" class="form">
   @csrf
 
   <div class="form-heading">
@@ -25,7 +25,7 @@
     @endif
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" name="password_confirmation" placeholder="(確認)新しいパスワード(6文字)">
+    <input type="password" class="form-control" name="password_confirmation" placeholder="新しいパスワード再入力(6文字)">
   </div>
   <button type="submit" class="btn btn-default btn-large">変更</button>
 
