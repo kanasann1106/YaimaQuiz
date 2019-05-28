@@ -11290,11 +11290,12 @@ ul {
 }
 
 .form-back_message {
-  display: block;
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
   font-size: 22px;
   color: #fff;
-  margin: 32px 0;
-  text-align: right;
+  margin: 32px 0 32px auto;
 }
 
 .form-image-area {

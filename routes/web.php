@@ -17,11 +17,15 @@ Auth::routes();
 //クイズCRUD(only login user)
 Route::resource('/mypage', 'User\QuizPostController', ['except' => ['show']]);
 
-//setting
+/*
+  setting
+*/
 Route::get('/mypage/setting', 'User\SettingController@showPage');
 Route::get('/withdraw', 'User\SettingController@withdraw');
 Route::get('/mypage/setting/change_email', 'User\SettingController@changeEmail');
+//パスワード変更
 Route::get('/mypage/setting/change_password', 'User\SettingController@showChangePassword');
+Route::post('/mypage/setting/change_password', 'User\SettingController@changePassword');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');
