@@ -40,3 +40,4 @@ Route::get('/quiz/ajax/menu{menuId}', 'Ajax\QuizController@getQuizByCategory');
 Route::get('quiz/region/ajax/region{islandId}', 'Ajax\QuizController@getQuizByRegion');
 Route::get('/ajax/category', 'Ajax\QuizController@getQuizCategory');
 Route::get('/ajax/region', 'Ajax\QuizController@getRegion');
+
