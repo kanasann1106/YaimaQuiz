@@ -18,14 +18,17 @@ Auth::routes();
 Route::resource('/mypage', 'User\QuizPostController', ['except' => ['show']]);
 
 /*
-  setting
+  ユーザー設定
 */
 Route::get('/mypage/setting', 'User\SettingController@showPage');
+//退会
 Route::get('/withdraw', 'User\SettingController@withdraw');
-Route::get('/mypage/setting/change_email', 'User\SettingController@changeEmail');
 //パスワード変更
 Route::get('/mypage/setting/change_password', 'User\SettingController@showChangePassword');
 Route::post('/mypage/setting/change_password', 'User\SettingController@changePassword');
+//メールアドレス変更
+Route::get('/mypage/setting/change_password', 'User\SettingController@showChangeEmail');
+Route::post('/mypage/setting/change_email', 'User\SettingController@changeEmail');
 
 //Quiz(public)
 Route::get('/', 'QuizController@index');
@@ -40,4 +43,3 @@ Route::get('/quiz/ajax/menu{menuId}', 'Ajax\QuizController@getQuizByCategory');
 Route::get('quiz/region/ajax/region{islandId}', 'Ajax\QuizController@getQuizByRegion');
 Route::get('/ajax/category', 'Ajax\QuizController@getQuizCategory');
 Route::get('/ajax/region', 'Ajax\QuizController@getRegion');
-
