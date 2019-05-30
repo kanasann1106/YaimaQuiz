@@ -29,6 +29,6 @@
   </div>
   <button type="submit" class="btn btn-default btn-large">変更</button>
 
-  <a href="/" class="form-back_message">TOPへ　→</a>
+  <a href="/mypage" class="form-back_message">HOMEへ　→</a>
 </form>
 @endsection

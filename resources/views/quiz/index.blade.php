@@ -102,7 +102,7 @@
   </main>
   <!-- footer -->
   <footer id="footer">
-    Copyright <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
+    Copyright© <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
   </footer>
   <script src=" {{ mix('js/app.js') }} "></script>
   <script src="js/bgswitcher.js"></script>

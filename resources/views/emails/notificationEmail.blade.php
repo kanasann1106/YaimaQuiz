@@ -86,7 +86,7 @@
               <table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; margin: 0 auto; padding: 0; text-align: center; width: 570px; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px;">
                 <tr>
                   <td class="content-cell" align="center" style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; padding: 35px;">
-                    <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; line-height: 1.5em; margin-top: 0; color: #AEAEAE; font-size: 12px; text-align: center;"><a style="color:#555;" href="https://yonaguni-media.com/" target="_blank">Copyright© どなんメディア.</a></p>
+                    <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; line-height: 1.5em; margin-top: 0; color: #555; font-size: 12px; text-align: center;">Copyright©　<a style="color:#555;" href="https://yonaguni-media.com/" target="_blank">どなんメディア.</a></p>
                   </td>
                 </tr>
               </table>

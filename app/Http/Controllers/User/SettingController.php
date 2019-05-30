@@ -42,9 +42,11 @@ class SettingController extends Controller
   // 新メールアドレスをDBへ保存する
   public function changeEmail(StoreUserSetting $request)
   {
+    Log::debug('新メールアドレスをDBへ保存する');
     $user = Auth::user();
     if ($user) {
-      $user->email = Hash::make($request->email);
+      $user->email = $request->email;
+      Log::debug('バリデーションOK');
     }
     $user->save();
     return redirect('/mypage/setting/');
