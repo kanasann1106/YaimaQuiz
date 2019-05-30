@@ -1,7 +1,7 @@
 .l-form {
   padding: 32px 0;
   @include mq-down(sm) {
-    // height: 100%;
+    height: 100%;
     padding: 0;
   }
 }

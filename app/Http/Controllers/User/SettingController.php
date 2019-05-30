@@ -29,10 +29,25 @@ class SettingController extends Controller
     }
     return redirect('/');
   }
-  //メールアドレス変更
-  public function changeEmail()
+  //メールアドレス変更画面表示
+  public function showChangeEmail()
   {
-    return view('userpage.setting_menu.changeEmail');
+    if (Auth::check()) {
+      Log::debug('メールアドレス変更画面');
+      return view('userpage.setting_menu.changeEmail');
+    } else {
+      return redirect(('/login'));
+    }
+  }
+  // 新メールアドレスをDBへ保存する
+  public function changeEmail(StoreUserSetting $request)
+  {
+    $user = Auth::user();
+    if ($user) {
+      $user->email = Hash::make($request->email);
+    }
+    $user->save();
+    return redirect('/mypage/setting/');
   }
   //パスワード変更画面表示
   public function showChangePassword()
