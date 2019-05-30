@@ -27,7 +27,7 @@ Route::get('/withdraw', 'User\SettingController@withdraw');
 Route::get('/mypage/setting/change_password', 'User\SettingController@showChangePassword');
 Route::post('/mypage/setting/change_password', 'User\SettingController@changePassword');
 //メールアドレス変更
-Route::get('/mypage/setting/change_password', 'User\SettingController@showChangeEmail');
+Route::get('/mypage/setting/change_email', 'User\SettingController@showChangeEmail');
 Route::post('/mypage/setting/change_email', 'User\SettingController@changeEmail');
 
 //Quiz(public)

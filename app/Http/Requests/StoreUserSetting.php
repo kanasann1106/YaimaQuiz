@@ -29,13 +29,19 @@ class StoreUserSetting extends FormRequest
       'old_password' => 'required|dbpass',
       'password' => 'required|min:6|confirmed',
       'password_confirmation' => 'required',
+      'old_email' => 'required|dbemail',
+      'email' => 'required|email|same:email_confirmation',
+      'email_confirmation' => 'required|email',
+      'pass_auth' => 'required|min:6'
     ];
   }
 
   public function messages()
   {
     return [
+      'email.same' => 'メールアドレスとメールアドレス再入力が一致しません。',
       'dbpass' => '現在のパスワードが違います。',
+      'dbemail' => '現在のメールアドレスが違います。',
     ];
   }
 }
