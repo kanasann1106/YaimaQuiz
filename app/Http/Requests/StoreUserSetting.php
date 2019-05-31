@@ -30,7 +30,7 @@ class StoreUserSetting extends FormRequest
       'password' => 'required|min:6|confirmed',
       'password_confirmation' => 'required',
       'old_email' => 'required|dbemail',
-      'email' => 'required|email|same:email_confirmation',
+      'email' => 'required|email|unique:users|same:email_confirmation',
       'email_confirmation' => 'required|email',
       'pass_auth' => 'required|min:6'
     ];
