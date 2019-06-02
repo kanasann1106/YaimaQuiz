@@ -52,11 +52,16 @@
           text-decoration: none;
         }
       }
-      &:hover {
+      &:hover:not(:first-child) {
         cursor: pointer;
         transform: scale(1.02, 1.02);
         opacity: 0.6;
       }
+    }
+    .user-info {
+      background: #89d5f8;
+      color: #555;
+      font-size: 16px;
     }
   }
 }
