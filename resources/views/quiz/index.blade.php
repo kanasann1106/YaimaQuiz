@@ -72,7 +72,7 @@
       <div class="can">
         <div class="can-head">
           <h3>02</h3>
-          <p>クイズを作成<span class="notice">現在開発中</span></p>
+          <p>クイズを作成<span class="notice">NEW!!</span></p>
         </div>
         <img class="animated can-body" data-animate="bounce" src="images/can02.png" alt="できること02">
         <div class="can-text">
@@ -83,7 +83,7 @@
       <div class="can">
         <div class="can-head">
           <h3>03</h3>
-          <p>クイズを管理<span class="notice">現在開発中</span></p>
+          <p>クイズを管理<span class="notice">NEW!!</span></p>
         </div>
         <img class="animated can-body" data-animate="bounce" src=" images/can03.png" alt="できること03">
         <div class="can-text">
