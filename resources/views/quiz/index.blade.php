@@ -96,6 +96,9 @@
     <section id="news" class="l-default l-section mb-4">
       <h2 class="section-title title-center title-border">お知らせ</h2>
       <ul class="news-list">
+        <li class="news-item"><time>2019.06.05</time>やいまクイズver2リリースしました。<br>
+          <a href="/login">＊追加機能＊<br>
+            クイズ作成、クイズ管理、マイページ</a></li>
         <li class="news-item"><time>2019.05.07</time>やいまクイズver1リリースしました。</li>
       </ul>
     </section>

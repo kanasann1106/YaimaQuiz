@@ -11504,6 +11504,10 @@ ul {
   margin-right: 8px;
 }
 
+.news-item a {
+  color: #f44336;
+}
+
 .mypage-quizlist .table td {
   padding: 0.5rem;
 }
