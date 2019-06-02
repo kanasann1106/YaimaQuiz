@@ -11568,11 +11568,17 @@ ul {
   text-decoration: none;
 }
 
-.setting .menu-list .menu-item:hover {
+.setting .menu-list .menu-item:hover:not(:first-child) {
   cursor: pointer;
   -webkit-transform: scale(1.02, 1.02);
           transform: scale(1.02, 1.02);
   opacity: 0.6;
+}
+
+.setting .menu-list .user-info {
+  background: #89d5f8;
+  color: #555;
+  font-size: 16px;
 }
 
 #alert {

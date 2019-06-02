@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Requests\StoreUserSetting;
+use App\Http\Requests\StoreChangePass;
+use App\Http\Requests\StoreChangeEmail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,8 @@ class SettingController extends Controller
   public function showPage()
   {
     if (Auth::check()) {
-      return view('userpage.setting');
+      $user = Auth::user();
+      return view('userpage.setting', ['user' => $user]);
     }
     return redirect('/login');
   }
@@ -40,7 +42,7 @@ class SettingController extends Controller
     }
   }
   // 新メールアドレスをDBへ保存する
-  public function changeEmail(StoreUserSetting $request)
+  public function changeEmail(StoreChangeEmail $request)
   {
     Log::debug('新メールアドレスをDBへ保存する');
     $user = Auth::user();
@@ -62,7 +64,7 @@ class SettingController extends Controller
     }
   }
   // 新パスワードをDBへ保存する
-  public function changePassword(StoreUserSetting $request)
+  public function changePassword(StoreChangePass $request)
   {
     $user = Auth::user();
     if ($user) {

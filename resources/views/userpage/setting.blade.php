@@ -6,7 +6,12 @@
 
 <div class="setting">
   <h1>ユーザー設定</h1>
+
   <ul class="menu-list">
+    <li class="menu-item user-info">
+      <p><i class="fas fa-envelope"></i>:{{$user->email}}</p>
+      <p><i class="fas fa-lock"></i>: ********</p>
+    </li>
     <li class="menu-item">
       <a href="{{ Request::url()}}/change_password">パスワード変更</a>
     </li>
