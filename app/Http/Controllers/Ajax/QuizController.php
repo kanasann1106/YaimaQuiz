@@ -43,6 +43,7 @@ class QuizController extends Controller
 			->where([
 				['category_id', '=', $menuId]
 			])
+			->inRandomOrder()
 			->get();
 
 		return json_encode($select, JSON_UNESCAPED_UNICODE);
