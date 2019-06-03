@@ -107,9 +107,9 @@
   <footer id="footer">
     Copyright© <a href="https://yonaguni-media.com" target="_blank">どなんメディア</a>.
   </footer>
-  <script src=" {{ mix('js/app.js') }} "></script>
-  <script src="js/bgswitcher.js"></script>
-  <script src="js/toppage.js"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ mix('js/bgswitcher.js') }}"></script>
+  <script src="{{ mix('js/toppage.js') }}"></script>
 </body>
 
 </html>
