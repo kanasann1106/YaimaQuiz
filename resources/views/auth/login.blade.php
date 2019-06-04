@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <main class="l-form">
+  <main class="l-form l-form-vh">
     <form method="POST" action="{{ route('login') }}" class="form">
       @csrf
 

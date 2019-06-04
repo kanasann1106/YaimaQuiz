@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <main class="l-form" style="height:100%;">
+  <main class="l-form">
     <form method="POST" action="{{ route('register') }}" class="form">
       @csrf
 

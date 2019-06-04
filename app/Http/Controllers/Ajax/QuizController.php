@@ -16,6 +16,9 @@ class QuizController extends Controller
 	{
 		$quizzes = DB::table('quizzes')
 			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
+			->where([
+				['deleted_at', '=', null]
+			])
 			->inRandomOrder()
 			->take(5)
 			->get();
@@ -41,7 +44,8 @@ class QuizController extends Controller
 		$select = DB::table('quizzes')
 			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
 			->where([
-				['category_id', '=', $menuId]
+				['category_id', '=', $menuId],
+				['deleted_at', '=', null]
 			])
 			->inRandomOrder()
 			->get();
@@ -67,7 +71,8 @@ class QuizController extends Controller
 		$select = DB::table('quizzes')
 			->select('title', 'image_name', 'correct', 'uncorrect1', 'uncorrect2', 'explain_sentence')
 			->where([
-				['region_id', '=', $islandId]
+				['region_id', '=', $islandId],
+				['deleted_at', '=', null]
 			])
 			->inRandomOrder()
 			->take(5)

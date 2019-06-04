@@ -29,7 +29,7 @@
       </nav>
     </header>
 
-    <main class="l-form">
+    <main class="l-form l-form-lh">
       @yield('content')
     </main>
 
