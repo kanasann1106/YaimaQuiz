@@ -1,7 +1,7 @@
 <template>
   <header class="fixed">
     <h1><a href="/">やいまクイズ</a></h1>
-    <div class="sp-menu js-toggle-nav">
+    <div class="c-menu-button js-toggle-nav">
       <span></span>
       <span></span>
       <span></span>

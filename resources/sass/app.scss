@@ -5,15 +5,28 @@
 //Animation
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css");
 
-// Variables
-@import "variables";
-
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-@import "base/mixins";
-@import "reset/common.scss";
-@import "base/vars";
+// Foundation
+@import "Foundation/_vars";
+@import "Foundation/_mixins";
+@import "Foundation/_base";
+
+// Layout
+@import "Layout/_header";
+
+/* ------------
+  Object
+---------------*/
+// Component
+@import "Object/Component/top-nav";
+@import "Object/Component/menu-button";
+// Project
+@import "Object/Project/_logo";
+
+// Utility
+
 @import "layout";
 @import "decoration";
 @import "quiz";
@@ -41,38 +54,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-/* -------------------
-	header
----------------------*/
-header {
-  background-color: #03b6f48f;
-  height: 64px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-header h1 a {
-  display: block;
-  font-weight: 500;
-  line-height: 64px;
-  font-family: "Nico Moji";
-}
-header h1 a:hover {
-  text-decoration: none;
-  opacity: 0.7;
-}
-@media screen and (max-width: 856px) {
-  header {
-    padding: 0 24px;
-    height: 48px;
-    display: flex;
-    justify-content: space-between;
-  }
-  header h1 a {
-    font-size: 28px;
-    line-height: 48px;
   }
 }
 /* -------------------

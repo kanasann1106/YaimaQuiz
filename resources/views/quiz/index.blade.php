@@ -4,16 +4,16 @@
 
 <body>
   <!-- header -->
-  <header class="fixed">
-    <h1><a href="/">やいまクイズ</a></h1>
-    <div class="sp-menu js-toggle-nav">
+  <header class="l-header">
+    <div class="p-logo"><a href="/">やいまクイズ</a></div>
+    <div class="c-menu-button js-toggle-nav">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <nav class="top-nav">
-      <ul>
+    <nav class="p-top-nav">
+      <ul class="p-top-nav__list">
         <li><a href="/quiz">クイズへ</a></li>
         <li><a href="#about-yaeyama">八重山とは</a></li>
         <li><a href="#can">できること</a></li>
@@ -32,9 +32,9 @@
   <main>
     <section class="l-section l-section-top js-slider">
       <div class="top-copy animated" data-animate="fadeIn">
-        <div class="top-message">
+        <h1 class="top-message">
           訪れるだけではわからない魅力をクイズで。
-        </div>
+        </h1>
         <div class="top-link">
           <a href="/quiz">クイズに挑戦！</a>
         </div>

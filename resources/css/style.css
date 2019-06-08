@@ -75,18 +75,18 @@ header h1 a:hover {
     font-size: 28px;
     line-height: 48px;
   }
-  .sp-menu,
-  .sp-menu span {
+  .c-menu-button,
+  .c-menu-button span {
     display: inline-block;
     transition: all 0.6s;
     box-sizing: border-box;
   }
-  .sp-menu {
+  .c-menu-button {
     position: relative;
     width: 40px;
     height: 40px;
   }
-  .sp-menu span {
+  .c-menu-button span {
     position: absolute;
     left: 0;
     width: 100%;
@@ -94,46 +94,46 @@ header h1 a:hover {
     background-color: #fff;
     border-radius: 4px;
   }
-  .sp-menu span:nth-of-type(1) {
+  .c-menu-button span:nth-of-type(1) {
     top: 11px;
   }
-  .sp-menu span:nth-of-type(2) {
+  .c-menu-button span:nth-of-type(2) {
     top: 22px;
   }
-  .sp-menu span:nth-of-type(3) {
+  .c-menu-button span:nth-of-type(3) {
     bottom: 3px;
   }
-  .sp-menu.active span:nth-of-type(1) {
+  .c-menu-button.active span:nth-of-type(1) {
     -webkit-transform: translateY(11px) rotate(-45deg);
     transform: translateY(11px) rotate(-45deg);
   }
-  .sp-menu.active span:nth-of-type(2) {
+  .c-menu-button.active span:nth-of-type(2) {
     opacity: 0;
   }
-  .sp-menu.active span:nth-of-type(3) {
+  .c-menu-button.active span:nth-of-type(3) {
     -webkit-transform: translateY(-11px) rotate(45deg);
     transform: translateY(-11px) rotate(45deg);
   }
 }
-.top-nav {
+.p-top-nav {
   width: 560px;
 }
 #accordion-menu {
   display: none;
 }
-.top-nav ul {
+.p-top-nav ul {
   display: flex;
   justify-content: space-around;
   line-height: 64px;
 }
-.top-nav a {
+.p-top-nav a {
   display: block;
   width: 88px;
   font-weight: bold;
   text-align: center;
   color: #fff;
 }
-.top-nav a:hover {
+.p-top-nav a:hover {
   text-decoration: none;
   background: #fff;
   color: #80cee0;
@@ -143,24 +143,24 @@ header h1 a:hover {
 /* .dropdown:hover .dropdown-menu {
   display: block;
 } */
-.top-nav .dropdown-menu {
+.p-top-nav .dropdown-menu {
   display: none;
   background: #80cee0;
   border: 3px solid #80cee0;
   border-radius: unset;
   padding: 0;
 }
-.top-nav .dropdown-menu a {
+.p-top-nav .dropdown-menu a {
   width: 100%;
   height: 48px;
   line-height: 42px;
 }
 @media screen and (max-width: 856px) {
   .dropdown,
-  .top-nav {
+  .p-top-nav {
     display: none;
   }
-  .top-nav {
+  .p-top-nav {
     position: absolute;
     top: 48px;
     left: 0;
@@ -231,13 +231,13 @@ header h1 a:hover {
   }
   /*-- accordion-menu ここまで ---*/
 
-  .top-nav ul {
+  .p-top-nav ul {
     display: block;
   }
-  .top-nav a {
+  .p-top-nav a {
     width: unset;
   }
-  .top-nav a:hover {
+  .p-top-nav a:hover {
     text-decoration: none;
     background: #fff;
     color: #80cee0;

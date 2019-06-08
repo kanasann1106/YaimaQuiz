@@ -1,0 +1,38 @@
+.p-top-nav {
+  width: 560px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    line-height: $headerHeight;
+    a {
+      display: block;
+      width: 88px;
+      font-weight: bold;
+      text-align: center;
+      &:hover {
+        text-decoration: none;
+        background: $white;
+        color: $skyBlue;
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  @include mq-down("md2") {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: $c-menu-buttonBgColor;
+    overflow: scroll;
+    height: 100vh;
+    z-index: 10;
+    &__list {
+      display: block;
+      a {
+        width: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.p-logo {
+  a {
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: $headerHeight;
+    font-family: "Nico Moji";
+    &:hover {
+      text-decoration: none;
+      opacity: 0.7;
+    }
+    @include mq-down("md2") {
+      font-size: 28px;
+      line-height: $sp-headerHeight;
+    }
+  }
+}

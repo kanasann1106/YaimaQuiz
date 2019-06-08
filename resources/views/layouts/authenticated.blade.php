@@ -8,13 +8,13 @@
     <!-- header -->
     <header>
       <h1><a href="/">やいまクイズ</a></h1>
-      <div class="sp-menu js-toggle-nav">
+      <div class="c-menu-button js-toggle-nav">
         <span></span>
         <span></span>
         <span></span>
       </div>
 
-      <nav class="top-nav">
+      <nav class="p-top-nav">
         <ul>
           <li><a href="/quiz">クイズに挑戦</a></li>
           <li><a href="/mypage/create">クイズ作成</a></li>

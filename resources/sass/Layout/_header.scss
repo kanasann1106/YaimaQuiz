@@ -1,0 +1,14 @@
+.l-header {
+  background-color: $headerBgColor;
+  height: $headerHeight;
+	width: 100%;
+	position: fixed;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-around;
+  @include mq-down("md2") {
+    padding: 0 24px;
+    height: $sp-headerHeight;
+    justify-content: space-between;
+  }
+}
