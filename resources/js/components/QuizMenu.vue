@@ -1,5 +1,5 @@
 <template>
-  <nav class="top-nav">
+  <nav class="p-top-nav">
     <ul>
       <li v-for="category in categories">
         <a :href="'/quiz/'+category.id">{{ category.name }}</a>

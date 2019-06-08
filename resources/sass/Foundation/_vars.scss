@@ -1,5 +1,10 @@
+$headerHeight: 64px;
+$sp-headerHeight: 48px;
+
 // Body
-$body-bg: #f8fafc;
+$mainBgColor: #f8fafc;
+$headerBgColor: #03b6f48f;
+$c-menu-buttonBgColor: #77d4f4f0;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
@@ -7,7 +12,10 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #03b6f48f;
+$white: #fff;
+$skyBlue: #80cee0;
+$thinBlock: #555;
+
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;

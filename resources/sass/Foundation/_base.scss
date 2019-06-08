@@ -1,9 +1,5 @@
-// html,
-// body {
-//   height: 100%;
-// }
 body {
-  color: #555;
+  color: $thinBlock;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "M PLUS Rounded 1c";
@@ -15,10 +11,10 @@ body,
   min-height: 100vh;
 }
 a {
-  color: #fff;
+  color: $white;
 }
 a:hover {
-  color: #fff;
+  color: $white;
 }
 h1,
 h2,
