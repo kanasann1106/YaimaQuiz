@@ -10,7 +10,6 @@
       font-weight: bold;
       text-align: center;
       &:hover {
-        text-decoration: none;
         background: $white;
         color: $skyBlue;
         transition: all 0.5s;
@@ -18,13 +17,13 @@
     }
   }
 
-  @include mq-down("md2") {
+  @include mq-down("md") {
     display: none;
     position: absolute;
     top: 48px;
     left: 0;
     width: 100%;
-    background: $c-menu-buttonBgColor;
+    background: $s-menu-buttonBgColor;
     overflow: scroll;
     height: 100vh;
     z-index: 10;

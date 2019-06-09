@@ -6,10 +6,9 @@
     line-height: $headerHeight;
     font-family: "Nico Moji";
     &:hover {
-      text-decoration: none;
       opacity: 0.7;
     }
-    @include mq-down("md2") {
+    @include mq-down("md") {
       font-size: 28px;
       line-height: $sp-headerHeight;
     }

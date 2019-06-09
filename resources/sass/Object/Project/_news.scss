@@ -1,0 +1,20 @@
+.p-news{
+  &__list {
+    width: 72%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__item {
+    border-bottom: 1px dashed $thinBlack;
+    margin: 8px 0;
+    time {
+      margin-right: 8px;
+    }
+    a {
+      color: $red;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}

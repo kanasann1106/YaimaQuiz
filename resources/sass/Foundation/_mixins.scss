@@ -1,18 +1,13 @@
 // min-width
 $breakpoint-up: (
-  "sm": "screen and (min-width: 550px)",
-  "md": "screen and (min-width: 768px)",
-  "lg": "screen and (min-width: 1000px)",
-  "xl": "screen and (min-width: 1200px)"
+  "sm": "screen and (min-width: 577px)",
+  "md": "screen and (min-width: 769px)"
 ) !default;
 
 // max-width
 $breakpoint-down: (
-  "sm": "screen and (max-width: 549px)",
-  "md": "screen and (max-width: 767px)",
-  "md2": "screen and (max-width: 856px)",
-  "lg": "screen and (max-width: 999px)",
-  "xl": "screen and (max-width: 1199px)"
+  "sm": "screen and (max-width: 576px)",
+  "md": "screen and (max-width: 768px)"
 ) !default;
 
 // @mixinの定義

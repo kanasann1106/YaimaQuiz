@@ -9,22 +9,9 @@
     @include mq-down() {
       max-width: 96%;
     }
-    @include mq-down(md2) {
+    @include mq-down(md) {
       max-width: 96%;
       padding-top: 64px;
-    }
-  }
-  &-section {
-    padding: 30px 0;
-    &-top {
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 700px;
-      color: #fff;
-      display: flex;
-      align-items: center;
     }
   }
   &-sns_list {
