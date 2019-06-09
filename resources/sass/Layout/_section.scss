@@ -1,0 +1,14 @@
+.l {
+  &-section {
+    padding: 30px 0;
+    &__hero {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 700px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

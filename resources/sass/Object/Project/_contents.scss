@@ -1,0 +1,31 @@
+.p-contents {
+  &__title {
+    color: $gray;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    text-align: center;
+    &--border {
+      display: flex;
+      align-items: center;
+      &:before,
+      &:after {
+        border-top: 1px solid $gray;
+        content: "";
+        flex-grow: 1;
+      }
+      &:before {
+        margin-right: 1rem;
+      }
+      &:after {
+        margin-left: 1rem;
+      }
+    }
+  }
+  &--border-right {
+    border-right: 1px solid $thinBlack;
+    @include mq-down("md") {
+      border-right: none;
+    }
+  }
+}

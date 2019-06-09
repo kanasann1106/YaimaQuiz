@@ -1,6 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/js/bgswitcher.js": "/js/bgswitcher.js",
-    "/js/toppage.js": "/js/toppage.js",
-    "/css/app.css": "/css/app.css"
+    "/js/toppage.js": "/js/toppage.js"
 }

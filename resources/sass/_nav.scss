@@ -17,7 +17,7 @@
     line-height: 42px;
   }
 }
-@include mq-down(md2) {
+@include mq-down(md) {
   .dropdown {
     display: none;
   }
@@ -43,7 +43,6 @@
   #accordion-menu a[data-toggle="collapse"] {
     display: block;
     padding: 10px;
-    text-decoration: none;
     position: relative;
     &:hover {
       background: #fff;

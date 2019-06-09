@@ -40,7 +40,7 @@
     &:hover {
       opacity: 0.7;
     }
-    @include mq-down(md2) {
+    @include mq-down(md) {
       font-size: 16px;
     }
   }

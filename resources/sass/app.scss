@@ -15,25 +15,32 @@
 
 // Layout
 @import "Layout/_header";
+@import "Layout/_section";
+@import "Layout/_footer";
 
 /* ------------
   Object
 ---------------*/
 // Component
-@import "Object/Component/top-nav";
-@import "Object/Component/menu-button";
+@import "Object/Component/_top-nav";
+@import "Object/Component/_hero";
+@import "Object/Component/_menu-button";
+@import "Object/Component/_overlay";
+
 // Project
 @import "Object/Project/_logo";
+@import "Object/Project/_contents";
+@import "Object/Project/_can";
+@import "Object/Project/_news";
 
 // Utility
 
 @import "layout";
-@import "decoration";
+
 @import "quiz";
 @import "nav";
 @import "form";
 @import "button";
-@import "toppage";
 @import "mypage";
 /* -------------------
 	animation
@@ -56,24 +63,5 @@
     opacity: 1;
   }
 }
-/* -------------------
-	footer
----------------------*/
-footer {
-  margin-top: auto;
-  bottom: 0;
-  height: 40px;
-  font-size: 14px;
-  width: 100%;
-  padding: 8px;
-  text-align: center;
-  color: #fff;
-  background: #444;
-  @include mq-down(sm) {
-    height: 32px;
-    font-size: 12px;
-  }
-}
-footer a {
-  color: #fff;
-}
+
+

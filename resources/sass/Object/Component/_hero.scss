@@ -1,0 +1,31 @@
+.p-hero {
+  margin: 0 auto;
+  padding: 24px;
+  background: $thinWhite;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  &__title {
+    color: $white;
+    text-align: center;
+    font-size: 24px;
+  }
+  &__link {
+    width: 240px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16x;
+    padding: 4px;
+    font-size: 20px;
+    transition: 0.3s;
+    background: $red;
+    &:hover {
+      transform: scale(1.08, 1.08);
+    }
+    a {
+      display: block;
+    }
+  }
+}
