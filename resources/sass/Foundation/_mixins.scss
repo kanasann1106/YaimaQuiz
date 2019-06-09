@@ -1,13 +1,13 @@
 // min-width
 $breakpoint-up: (
   "sm": "screen and (min-width: 577px)",
-  "md": "screen and (min-width: 769px)"
+  "md": "screen and (min-width: 834px)"
 ) !default;
 
 // max-width
 $breakpoint-down: (
   "sm": "screen and (max-width: 576px)",
-  "md": "screen and (max-width: 768px)"
+  "md": "screen and (max-width: 835px)"
 ) !default;
 
 // @mixinの定義

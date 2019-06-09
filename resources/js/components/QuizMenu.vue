@@ -1,6 +1,6 @@
 <template>
-  <nav class="p-top-nav">
-    <ul>
+  <nav class="c-top-nav">
+    <ul class="c-top-nav__list">
       <li v-for="category in categories">
         <a :href="'/quiz/'+category.id">{{ category.name }}</a>
       </li>
@@ -19,7 +19,7 @@
           </li>
         </ul>
       </li>
-      <li id="accordion-menu">
+      <li id="accordion-menu" class="c-accordion">
         <a
           data-toggle="collapse"
           href="#sp-region"
@@ -97,7 +97,4 @@ export default {
 </script>
 
 <style scoped>
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
 </style>

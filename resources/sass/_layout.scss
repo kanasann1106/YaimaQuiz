@@ -1,19 +1,4 @@
 .l {
-  &-default {
-    position: relative;
-    width: 848px;
-    margin: 0 auto;
-    padding-top: 96px;
-    padding-bottom: 40px;
-    /*animation: fadeIn 1s;*/
-    @include mq-down() {
-      max-width: 96%;
-    }
-    @include mq-down(md) {
-      max-width: 96%;
-      padding-top: 64px;
-    }
-  }
   &-sns_list {
     width: 100%;
     margin: 24px auto 0 auto;

@@ -12,8 +12,8 @@
       <span></span>
     </div>
 
-    <nav class="p-top-nav">
-      <ul class="p-top-nav__list">
+    <nav class="c-top-nav">
+      <ul class="c-top-nav__list">
         <li><a href="/quiz">クイズへ</a></li>
         <li><a href="#about-yaeyama">八重山とは</a></li>
         <li><a href="#can">できること</a></li>

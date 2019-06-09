@@ -10,5 +10,16 @@
       display: flex;
       align-items: center;
     }
+    &__wide {
+      position: relative;
+      width: 848px;
+      margin: 0 auto;
+      padding-top: 96px;
+      padding-bottom: 40px;
+      @include mq-down("md") {
+        max-width: 96%;
+        padding-top: 64px;
+      }
+    }
   }
 }
