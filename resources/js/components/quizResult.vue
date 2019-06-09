@@ -1,5 +1,5 @@
 <template>
-  <article id="result" v-if="show">
+  <article class="p-quiz__result" v-if="show">
     <section>
       <h1>クイズ結果</h1>
       <p v-if="totalCorrectNum > 0">{{totalCorrectNum}}問正解！</p>
@@ -7,10 +7,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5 offset-md-1">
-            <button @click="start" type="button" class="btn btn-default rounded-pill btn-block">リトライ</button>
+            <button @click="start" type="button" class="btn btn-default">リトライ</button>
           </div>
           <div class="col-md-5">
-            <button @click="tweet" type="button" class="btn btn-default rounded-pill btn-block"><i
+            <button @click="tweet" type="button" class="btn btn-default"><i
                 class="fab fa-twitter fa-lg mr-3"></i>ツイート</button>
           </div>
         </div>
@@ -26,7 +26,6 @@
     data: function () {
       return {
         show: false,
-        // totalCorrectNum: this.totalCorrectNum
       }
     },
     methods: {

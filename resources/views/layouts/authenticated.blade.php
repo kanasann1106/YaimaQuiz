@@ -14,7 +14,7 @@
         <span></span>
       </div>
 
-      <nav class="p-top-nav">
+      <nav class="c-top-nav">
         <ul>
           <li><a href="/quiz">クイズに挑戦</a></li>
           <li><a href="/mypage/create">クイズ作成</a></li>

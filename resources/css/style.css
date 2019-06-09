@@ -115,25 +115,25 @@ header h1 a:hover {
     transform: translateY(-11px) rotate(45deg);
   }
 }
-.p-top-nav {
+.c-top-nav {
   width: 560px;
 }
 #accordion-menu {
   display: none;
 }
-.p-top-nav ul {
+.c-top-nav ul {
   display: flex;
   justify-content: space-around;
   line-height: 64px;
 }
-.p-top-nav a {
+.c-top-nav a {
   display: block;
   width: 88px;
   font-weight: bold;
   text-align: center;
   color: #fff;
 }
-.p-top-nav a:hover {
+.c-top-nav a:hover {
   text-decoration: none;
   background: #fff;
   color: #80cee0;
@@ -143,24 +143,24 @@ header h1 a:hover {
 /* .dropdown:hover .dropdown-menu {
   display: block;
 } */
-.p-top-nav .dropdown-menu {
+.c-top-nav .dropdown-menu {
   display: none;
   background: #80cee0;
   border: 3px solid #80cee0;
   border-radius: unset;
   padding: 0;
 }
-.p-top-nav .dropdown-menu a {
+.c-top-nav .dropdown-menu a {
   width: 100%;
   height: 48px;
   line-height: 42px;
 }
 @media screen and (max-width: 856px) {
   .dropdown,
-  .p-top-nav {
+  .c-top-nav {
     display: none;
   }
-  .p-top-nav {
+  .c-top-nav {
     position: absolute;
     top: 48px;
     left: 0;
@@ -231,13 +231,13 @@ header h1 a:hover {
   }
   /*-- accordion-menu ここまで ---*/
 
-  .p-top-nav ul {
+  .c-top-nav ul {
     display: block;
   }
-  .p-top-nav a {
+  .c-top-nav a {
     width: unset;
   }
-  .p-top-nav a:hover {
+  .c-top-nav a:hover {
     text-decoration: none;
     background: #fff;
     color: #80cee0;

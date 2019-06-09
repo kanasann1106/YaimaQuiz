@@ -21,13 +21,13 @@ $(function () {
 
 	// ハンバーガーメニュー
 	$('.js-toggle-nav').on('click', function (e) {
-		$('.p-top-nav').toggleClass('show');
+		$('.c-top-nav').toggleClass('show');
 		$(this).toggleClass('active');
 	});
 	// ハンバーガーとメニュー以外をクリックしたらナビメニューを閉じる
 	$(document).on('click', function (e) {
-		if (!$(e.target).closest('.js-toggle-nav, .p-top-nav #accordion-menu').length) {
-			$('.p-top-nav').removeClass('show');
+		if (!$(e.target).closest('.js-toggle-nav, .c-top-nav #accordion-menu').length) {
+			$('.c-top-nav').removeClass('show');
 			$('.js-toggle-nav').removeClass('active');
 		}
 	});

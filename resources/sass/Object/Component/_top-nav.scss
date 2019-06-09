@@ -1,5 +1,5 @@
-.p-top-nav {
-  width: 560px;
+.c-top-nav {
+  width: 640px;
   &__list {
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,7 @@
     top: 48px;
     left: 0;
     width: 100%;
-    background: $s-menu-buttonBgColor;
+    background: $sp-menuBgColor;
     overflow: scroll;
     height: 100vh;
     z-index: 10;

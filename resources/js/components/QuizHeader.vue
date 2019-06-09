@@ -1,27 +1,26 @@
 <template>
-  <header class="fixed">
-    <h1><a href="/">やいまクイズ</a></h1>
+  <header class="l-header">
+    <div class="p-logo">
+      <a href="/">やいまクイズ</a>
+    </div>
     <div class="c-menu-button js-toggle-nav">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
-    <quiz-menu />
-
+    <quiz-menu/>
   </header>
 </template>
 
 <script>
-  import QuizMenu from './QuizMenu'
-  export default {
-    name: 'QuizHeader',
-    components: {
-      QuizMenu
-    }
+import QuizMenu from "./QuizMenu";
+export default {
+  name: "QuizHeader",
+  components: {
+    QuizMenu
   }
+};
 </script>
 
 <style scoped>
-
 </style>

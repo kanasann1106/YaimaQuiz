@@ -1,0 +1,62 @@
+.c-accordion {
+  display: none;
+}
+
+@include mq-down(md) {
+  /*-- accordion-menu ここから ---*/
+  .c-accordion,
+  .show {
+    display: block;
+  }
+  .c-accordion {
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    a:hover {
+      color: $sp-menuBgColor;
+    }
+    a[data-toggle="collapse"] {
+      display: block;
+      padding: 10px;
+      position: relative;
+      &:hover {
+        background: $white;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-top: $white 3px solid;
+        border-right: $white 3px solid;
+        position: absolute;
+        right: 20%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &:hover::after {
+        border-top: $sp-menuBgColor 3px solid;
+        border-right: $sp-menuBgColor 3px solid;
+      }
+    }
+    a[aria-expanded="false"]::after {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      transition-duration: 0.3s;
+    }
+    a[aria-expanded="true"]::after {
+      -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      transform: rotate(135deg);
+      transition-duration: 0.3s;
+    }
+  }
+  [id^="sp-region"] li {
+    padding: 10px 10px 10px 20px;
+  }
+}
