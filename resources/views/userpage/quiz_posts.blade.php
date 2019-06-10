@@ -4,9 +4,9 @@
 
 @section('content')
 
-<div class="container mypage-quizlist">
+<div class="container p-mypage">
   @if(count($quiz_posts)!= 0)
-  <h1>@yield('title')</h1>
+  <h1 class="p-mypage__title">@yield('title')</h1>
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>

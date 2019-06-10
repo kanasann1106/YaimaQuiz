@@ -4,8 +4,8 @@
 
 @section('content')
 
-<div class="setting">
-  <h1>ユーザー設定</h1>
+<div>
+  <h1 class="p-mypage__title">ユーザー設定</h1>
 
   <ul class="menu-list">
     <li class="menu-item user-info">
@@ -28,10 +28,10 @@
     <div class="container alert-btnlist">
       <div class="row">
         <div class="col-md-5 offset-md-1">
-          <button type="button" id="withdraw" class="btn btn-moderate rounded-pill btn-block">退会する</button>
+          <button type="button" id="withdraw" class="btn btn-moderate">退会する</button>
         </div>
         <div class="col-md-5">
-          <button type="button" id="cancel" class="btn btn-default rounded-pill btn-block">キャンセル</button>
+          <button type="button" id="cancel" class="btn btn-default">キャンセル</button>
         </div>
       </div>
     </div>

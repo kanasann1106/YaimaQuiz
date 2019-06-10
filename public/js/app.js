@@ -1923,9 +1923,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'quizResult',
-  props: ['totalCorrectNum'],
+  name: "quizResult",
+  props: ["totalCorrectNum"],
   data: function data() {
     return {
       show: false
@@ -1936,13 +1937,13 @@ __webpack_require__.r(__webpack_exports__);
       this.show = !this.show; //true
     },
     start: function start() {
-      window.location.href = '/quiz';
+      window.location.href = "/quiz";
     },
     tweet: function tweet() {
       if (this.totalCorrectNum > 0) {
-        open('https://twitter.com/intent/tweet?text=' + this.totalCorrectNum + '%E5%95%8F%E6%AD%A3%E8%A7%A3%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A&url=https%3A%2F%2Fyaima-quiz.kanasann.com&hashtags=%E3%82%84%E3%81%84%E3%81%BE%E3%82%AF%E3%82%A4%E3%82%BA%2C%E5%85%AB%E9%87%8D%E5%B1%B1%2C%E6%B2%96%E7%B8%84', '_blank');
+        open("https://twitter.com/intent/tweet?text=" + this.totalCorrectNum + "%E5%95%8F%E6%AD%A3%E8%A7%A3%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A&url=https%3A%2F%2Fyaima-quiz.kanasann.com&hashtags=%E3%82%84%E3%81%84%E3%81%BE%E3%82%AF%E3%82%A4%E3%82%BA%2C%E5%85%AB%E9%87%8D%E5%B1%B1%2C%E6%B2%96%E7%B8%84", "_blank");
       } else {
-        open('https://twitter.com/intent/tweet?text=%E6%AE%8B%E5%BF%B5%EF%BC%81%E5%85%A8%E5%95%8F%E4%B8%8D%E6%AD%A3%E8%A7%A3%E3%80%82%E3%80%82(%3E_%3C)%0A%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%E2%99%AA&url=https%3A%2F%2Fyaima-quiz.kanasann.com&hashtags=%E3%82%84%E3%81%84%E3%81%BE%E3%82%AF%E3%82%A4%E3%82%BA%2C%E5%85%AB%E9%87%8D%E5%B1%B1%2C%E6%B2%96%E7%B8%84', '_blank');
+        open("https://twitter.com/intent/tweet?text=%E6%AE%8B%E5%BF%B5%EF%BC%81%E5%85%A8%E5%95%8F%E4%B8%8D%E6%AD%A3%E8%A7%A3%E3%80%82%E3%80%82(%3E_%3C)%0A%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%E2%99%AA&url=https%3A%2F%2Fyaima-quiz.kanasann.com&hashtags=%E3%82%84%E3%81%84%E3%81%BE%E3%82%AF%E3%82%A4%E3%82%BA%2C%E5%85%AB%E9%87%8D%E5%B1%B1%2C%E6%B2%96%E7%B8%84", "_blank");
       }
     }
   }
@@ -37385,7 +37386,7 @@ var render = function() {
                   },
                   [
                     _c("i", { staticClass: "fab fa-twitter fa-lg mr-3" }),
-                    _vm._v("ツイート")
+                    _vm._v("ツイート\n          ")
                   ]
                 )
               ])

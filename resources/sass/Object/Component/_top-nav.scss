@@ -1,12 +1,11 @@
 .c-top-nav {
-  width: 640px;
   &__list {
     display: flex;
     justify-content: space-between;
     line-height: $headerHeight;
     a {
       display: block;
-      width: 88px;
+      width: 100px;
       font-weight: bold;
       text-align: center;
       &:hover {

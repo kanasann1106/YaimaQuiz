@@ -1,10 +1,10 @@
-@extends('layouts.authenticated')
+@extends('layouts.formWithHeader')
 
 @section('title','パスワード変更')
 
 @section('content')
 
-<form method="POST" action="{{ url('/mypage/setting/change_password') }}" class="form">
+<form method="POST" action="{{ url('/mypage/setting/change_password') }}" class="l-section--vh form">
   @csrf
 
   <div class="form-heading">

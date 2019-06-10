@@ -1,27 +1,17 @@
-.l-form {
-  padding: 32px 0;
-  @include mq-down(sm) {
-    height: 100vh;
-    padding: 0;
-    &-lh {
-      height: 100%;
-    }
-  }
-}
 .form {
-  padding: 32px 48px 24px 48px;
+  padding: 32px 48px 24px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8x;
-  background-color: #7ad3fc;
+  background-color: $formBgColor;
   width: 64%;
-  margin: 0 auto;
+  margin: 120px auto;
   @include mq-down() {
     width: 80%;
   }
-  @include mq-down(sm) {
+  @include mq-down("sm") {
     width: 100%;
-    height: 100%;
+    margin: 0;
     border-radius: initial;
     -webkit-border-radius: initial;
     -moz-border-radius: initial;
@@ -30,12 +20,12 @@
     text-align: center;
     margin: 24px 0;
     h1 {
-      color: #ffffff;
+      color: $white;
       font-size: 24px;
       margin-bottom: 24px;
     }
     p {
-      color: #ffffff;
+      color: $white;
       font-weight: bold;
     }
   }
@@ -43,16 +33,16 @@
     margin-bottom: 24px;
     .error_msg {
       padding-left: 24px;
-      color: #e3342f;
+      color: $red;
     }
     .attention {
       margin: 0 4px;
       padding: 2px 8px;
-      background: #f97b71;
+      background: $red;
       border-radius: 8px;
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
-      color: #fff;
+      color: $white;
     }
     label {
       font-weight: bold;
@@ -62,7 +52,6 @@
     height: 48px;
     border-radius: 40px;
     padding: 0 24px;
-    background-color: #ffffffc7;
   }
   .update-date {
     text-align: right;
@@ -83,7 +72,7 @@
     justify-content: flex-end;
     width: 50%;
     font-size: 22px;
-    color: #fff;
+    color: $white;
     margin: 32px 0 32px auto;
   }
   &-image-area {
@@ -92,8 +81,8 @@
       position: absolute;
       top: 47px;
       left: 34%;
-      color: #aaa;
-      @include mq-down(sm) {
+      color: $thinBlack;
+      @include mq-down("sm") {
         left: 35%;
       }
     }
@@ -104,7 +93,7 @@
       top: 0;
       left: 0;
       z-index: 2;
-      @include mq-down(sm) {
+      @include mq-down("sm") {
         width: 100%;
       }
     }
@@ -113,7 +102,7 @@
     position: relative;
     width: 50%;
     height: 165px;
-    background-color: #ffffffc7;
+    background-color: $white;
     border-radius: 16px;
     img {
       object-fit: cover;
@@ -123,7 +112,7 @@
       position: absolute;
       top: 0;
     }
-    @include mq-down(sm) {
+    @include mq-down("sm") {
       width: 100%;
     }
   }
