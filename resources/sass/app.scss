@@ -12,6 +12,7 @@
 @import "Foundation/_vars";
 @import "Foundation/_mixins";
 @import "Foundation/_base";
+@import "Foundation/_animation";
 
 // Layout
 @import "Layout/_header";
@@ -37,31 +38,9 @@
 @import "Object/Project/_can";
 @import "Object/Project/_news";
 @import "Object/Project/_quiz";
+@import "Object/Project/_form";
+@import "Object/Project/_sns";
+@import "Object/Project/_mypage";
+@import "Object/Project/_alert";
 
 // Utility
-
-@import "layout";
-@import "form";
-
-@import "mypage";
-/* -------------------
-	animation
----------------------*/
-@keyframes SlideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

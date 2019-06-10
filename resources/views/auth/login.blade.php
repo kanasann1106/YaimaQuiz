@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <main class="l-form l-form-vh">
+  <main class="l-section l-section--vh">
     <form method="POST" action="{{ route('login') }}" class="form">
       @csrf
 
@@ -34,8 +34,8 @@
         </div>
         <a href="{{ route('password.request') }}" class="form-message">パスワードをお忘れですか？</a>
       </div>
-      <!-- <p class="title-border">or</p>
-      <div class="l-sns_list">
+      <!-- <p class="p-contents__title p-contents__title--border">or</p>
+      <div class="l-section p-sns__list">
         <img src="{{asset('/images/twitter-icon.png')}}" alt="twitter-icon">
         <img src="{{asset('/images/facebook-icon.png')}}" alt="facebook-icon">
         <img src="{{asset('/images/google-icon.png')}}" alt="google-icon">

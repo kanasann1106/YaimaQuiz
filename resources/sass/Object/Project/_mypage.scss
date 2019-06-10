@@ -1,0 +1,47 @@
+.p-mypage {
+  &__title {
+    font-size: 20px;
+    margin: 16px 0;
+    text-align: center;
+  }
+}
+.menu-list {
+  width: 70%;
+  margin: 30px auto;
+  .menu-item {
+    background: $darkPink;
+    margin: 24px 0;
+    text-align: center;
+    border-radius: 8px;
+    -webkit-borer-radius: 8px;
+    -moz-border-raidus: 8px;
+    transition: 0.3s;
+    &.is-moderate {
+      background: $thinBlack;
+    }
+    button {
+      background: none;
+      border: none;
+      margin: 15px;
+      font-size: 16px;
+      color: $white;
+      font-weight: bold;
+    }
+    a {
+      display: block;
+      padding: 20px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &:hover:not(:first-child) {
+      cursor: pointer;
+      transform: scale(1.02, 1.02);
+      opacity: 0.6;
+    }
+  }
+  .user-info {
+    background: $rightBlue;
+    color: $black;
+    font-size: 16px;
+  }
+}

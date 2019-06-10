@@ -28,7 +28,7 @@
     </nav>
   </header>
 
-  <main class="l-section__wide">
+  <main>
     @yield('content')
   </main>
 

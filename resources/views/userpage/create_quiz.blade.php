@@ -1,4 +1,4 @@
-@extends('layouts.authenticated')
+@extends('layouts.formWithHeader')
 
 @section('title','クイズ作成')
 
