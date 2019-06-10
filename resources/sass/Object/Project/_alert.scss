@@ -25,6 +25,14 @@
     @include mq-down("sm") {
       margin: 0;
     }
+    button {
+      width: 120px;
+      @include mq-down("md2") {
+        width: 100%;
+      }
+      margin-top: 24px;
+      height: 56px;
+    }
   }
   &.is-active {
     display: block;
