@@ -139,7 +139,6 @@ export default {
     showAnswer: function(choice) {
       this.showQuiz = !this.showQuiz; //false
       this.showExplain = !this.showExplain; //true
-      console.log(this.quizzes);
 
       let answer = this.quizzes[this.quizNum - 1].correct;
       if (choice === answer) {
