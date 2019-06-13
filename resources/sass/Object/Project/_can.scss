@@ -8,6 +8,10 @@
     border-bottom: none;
   }
   &__head {
+    h3 {
+      color: $blue;
+      font-weight: bold;
+    }
     p {
       font-size: 22px;
     }
