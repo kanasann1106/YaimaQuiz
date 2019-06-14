@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: "QuizResult",
+  name: "quizResult",
   props: ["totalCorrectNum"],
   data: function() {
     return {
