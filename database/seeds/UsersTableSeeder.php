@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
 	{
 		$users = [
 			$user1 = [
-				'email' => 'machimachiko.kn11@gmail.com',
+				'email' => '111@111.com',
 				'password' => 'kanakana',
 				'quiz_auth_flg' => 1,
 
