@@ -50,7 +50,7 @@
 <script>
 import QuizResult from "./QuizResult";
 export default {
-  name: "quiz",
+  name: "QuizContents",
   components: {
     QuizResult
   },
